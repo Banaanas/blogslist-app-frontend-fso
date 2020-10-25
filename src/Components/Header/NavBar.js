@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import actionCreators from "../../store/actions/action-creators";
 
 const StyledNav = styled.nav`
   display: none;
@@ -38,9 +39,19 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const NavBar = () => {
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
+  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
 
-  console.log(loggedInUser === "");
+  // LOGOUT - FUNCTION
+  const handleLogout = () => {
+    window.localStorage.clear(); // Clear localStorage
+    window.location.reload(false); // Reload The Page (--> loggedInUser === null)
+
+    dispatch(actionCreators.displayNotification("success", "User Logged Out"));
+  };
+
   return (
     <React.Fragment>
       <StyledNav>
@@ -49,7 +60,11 @@ const NavBar = () => {
         </StyledNavLink>
         <StyledNavLink to="/myblogs">MY BLOGS</StyledNavLink>
         <StyledNavLink to="/users">ALL USERS</StyledNavLink>
-        {loggedInUser !== "" ? null : (
+        {loggedInUser !== "" ? (
+          <StyledNavLink to="/login" onClick={handleLogout}>
+            LOGOUT
+          </StyledNavLink>
+        ) : (
           <StyledNavLink to="/login">LOGIN</StyledNavLink>
         )}
       </StyledNav>

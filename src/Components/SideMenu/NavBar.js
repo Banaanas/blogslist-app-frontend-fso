@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { NavLink, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
 import { FaBloggerB as MyBlogsIcon } from "react-icons/fa";
 import {
   IoIosPeople as AllUsersIcon,
-  IoMdLogIn as LoginIcon,
+  IoMdLogIn as LogInIcon,
+  IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
+import actionCreators from "../../store/actions/action-creators";
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -69,8 +71,18 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
+
+  // LOGOUT - FUNCTION
+  const handleLogout = () => {
+    window.localStorage.clear(); // Clear localStorage
+    window.location.reload(false); // Reload The Page (--> loggedInUser === null)
+
+    dispatch(actionCreators.displayNotification("success", "User Logged Out"));
+  };
 
   const isMenuDisplayed = isMenuOpen ? true : false;
   const tabIndex = isMenuDisplayed ? 0 : -1;
@@ -123,16 +135,30 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
           All Users
         </StyledNavLink>
 
-        {loggedInUser !== "" ? null : (
+        {loggedInUser !== "" ? (
+          <StyledNavLink
+            to="/login"
+            tabIndex={tabIndex}
+            onClick={() => {
+              setMenuOpen(false);
+              handleLogout();
+            }}
+          >
+            <span aria-hidden="true">
+              <LogInIcon />
+            </span>
+            LOGOUT
+          </StyledNavLink>
+        ) : (
           <StyledNavLink
             to="/login"
             tabIndex={tabIndex}
             onClick={() => setMenuOpen(false)}
           >
             <span aria-hidden="true">
-              <LoginIcon />
+              <LogInIcon />
             </span>
-            Login
+            LOGIN
           </StyledNavLink>
         )}
       </StyledNav>
