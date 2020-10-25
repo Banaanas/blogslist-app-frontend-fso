@@ -1,0 +1,76 @@
+{
+  "name": "part7-03-blogslist-extension",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "@material-ui/core": "^5.0.0-alpha.13",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/styles": "^4.10.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "emotion": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+    "material-ui": "^1.0.0-beta.47",
+    "prop-types": "^15.7.2",
+    "react": "^16.14.0",
+    "react-burger-menu": "^2.9.0",
+    "react-dom": "^16.14.0",
+    "react-focus-lock": "^2.4.1",
+    "react-icons": "^3.11.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "react-swipeable": "^5.5.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "json-server -p3001 --watch db.json",
+    "cypress:open": "cypress open",
+    "test:e2e": "cypress run"
+  },
+  "proxy": "http://localhost:3001",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.26.3",
+    "babel-plugin-emotion": "^10.0.33",
+    "cypress": "^5.4.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "2.0.5",
+    "regenerator-runtime": "^0.13.7",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}

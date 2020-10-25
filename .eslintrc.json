@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["cypress", "jest", "jsx-a11y"],
+  "rules": {
+    // Authorize double-quote use
+    "quotes": [
+      1,
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        // Comma-dangle for all MULTILINE Arrays, Objects
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        // Comma-dangle for all MULTILINE Imports, Exports
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        // Comma-dangle for functions only when the developer decides
+        "functions": "only-multiline"
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-fragments": ["error", "element"],
+    "react/jsx-pascal-case": [
+      1,
+      {
+        "allowAllCaps": false
+      }
+    ]
+  }
+}
