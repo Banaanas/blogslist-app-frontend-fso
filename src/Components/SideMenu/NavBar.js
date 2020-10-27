@@ -20,20 +20,15 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 75%;
+  max-width: calc(710px - 25%);
   min-height: 100%;
-  padding: 0 2rem;
+  overflow: hidden;
   text-align: left;
   background-color: ${({ theme }) => theme.palette.secondary.main};
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform, 300ms ease;
-
-  a {
-    span {
-      margin-right: 1rem;
-      font-size: 4rem;
-    }
-  }
 `;
 
 const StyledNav = styled.nav`
@@ -51,7 +46,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 2rem 0;
   color: ${({ theme }) => theme.palette.primary.dark};
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 3rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -67,6 +62,11 @@ const StyledNavLink = styled(NavLink)`
   &.active {
     color: ${({ theme }) => theme.palette.primary.dark};
     opacity: 1;
+  }
+
+  /* Icons */
+  span {
+    margin-right: 2rem;
   }
 `;
 
@@ -145,7 +145,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
             }}
           >
             <span aria-hidden="true">
-              <LogInIcon />
+              <LogOutIcon />
             </span>
             LOGOUT
           </StyledNavLink>

@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
 `;
 
 const StyledLogo = styled.img`
-  width: 4rem;
+  height: 6rem;
   background-color: transparent;
 
   &:hover {

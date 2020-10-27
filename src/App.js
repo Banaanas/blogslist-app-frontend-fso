@@ -14,10 +14,6 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import SideMenu from "./Components/SideMenu/SideMenu";
 
-// TODO - Burger Menu
-// TODO - Favicon
-// TODO - Header
-// TODO - Footer
 // TODO - Comments
 // TODO - Redux Toolkit
 // TODO - Sync state between multiple tabs - Redux Persist - Redux-State-Sync - Multiple Tabs

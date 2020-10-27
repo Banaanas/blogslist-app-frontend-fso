@@ -7,6 +7,13 @@ import blogService from "../services/blogs";
 import userService from "../services/users";
 import actionCreators from "../store/actions/action-creators";
 
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/core";
+
 const StyledMain = styled.main`
   display: flex;
   flex: 1;
@@ -85,7 +92,7 @@ const LoginForm = () => {
 
   return (
     <StyledMain>
-      <form onSubmit={handleLogin}>
+      {/* <form onSubmit={handleLogin}>
         <div>
           Username
           <input
@@ -95,7 +102,7 @@ const LoginForm = () => {
             onChange={handleUsernameChange}
             data-cy="username-input"
           />
-        </div>
+        </div>a
         <div>
           Password
           <input
@@ -109,7 +116,19 @@ const LoginForm = () => {
         <button type="submit" data-cy="login-button">
           LOGIN
         </button>
-      </form>
+      </form>*/}
+      <FormControl>
+        <FormLabel htmlFor="email">Email address</FormLabel>
+        <input type="email" id="email" aria-describedby="email-helper-text" />
+        <FormHelperText id="email-helper-text">
+          We'll never share your email.
+        </FormHelperText>
+        <FormLabel htmlFor="email">Email address</FormLabel>
+        <input type="email" id="email" aria-describedby="email-helper-text" />
+        <FormHelperText id="email-helper-text">
+          We'll never share your email.
+        </FormHelperText>
+      </FormControl>
     </StyledMain>
   );
 };

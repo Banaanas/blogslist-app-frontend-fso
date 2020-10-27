@@ -7,9 +7,9 @@ import store from "./store/store";
 import * as serviceWorker from "./serviceWorker";
 import AppWrapper from "./AppWrapper";
 
-// Todo - Footer
 // Todo - Change Icon
 // Todo - Must Logged In to Like
+// Todo - Footer and Header Z-Index
 // Todo - Demo Identifiers
 // Todo - Verify Header color when
 // Todo - Verify

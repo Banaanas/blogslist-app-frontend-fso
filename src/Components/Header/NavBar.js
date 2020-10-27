@@ -22,9 +22,13 @@ const StyledNavLink = styled(NavLink)`
   justify-content: center;
   color: ${({ theme }) => theme.palette.primary.dark};
   font-weight: bolder;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-decoration: none;
   opacity: 0.5;
+
+  :not(:last-child) {
+    margin-right: 1rem;
+  }
 
   &:hover {
     opacity: 1;
@@ -35,6 +39,10 @@ const StyledNavLink = styled(NavLink)`
   &.active {
     color: ${({ theme }) => theme.palette.primary.dark};
     opacity: 1;
+  }
+
+  @media (min-width: 780px) {
+    font-size: 2rem;
   }
 `;
 
