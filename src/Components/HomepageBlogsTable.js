@@ -48,7 +48,6 @@ const HomepageBlogsTable = () => {
     try {
       // Like Blog - Dispatch - Redux State
       dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
-
       if (loggedInUser === "") {
         dispatch(
           actionCreators.displayNotification(

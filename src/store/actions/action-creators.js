@@ -38,7 +38,7 @@ const getBlogsSingleUser = (id) => async (dispatch) => {
   // Async Action
   const singleUser = await usersService.getUser(id);
   dispatch({
-    type: actionTypes.GET_SINGLE_USER, // <-- Single User
+    type: actionTypes.GET_BLOGS_SINGLE_USER, // <-- Single User
     singleUser,
   });
 };

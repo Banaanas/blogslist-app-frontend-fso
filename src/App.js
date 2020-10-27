@@ -14,12 +14,16 @@ import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import SideMenu from "./Components/SideMenu/SideMenu";
 
+import appTheme from "./styles/appTheme";
+
+
 // TODO - Comments
 // TODO - Redux Toolkit
 // TODO - Sync state between multiple tabs - Redux Persist - Redux-State-Sync - Multiple Tabs
 // https://medium.com/front-end-weekly/multi-tab-logout-in-react-redux-4715f071c7fa
 
 const App = () => {
+  console.log(appTheme);
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
   // NOTIFICATION Message TO DISPLAY - REDUX STATE

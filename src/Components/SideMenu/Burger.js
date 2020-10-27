@@ -20,7 +20,7 @@ const StyledSideMenuButton = styled.button`
   }
 
   &:focus {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     outline: thin dotted;
   }
 
@@ -31,7 +31,7 @@ const StyledSideMenuButton = styled.button`
   span {
     width: ${({ openMenu }) => (openMenu ? "4.5rem" : "4.5rem")};
     height: 1.5rem;
-    background-color: ${({ theme }) => theme.palette.primary.dark};
+    background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 10px;
     transform-origin: left center;
     transition: transform, width, 300ms ease-out;

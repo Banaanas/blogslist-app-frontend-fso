@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   width: 100%;
   height: 8rem;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.colors.secondary.main};
 
   button {
     width: auto;
@@ -23,7 +23,7 @@ const StyledHeader = styled.header`
     cursor: pointer;
 
     &:focus {
-      color: ${({ theme }) => theme.palette.primary.dark};
+      color: ${({ theme }) => theme.colors.primary.dark};
       outline: thin dotted;
     }
   }

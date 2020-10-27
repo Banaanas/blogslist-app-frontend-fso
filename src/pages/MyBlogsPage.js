@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import PageHeading from "../Components/PageHeading";
 
 const StyledMain = styled.main`
   display: flex;
@@ -17,7 +18,7 @@ const StyledMain = styled.main`
 const MyBlogsPage = () => {
   return (
     <StyledMain>
-      <h1>My Blogs</h1>
+      <PageHeading>MY BLOGS</PageHeading>
     </StyledMain>
   );
 };

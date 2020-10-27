@@ -5,8 +5,6 @@ import Burger from "./Burger";
 import useOnClickOutside from "../../custom-hooks/useOnClickOutside";
 import NavBar from "./NavBar";
 
-const StyledRefDiv = styled.div`
-`;
 
 const SideMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -18,7 +16,7 @@ const SideMenu = () => {
 
   return (
     <React.Fragment>
-      <StyledRefDiv ref={DOMRef}>
+      <div ref={DOMRef}>
         <FocusLock disabled={!isMenuOpen}>
           <Burger
             openMenu={isMenuOpen}
@@ -31,7 +29,7 @@ const SideMenu = () => {
             menuID={menuId}
           />
         </FocusLock>
-      </StyledRefDiv>
+      </div>
     </React.Fragment>
   );
 };

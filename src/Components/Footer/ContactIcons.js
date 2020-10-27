@@ -15,9 +15,9 @@ const StyledSocialIconsContainer = styled.div`
   }
 
   svg {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     font-size: 3rem;
-    background-color: ${({ theme }) => theme.palette.secondary.main};
+    background-color: ${({ theme }) => theme.colors.secondary.main};
   }
 `;
 

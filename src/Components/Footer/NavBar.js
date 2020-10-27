@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { NavLink, Redirect, Route, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import LoginPage from "../../pages/LoginPage";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -17,11 +16,11 @@ const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.palette.primary.dark};
+  color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
   font-size: 1rem;
   text-decoration: none;
-  opacity: 0.5;
+  opacity: 0.6;
 
   &:hover {
     opacity: 1;
@@ -30,21 +29,12 @@ const StyledNavLink = styled(NavLink)`
   /* React Router NavLink attributes automatically an "active" className
   to the active NavLink (when it matches the URL) */
   &.active {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     opacity: 1;
   }
 `;
 
 const NavBar = () => {
-  // USELOCATION - REACT ROUTER
-  // React Router NavLink attributes automatically an "active" className
-  // to the active NavLink (when it matches the URL)
-  // It is possible to make a NavLink active when a URL doesn't match, with the
-  // isActive function and Regex filter (with the different routes).
-  // Example : Click on Resume Link --> Route to Resume (/resume) + activeClassName
-  // for About Tab (/about). This choice, because Resume is a part of the About submenu
-  const { pathname } = useLocation();
-
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
 

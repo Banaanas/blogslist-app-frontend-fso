@@ -1,10 +1,8 @@
-import { useSelector } from "react-redux";
-import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
-
 import React from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import styled from "@emotion/styled";
 import { useTable } from "react-table";
-import list from "../List";
 
 const StyledTable = styled.table`
   width: 95%;
@@ -13,9 +11,9 @@ const StyledTable = styled.table`
   border-collapse: collapse;
 
   th {
-    color: ${({ theme }) => theme.palette.primary.light};
+    color: ${({ theme }) => theme.colors.secondary.dark};
     text-transform: uppercase;
-    background-color: ${({ theme }) => theme.palette.secondary.dark};
+    background-color: ${({ theme }) => theme.colors.primary.dark};
   }
 
   th,
@@ -26,26 +24,38 @@ const StyledTable = styled.table`
   }
 
   tr:nth-of-type(odd) {
-    background-color: ${({ theme }) => theme.palette.primary.main};
+    background-color: ${({ theme }) => theme.colors.secondary.light};
   }
 
   tr:nth-of-type(even) {
-    background-color: ${({ theme }) => theme.palette.primary.dark};
+    background-color: ${({ theme }) => theme.colors.secondary.main};
   }
 
   td {
     width: 33%;
+    color: ${({ theme }) => theme.colors.primary.dark};
+    font-weight: bolder;
     text-overflow: ellipsis;
     word-break: break-word;
   }
 
- 
+  a {
+    font-weight: bolder;
+    text-decoration-line: underline;
+  }
+
+  a:visited {
+    color: ${({ theme }) => theme.colors.primary.main};
+    font-weight: bolder;
+    text-decoration-line: underline;
+  }
 `;
 
 const AllUsersTable = () => {
   // ALL BLOGS ALL USERS - REDUX STATE
   const data = useSelector((state) => state.allUsers);
 
+  // Table Columns
   const columns = React.useMemo(
     () => [
       {
@@ -70,6 +80,8 @@ const AllUsersTable = () => {
     ],
     [],
   );
+
+  // React-Table Hook
   const tableInstance = useTable({ columns, data });
 
   const {

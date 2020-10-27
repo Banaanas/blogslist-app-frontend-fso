@@ -1,14 +1,21 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import orange from "@material-ui/core/colors/orange";
-import grey from "@material-ui/core/colors/grey";
+import { extendTheme } from "@chakra-ui/core";
 
-const appTheme = createMuiTheme({
-  palette: {
+const appTheme = extendTheme({
+  colors: {
     primary: {
-      main: orange[50],
+      light: "#959bea",
+      main: "#434cd6",
+      dark: "#1f2793",
     },
     secondary: {
-      main: grey.A700,
+      light: "#ffe4af",
+      main: "#ffc04d",
+      dark: "#e69405",
+    },
+    brand: {
+      100: "#f7fafc",
+      // ...
+      900: "#1a202c",
     },
   },
 });

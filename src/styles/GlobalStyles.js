@@ -34,8 +34,8 @@ const GlobalStyles = () => {
           justify-content: space-between;
           width: 100%;
           min-height: 100%;
-          color: ${theme.palette.secondary.main};
-          background-color: ${theme.palette.primary.main};
+          color: ${theme.colors.secondary.main};
+          background-color: ${theme.colors.primary.main};
         }
       `}
     />

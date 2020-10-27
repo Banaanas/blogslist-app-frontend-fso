@@ -14,7 +14,7 @@ const StyledSpan = styled.span`
   justify-content: center;
   width: 100%;
   padding: 1rem 0;
-  background-color: ${({ theme }) => theme.palette.primary.dark};
+  background-color: ${({ theme }) => theme.colors.primary.dark};
 `;
 
 const SubFooter = () => (

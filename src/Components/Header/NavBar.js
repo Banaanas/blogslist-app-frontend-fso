@@ -9,6 +9,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-around;
   width: 50%;
+  min-width: 40rem;
   padding: 1rem;
 
   @media (min-width: 710px) {
@@ -16,18 +17,38 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(NavLink, {
+  shouldForwardProp: (prop) => prop !== "loggedIn", // loggedIn prop is not passed to the DOM
+})`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.palette.primary.dark};
+  color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
   font-size: 1.8rem;
   text-decoration: none;
-  opacity: 0.5;
+  opacity: 0.6;
+
+  &:last-child {
+    padding: 1rem;
+    border-radius: 5px;
+    color: ${(props) =>
+      props.loggedIn
+        ? ({ theme }) => theme.colors.secondary.dark
+        : ({ theme }) => theme.colors.primary.dark};
+
+    background-color: ${(props) =>
+      props.loggedIn
+        ? ({ theme }) => theme.colors.primary.dark
+        : ({ theme }) => theme.colors.secondary.dark};
+  }
 
   :not(:last-child) {
-    margin-right: 1rem;
+    ${({ active }) =>
+      active &&
+      `
+    background: blue;
+  `}
   }
 
   &:hover {
@@ -37,7 +58,7 @@ const StyledNavLink = styled(NavLink)`
   /* React Router NavLink attributes automatically an "active" className
   to the active NavLink (when it matches the URL) */
   &.active {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     opacity: 1;
   }
 
@@ -69,11 +90,17 @@ const NavBar = () => {
         <StyledNavLink to="/myblogs">MY BLOGS</StyledNavLink>
         <StyledNavLink to="/users">ALL USERS</StyledNavLink>
         {loggedInUser !== "" ? (
-          <StyledNavLink to="/login" onClick={handleLogout}>
+          <StyledNavLink
+            loggedIn={loggedInUser}
+            to="/login"
+            onClick={handleLogout}
+          >
             LOGOUT
           </StyledNavLink>
         ) : (
-          <StyledNavLink to="/login">LOGIN</StyledNavLink>
+          <StyledNavLink loggedIn={loggedInUser} to="/login">
+            LOGIN
+          </StyledNavLink>
         )}
       </StyledNav>
     </React.Fragment>

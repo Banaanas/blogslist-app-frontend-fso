@@ -3,7 +3,7 @@ import actionTypes from "../actions/actions-types";
 // BLOGS SINGLE USER REDUCER
 const blogsSingleUserReducer = (state = [], action) => {
   switch (action.type) {
-    case actionTypes.GET_SINGLE_USER: {
+    case actionTypes.GET_BLOGS_SINGLE_USER: {
       const { singleUser } = action;
       return singleUser.blogs;
     }

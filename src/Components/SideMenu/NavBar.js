@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
@@ -14,6 +14,7 @@ import actionCreators from "../../store/actions/action-creators";
 
 const StyledMenu = styled.nav`
   position: fixed;
+  top: 0;
   left: 0;
   z-index: 1;
   display: flex;
@@ -25,10 +26,11 @@ const StyledMenu = styled.nav`
   min-height: 100%;
   overflow: hidden;
   text-align: left;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.colors.secondary.main};
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform, 300ms ease;
+  box-shadow: -3px 0 10px 0 #555;
 `;
 
 const StyledNav = styled.nav`
@@ -44,23 +46,23 @@ const StyledNavLink = styled(NavLink)`
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-  color: ${({ theme }) => theme.palette.primary.dark};
+  color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
   font-size: 3rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
   text-decoration: none;
-  opacity: 0.5;
+  opacity: 0.6;
 
   &:hover {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     opacity: 1;
   }
 
   /* React Router NavLink attributes automatically an "active" className
   to the active NavLink (when it matches the URL) */
   &.active {
-    color: ${({ theme }) => theme.palette.primary.dark};
+    color: ${({ theme }) => theme.colors.primary.dark};
     opacity: 1;
   }
 

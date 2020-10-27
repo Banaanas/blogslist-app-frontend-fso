@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   min-height: 10rem;
   padding-top: 1rem;
-  background-color: ${({ theme }) => theme.palette.secondary.main};
+  background-color: ${({ theme }) => theme.colors.secondary.main};
 `;
 
 const Footer = () => {

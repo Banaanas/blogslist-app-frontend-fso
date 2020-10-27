@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "@emotion/styled";
 
+import { FormControl, FormHelperText, FormLabel } from "@chakra-ui/core";
 import login from "../services/login";
 import blogService from "../services/blogs";
 import userService from "../services/users";
 import actionCreators from "../store/actions/action-creators";
+import PageHeading from "../Components/PageHeading";
 
-import {
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-} from "@chakra-ui/core";
 
 const StyledMain = styled.main`
   display: flex;
@@ -92,7 +88,8 @@ const LoginForm = () => {
 
   return (
     <StyledMain>
-      {/* <form onSubmit={handleLogin}>
+      <PageHeading>LOGIN</PageHeading>
+      <form onSubmit={handleLogin}>
         <div>
           Username
           <input
@@ -102,7 +99,8 @@ const LoginForm = () => {
             onChange={handleUsernameChange}
             data-cy="username-input"
           />
-        </div>a
+        </div>
+        a
         <div>
           Password
           <input
@@ -116,7 +114,7 @@ const LoginForm = () => {
         <button type="submit" data-cy="login-button">
           LOGIN
         </button>
-      </form>*/}
+      </form>
       <FormControl>
         <FormLabel htmlFor="email">Email address</FormLabel>
         <input type="email" id="email" aria-describedby="email-helper-text" />
