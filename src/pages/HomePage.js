@@ -1,27 +1,20 @@
 import React from "react";
-import styled from "@emotion/styled";
-import BlogsTable from "../Components/BlogsTable";
+import { useSelector } from "react-redux";
+import HomePageTable from "../Components/Tables/HomePageTable";
 import PageHeading from "../Components/PageHeading";
-
-const StyledMain = styled.main`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
-  height: auto;
-  margin-top: 8rem; /* To match the Fixed Header Height */
-  padding: 4rem;
-  font-size: 2rem;
-`;
+import StyledMainPage from "../Components/StyledComponents/StyledPageMain";
+import AddBlogLink from "../Components/AddBlogLink";
 
 const HomePage = () => {
+  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+
   return (
-    <StyledMain>
+    <StyledMainPage relativePosition>
       <PageHeading>Favorite Blogs</PageHeading>
-      <BlogsTable />
-    </StyledMain>
+      {loggedInUser !== "" ? <AddBlogLink /> : null}
+      <HomePageTable />
+    </StyledMainPage>
   );
 };
 

@@ -1,17 +1,15 @@
 import React from "react";
-import AllUsersPagesTable from "../Components/Tables/AllUsersPagesTable";
 import PageHeading from "../Components/PageHeading";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
+import AddBlogForm from "../Components/AddBlogForm";
 
-const AllUsersPage = () => {
+const AddBlogPage = () => {
   return (
     <StyledPageMain>
-      <PageHeading>
-        All Users
-      </PageHeading>
-      <AllUsersPagesTable />
+      <PageHeading>ADD BLOG</PageHeading>
+      <AddBlogForm/>
     </StyledPageMain>
   );
 };
 
-export default AllUsersPage;
+export default AddBlogPage;

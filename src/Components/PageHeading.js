@@ -5,13 +5,12 @@ const PageHeading = (props) => {
   return (
     <Heading
       as="h1"
-      mb="2rem"
       size="4xl"
-      ls="1rem"
-      letterSpacing="1rem"
-      textTransform="uppercase"
-      align="center"
+      mr="-1rem" /* To balance the last letter's letterSpacing */
       color="secondary.dark"
+      textTransform="uppercase"
+      textAlign="center"
+      letterSpacing="1rem"
       /* eslint-disable react/jsx-props-no-spreading */
       {...props}
     >

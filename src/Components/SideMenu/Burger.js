@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const StyledSideMenuButton = styled.button`
-  position: fixed;
-  top: 1rem;
+  position: absolute;
+  top: 1.4rem;
   right: 1rem;
   display: flex;
   flex-direction: column;
@@ -11,13 +11,11 @@ const StyledSideMenuButton = styled.button`
   justify-content: space-evenly;
   width: 4.5rem;
   height: 4.5rem;
+  padding: 0 !important;
   background-color: transparent;
   border: 0;
   cursor: pointer;
-
-  @media (min-width: 710px) {
-    display: none;
-  }
+  outline: deeppink 3px solid;
 
   &:focus {
     color: ${({ theme }) => theme.colors.primary.dark};
@@ -29,7 +27,7 @@ const StyledSideMenuButton = styled.button`
   }
 
   span {
-    width: ${({ openMenu }) => (openMenu ? "4.5rem" : "4.5rem")};
+    width: ${({ openMenu }) => (openMenu ? "4.6rem" : "4.5rem")};
     height: 1.5rem;
     background-color: ${({ theme }) => theme.colors.primary.dark};
     border-radius: 10px;

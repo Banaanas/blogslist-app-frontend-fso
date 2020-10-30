@@ -27,10 +27,10 @@ const StyledMenu = styled.nav`
   overflow: hidden;
   text-align: left;
   background-color: ${({ theme }) => theme.colors.secondary.main};
+  box-shadow: -3px 0 10px 0 #555;
   transform: ${({ isMenuOpen }) =>
     isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform, 300ms ease;
-  box-shadow: -3px 0 10px 0 #555;
 `;
 
 const StyledNav = styled.nav`

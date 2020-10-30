@@ -1,11 +1,15 @@
 import React, { useRef, useState } from "react";
-import styled from "@emotion/styled";
 import FocusLock from "react-focus-lock";
+import styled from "@emotion/styled";
 import Burger from "./Burger";
 import useOnClickOutside from "../../custom-hooks/useOnClickOutside";
 import NavBar from "./NavBar";
 
-
+const StyledDiv = styled.div`
+  @media (min-width: 710px) {
+    display: none;
+  }
+`;
 const SideMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const DOMRef = useRef(null);
@@ -16,7 +20,7 @@ const SideMenu = () => {
 
   return (
     <React.Fragment>
-      <div ref={DOMRef}>
+      <StyledDiv ref={DOMRef}>
         <FocusLock disabled={!isMenuOpen}>
           <Burger
             openMenu={isMenuOpen}
@@ -29,7 +33,7 @@ const SideMenu = () => {
             menuID={menuId}
           />
         </FocusLock>
-      </div>
+      </StyledDiv>
     </React.Fragment>
   );
 };

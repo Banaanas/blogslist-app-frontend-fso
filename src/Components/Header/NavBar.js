@@ -31,16 +31,15 @@ const StyledNavLink = styled(NavLink, {
 
   &:last-child {
     padding: 1rem;
-    border-radius: 5px;
     color: ${(props) =>
       props.loggedIn
         ? ({ theme }) => theme.colors.secondary.dark
         : ({ theme }) => theme.colors.primary.dark};
-
     background-color: ${(props) =>
       props.loggedIn
         ? ({ theme }) => theme.colors.primary.dark
         : ({ theme }) => theme.colors.secondary.dark};
+    border-radius: 5px;
   }
 
   :not(:last-child) {

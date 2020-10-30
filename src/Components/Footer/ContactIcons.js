@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { VscGithubInverted as GithubIcon } from "react-icons/vsc";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { ImLinkedin as LinkedInIcon } from "react-icons/im";
-import { HiHome as HomeIcon } from "react-icons/hi";
+import { HiOutlineGlobeAlt as PersonalWebsiteIcon } from "react-icons/hi";
 
 const StyledSocialIconsContainer = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const ContactIcons = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <HomeIcon />
+      <PersonalWebsiteIcon />
     </a> <a
     aria-label="Github Profile Link"
     href="https://github.com/Banaanas"

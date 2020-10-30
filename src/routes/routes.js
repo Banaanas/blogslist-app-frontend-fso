@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import HomePage from "../pages/HomePage";
 import MyBlogsPage from "../pages/MyBlogsPage";
 import LoginPage from "../pages/LoginPage";
-import UserProfile from "../Components/UserProfile/UserProfile";
-import SingleBlog from "../Components/SingleBlog/SingleBlog";
 import AllUsersPage from "../pages/AllUsersPage";
+import SingleBlogPage from "../pages/SingleBlogPage";
+import SingleUser from "../Components/SingleUser.js/SingleUser";
+import AddBlogPage from "../pages/AddBlogPage";
 
 const Routes = () => {
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
@@ -27,19 +28,19 @@ const Routes = () => {
       </Route>
 
       <Route path="/users/:id">
-        <UserProfile />
+        <SingleUser />
       </Route>
 
       <Route path="/blogs/:id">
-        <SingleBlog />
+        <SingleBlogPage />
       </Route>
 
       <Route exact path="/login">
         {loggedInUser !== "" ? <Redirect to="/" /> : <LoginPage />}
       </Route>
 
-      <Route exact path="/login">
-        {loggedInUser !== "" ? <Redirect to="/" /> : <LoginPage />}
+      <Route exact path="/add-blog">
+        <AddBlogPage />
       </Route>
 
       <Route render={() => <Redirect to="/" />} />

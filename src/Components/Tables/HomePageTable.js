@@ -1,66 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
+import styled from "@emotion/styled";
 import { AiTwotoneLike as LikeIcon } from "react-icons/ai";
-
 import { IconButton } from "@chakra-ui/core";
-import actionCreators from "../store/actions/action-creators";
+import actionCreators from "../../store/actions/action-creators";
+import StyledTable from "../StyledComponents/StyledTable";
 
-const StyledTable = styled.table`
-  width: 95%;
-  min-width: 333px;
-  max-width: 750px;
-  border-collapse: collapse;
-
-  th {
-    color: ${({ theme }) => theme.colors.secondary.dark};
-    text-transform: uppercase;
-    background-color: ${({ theme }) => theme.colors.primary.dark};
-  }
-
-  th,
-  td {
-    padding: 0.8rem;
-    text-align: left;
-    text-overflow: ellipsis;
-  }
-
-  tr:nth-of-type(odd) {
-    background-color: ${({ theme }) => theme.colors.secondary.light};
-  }
-
-  tr:nth-of-type(even) {
-    background-color: ${({ theme }) => theme.colors.secondary.main};
-  }
-
-  td {
-    width: 33%;
-    color: ${({ theme }) => theme.colors.primary.dark};
-    font-weight: bolder;
-    text-overflow: ellipsis;
-    word-break: break-word;
-  }
-
-  /* Like Icon */
-  svg {
-    margin-right: 3rem;
-    color: ${({ theme }) => theme.colors.primary.dark};
-    font-size: 2.5rem;
-  }
-
-  a {
-    font-weight: bolder;
-    text-decoration-line: underline;
-  }
-
-  a:visited {
-    color: ${({ theme }) => theme.colors.primary.main};
-  }
+const StyledLikeIcon = styled(LikeIcon)`
+  margin: 0 !important;
 `;
 
-const BlogsTable = () => {
+const HomePageTable = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
@@ -71,50 +23,14 @@ const BlogsTable = () => {
   const loggedInUser = useSelector((state) => state.loggedInUser);
 
   // SORT BLOGS IN FUNCTION OF LIKES NUMBER - FUNCTION
-  const sortedBlogs = (arr) => arr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
+  const sortBlogsFunction = (arr) =>
+    arr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
+  const sortedAllBlogs = sortBlogsFunction(allBlogs);
 
-  // ADD LIKE - FUNCTION
-  const handleAddLike = (blog) => {
-    const updatedLikeNumber = blog.likes + 1;
+  // Data for React-Table
+  const data = [...sortedAllBlogs];
 
-    const updatedBlog = {
-      ...blog,
-      likes: updatedLikeNumber,
-    };
-
-    try {
-      // Like Blog - Dispatch - Redux State
-      dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
-
-      console.log(loggedInUser);
-      if (loggedInUser === "") {
-        dispatch(
-          actionCreators.displayNotification(
-            "error",
-            "You must be logged in to vote !",
-          ),
-        );
-      } else {
-        dispatch(
-          actionCreators.displayNotification(
-            "success",
-            "One more Like for this blog !",
-          ),
-        );
-      }
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          `The blog "${updatedBlog.title}" was already deleted from server`,
-        ),
-      );
-    }
-  };
-
-  // ALL BLOGS ALL USERS - REDUX STATE
-  const data = [...allBlogs];
-
-  // Table Columns
+  // React-Table Columns
   const columns = React.useMemo(
     () => [
       {
@@ -123,6 +39,7 @@ const BlogsTable = () => {
         Cell: ({ row }) => {
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
+
           return (
             <Link to={`/blogs/${row.original.id}`}>{row.values.title}</Link>
           );
@@ -139,6 +56,45 @@ const BlogsTable = () => {
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
           // Original Object (ID + values) is stored in row.original
+
+          // ADD LIKE - FUNCTION
+          // Add Like Function had to be located inside the useMemo
+          // to get ESLINT stop its "missing dependency" Warning
+          const handleAddLike = (blog) => {
+            const updatedLikeNumber = blog.likes + 1;
+
+            const updatedBlog = {
+              ...blog,
+              likes: updatedLikeNumber,
+            };
+
+            try {
+              // Like Blog - Dispatch - Redux State
+              dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
+
+              if (loggedInUser === "") {
+                dispatch(
+                  actionCreators.displayNotification(
+                    "error",
+                    "You must be logged in to vote !",
+                  ),
+                );
+              } else {
+                dispatch(
+                  actionCreators.displayNotification(
+                    "success",
+                    "One more Like for this blog !",
+                  ),
+                );
+              }
+            } catch (e) {
+              dispatch(
+                actionCreators.displayNotification(
+                  `The blog "${updatedBlog.title}" was already deleted from server`,
+                ),
+              );
+            }
+          };
           return (
             <React.Fragment>
               <IconButton
@@ -146,16 +102,17 @@ const BlogsTable = () => {
                 fontSize="1.5rem"
                 colorScheme="transparent"
                 onClick={() => handleAddLike(row.original)}
-              >
-                <LikeIcon />
-              </IconButton>
+                icon={<StyledLikeIcon />}
+                pos="static" // To make the Header overlap the IconButton
+                mr="1.5rem"
+              />
               {row.values.likes}
             </React.Fragment>
           );
         },
       },
     ],
-    [],
+    [dispatch, loggedInUser],
   );
 
   // React-Table Hook
@@ -200,4 +157,4 @@ const BlogsTable = () => {
   );
 };
 
-export default BlogsTable;
+export default HomePageTable;

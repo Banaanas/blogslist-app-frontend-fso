@@ -1,57 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
 import { useTable } from "react-table";
+import StyledTable from "../StyledComponents/StyledTable";
 
-const StyledTable = styled.table`
-  width: 95%;
-  min-width: 333px;
-  max-width: 750px;
-  border-collapse: collapse;
-
-  th {
-    color: ${({ theme }) => theme.colors.secondary.dark};
-    text-transform: uppercase;
-    background-color: ${({ theme }) => theme.colors.primary.dark};
-  }
-
-  th,
-  td {
-    padding: 0.8rem;
-    text-align: left;
-    text-overflow: ellipsis;
-  }
-
-  tr:nth-of-type(odd) {
-    background-color: ${({ theme }) => theme.colors.secondary.light};
-  }
-
-  tr:nth-of-type(even) {
-    background-color: ${({ theme }) => theme.colors.secondary.main};
-  }
-
-  td {
-    width: 33%;
-    color: ${({ theme }) => theme.colors.primary.dark};
-    font-weight: bolder;
-    text-overflow: ellipsis;
-    word-break: break-word;
-  }
-
-  a {
-    font-weight: bolder;
-    text-decoration-line: underline;
-  }
-
-  a:visited {
-    color: ${({ theme }) => theme.colors.primary.main};
-    font-weight: bolder;
-    text-decoration-line: underline;
-  }
-`;
-
-const AllUsersTable = () => {
+const AllUsersPagesTable = () => {
   // ALL BLOGS ALL USERS - REDUX STATE
   const data = useSelector((state) => state.allUsers);
 
@@ -119,4 +72,4 @@ const AllUsersTable = () => {
   );
 };
 
-export default AllUsersTable;
+export default AllUsersPagesTable;

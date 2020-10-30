@@ -16,6 +16,7 @@
     "axios": "^0.19.2",
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
+    "formik": "^2.2.1",
     "framer-motion": "latest",
     "material-ui": "^1.0.0-beta.47",
     "prop-types": "^15.7.2",

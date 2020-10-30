@@ -2,25 +2,23 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "@emotion/styled";
 
-import { FormControl, FormHelperText, FormLabel } from "@chakra-ui/core";
-import login from "../services/login";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/core";
 import blogService from "../services/blogs";
 import userService from "../services/users";
+import login from "../services/login";
 import actionCreators from "../store/actions/action-creators";
-import PageHeading from "../Components/PageHeading";
+import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 
-
-const StyledMain = styled.main`
+const StyledForm = styled.form`
   display: flex;
-  flex: 1;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  margin-top: 8rem; /* To match the Fixed Header Height */
-  padding: 4rem;
-  font-size: 2rem;
+  justify-content: space-around;
+  padding: 1rem;
+  color: ${({ theme }) => theme.colors.primary.dark};
+  font-weight: bold;
+  background-color: ${({ theme }) => theme.colors.secondary.main};
+  border-radius: 10px;
+  box-shadow: -3px 0 10px 0 ${({ theme }) => theme.colors.primary.dark};
 `;
 
 const LoginForm = () => {
@@ -87,47 +85,59 @@ const LoginForm = () => {
   };
 
   return (
-    <StyledMain>
-      <PageHeading>LOGIN</PageHeading>
-      <form onSubmit={handleLogin}>
-        <div>
-          Username
-          <input
+    <StyledPageMain>
+      <Input />
+      <StyledForm onSubmit={handleLogin}>
+        <FormControl isRequired>
+          <FormLabel htmlFor="username" fontSize="2rem">
+            Username
+          </FormLabel>
+          <Input
             type="text"
             value={username}
             name="Username"
             onChange={handleUsernameChange}
+            aria-describedby="username-text"
             data-cy="username-input"
+            size="lg"
+            bg="secondary.light"
           />
-        </div>
-        a
-        <div>
-          Password
-          <input
-            type="password"
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel
+            htmlFor="password"
+            fontSize="2rem"
             value={password}
-            name="Password"
             onChange={handlePasswordChange}
             data-cy="password-input"
+          >
+            Password
+          </FormLabel>
+          <Input
+            type="password"
+            value={password}
+            name="password"
+            onChange={handlePasswordChange}
+            aria-describedby="password-text"
+            data-cy="password-input"
+            size="xl"
+            bg="secondary.light"
           />
-        </div>
-        <button type="submit" data-cy="login-button">
+        </FormControl>
+        <Button
+          type="submit"
+          size="xl"
+          mt={10}
+          py={2}
+          width="full"
+          bg="primary.dark"
+          color="secondary.dark"
+          data-cy="login-button"
+        >
           LOGIN
-        </button>
-      </form>
-      <FormControl>
-        <FormLabel htmlFor="email">Email address</FormLabel>
-        <input type="email" id="email" aria-describedby="email-helper-text" />
-        <FormHelperText id="email-helper-text">
-          We'll never share your email.
-        </FormHelperText>
-        <FormLabel htmlFor="email">Email address</FormLabel>
-        <input type="email" id="email" aria-describedby="email-helper-text" />
-        <FormHelperText id="email-helper-text">
-          We'll never share your email.
-        </FormHelperText>
-      </FormControl>
-    </StyledMain>
+        </Button>
+      </StyledForm>
+    </StyledPageMain>
   );
 };
 

@@ -1,18 +1,17 @@
 import React from "react";
-import { ChakraProvider as ChakraThemeProvider } from "@chakra-ui/core";
+import { ChakraProvider as ChakraUIThemeProvider } from "@chakra-ui/core";
 import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
-
-import App from "./App";
-import appTheme from "./styles/appTheme";
 import GlobalStyles from "./styles/GlobalStyles";
+import appTheme from "./styles/appTheme";
+import App from "./App";
 
 const AppWrapper = () => (
-  <ChakraThemeProvider theme={appTheme}>
+  <ChakraUIThemeProvider theme={appTheme}>
     <EmotionThemeProvider theme={appTheme}>
       <GlobalStyles /> Apply Emotion Global Styles
       <App />
     </EmotionThemeProvider>
-  </ChakraThemeProvider>
+  </ChakraUIThemeProvider>
 );
 
 export default AppWrapper;

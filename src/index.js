@@ -7,17 +7,6 @@ import store from "./store/store";
 import * as serviceWorker from "./serviceWorker";
 import AppWrapper from "./AppWrapper";
 
-// Todo - Change Icon
-// Todo - Must Logged In to Like
-// Todo - Footer and Header Z-Index
-// Todo - Demo Identifiers
-// Todo - Verify Header color when
-// Todo - Verify
-// Todo - Change Theme Colors
-// Todo - Fake Data (blogs, authors, etc.)
-// Todo - MUI installed twice
-// Todo - When a page is refresh, header color is lost
-// Todo - Verify when dispatch action to get right data (after login, for example)
 
 ReactDOM.render(
   <Router>

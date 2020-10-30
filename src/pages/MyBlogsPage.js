@@ -1,25 +1,22 @@
 import React from "react";
-import styled from "@emotion/styled";
+import { useSelector } from "react-redux";
 import PageHeading from "../Components/PageHeading";
-
-const StyledMain = styled.main`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  margin-top: 8rem; /* To match the Fixed Header Height */
-  padding: 4rem;
-  font-size: 2rem;
-`;
+import MyBlogsPageTable from "../Components/Tables/MyBlogsPageTable";
+import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
+import AddBlogLink from "../Components/AddBlogLink";
+import AuthRedirectPage from "../Components/AuthRedirectPage";
 
 const MyBlogsPage = () => {
+  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+
   return (
-    <StyledMain>
+    <StyledPageMain relativePosition>
       <PageHeading>MY BLOGS</PageHeading>
-    </StyledMain>
+      {loggedInUser !== "" ? <AddBlogLink /> : null}
+      {loggedInUser !== "" ? <MyBlogsPageTable /> : <AuthRedirectPage/>}
+
+    </StyledPageMain>
   );
 };
 

@@ -21,6 +21,7 @@ const GlobalStyles = () => {
           font-size: 62.5%;
         }
         body {
+          min-width: 350px;
           height: 100%;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
