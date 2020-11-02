@@ -5,9 +5,9 @@ const StyledTable = styled.table`
       Browsers (Firefox among others)
    **/
 
-  margin-top: 2rem;
   width: 95%;
   max-width: 750px;
+  margin-top: 2rem;
   border-collapse: collapse;
 
   /* Table Head / Table Cells */

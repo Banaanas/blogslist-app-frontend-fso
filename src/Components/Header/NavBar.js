@@ -42,14 +42,6 @@ const StyledNavLink = styled(NavLink, {
     border-radius: 5px;
   }
 
-  :not(:last-child) {
-    ${({ active }) =>
-      active &&
-      `
-    background: blue;
-  `}
-  }
-
   &:hover {
     opacity: 1;
   }
@@ -61,7 +53,7 @@ const StyledNavLink = styled(NavLink, {
     opacity: 1;
   }
 
-  @media (min-width: 780px) {
+  @media (min-width: 850px) {
     font-size: 2rem;
   }
 `;
@@ -86,7 +78,7 @@ const NavBar = () => {
         <StyledNavLink exact to="/">
           HOME
         </StyledNavLink>
-        <StyledNavLink to="/myblogs">MY BLOGS</StyledNavLink>
+        <StyledNavLink to="/my-blogs">MY BLOGS</StyledNavLink>
         <StyledNavLink to="/users">ALL USERS</StyledNavLink>
         {loggedInUser !== "" ? (
           <StyledNavLink

@@ -17,7 +17,7 @@ const App = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
-  // APP - USEEFFECT - LOCALSTORAGE
+  // APP - USEEFFECT - LOCALSTORAGE - REDUX STATE
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem(
       "loggedBlogslistappUser",
@@ -54,7 +54,12 @@ const App = () => {
       // Get allBlogsSingleUser - Dispatch - Redux State
       dispatch(actionCreators.getBlogsSingleUser(user.id));
     } catch (e) {
-      dispatch(actionCreators.displayNotification("warning", "Login Failed"));
+      dispatch(
+        actionCreators.displayNotification(
+          "warning",
+          "Something went wrong with the server",
+        ),
+      );
     }
   }, [dispatch]);
 

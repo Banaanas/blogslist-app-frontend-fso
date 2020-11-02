@@ -1,6 +1,5 @@
 import React from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { useSelector } from "react-redux";
 import HomePage from "../pages/HomePage";
 import MyBlogsPage from "../pages/MyBlogsPage";
 import LoginPage from "../pages/LoginPage";
@@ -8,10 +7,11 @@ import AllUsersPage from "../pages/AllUsersPage";
 import SingleBlogPage from "../pages/SingleBlogPage";
 import SingleUser from "../Components/SingleUser.js/SingleUser";
 import AddBlogPage from "../pages/AddBlogPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = () => {
-  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
+  // Get localStorage
+  const isTokenVerified = window.localStorage.getItem("loggedBlogslistappUser");
 
   return (
     <Switch>
@@ -19,7 +19,7 @@ const Routes = () => {
         <HomePage />
       </Route>
 
-      <Route exact path="/myblogs">
+      <Route exact path="/my-blogs">
         <MyBlogsPage />
       </Route>
 
@@ -36,12 +36,15 @@ const Routes = () => {
       </Route>
 
       <Route exact path="/login">
-        {loggedInUser !== "" ? <Redirect to="/" /> : <LoginPage />}
+        {isTokenVerified !== null ? <Redirect to="/" /> : <LoginPage />}
       </Route>
 
-      <Route exact path="/add-blog">
-        <AddBlogPage />
-      </Route>
+      {/* Private Routes - Can be multiple */}
+      <PrivateRoutes>
+        <Route path="/add-blog">
+          <AddBlogPage />
+        </Route>
+      </PrivateRoutes>
 
       <Route render={() => <Redirect to="/" />} />
     </Switch>

@@ -116,7 +116,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
         </StyledNavLink>
 
         <StyledNavLink
-          to="/myblogs"
+          to="/my-blogs"
           tabIndex={tabIndex}
           onClick={() => setMenuOpen(false)}
         >

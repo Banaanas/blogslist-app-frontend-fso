@@ -99,6 +99,7 @@ const StyledLinkIcon = styled(LinkIcon)`
 const SingleBlogCard = () => {
   // ALL USERS - REDUX STATE
   const allBlogs = useSelector((state) => state.blogsAllUsers);
+
   // useRouteMatch - Router
   const match = useRouteMatch("/blogs/:id");
   const blogID = match.params.id;

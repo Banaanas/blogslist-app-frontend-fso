@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
@@ -18,6 +18,15 @@ const HomePageTable = () => {
 
   // ALL BLOGS ALL USERS - REDUX STATE
   const allBlogs = useSelector((state) => state.blogsAllUsers);
+
+  useEffect(() => {
+    try {
+      // Get blogsAllUsers - Dispatch - Redux State
+      dispatch(actionCreators.getBlogsAllUsers());
+    } catch (e) {
+      dispatch(actionCreators.displayNotification("warning", "Something went wrong with the server"));
+    }
+  }, [dispatch]);
 
   // ALL BLOGS ALL USERS - REDUX STATE
   const loggedInUser = useSelector((state) => state.loggedInUser);

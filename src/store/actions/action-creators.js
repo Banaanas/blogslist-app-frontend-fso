@@ -24,6 +24,7 @@ const gedLoggedInUser = (user) => ({
 const getBlogsAllUsers = () => async (dispatch) => {
   // Async Action
   const allBlogs = await blogsService.getBlogsAllUsers();
+  console.log(allBlogs);
   dispatch({
     type: actionTypes.GET_BLOGS_ALL_USERS,
     allBlogs,

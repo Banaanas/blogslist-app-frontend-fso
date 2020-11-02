@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
-import { Link as LinkChakraUI, IconButton } from "@chakra-ui/core";
+import { IconButton } from "@chakra-ui/core";
 import { IoIosRemoveCircle as RemoveIcon } from "react-icons/io";
 import StyledTable from "../StyledComponents/StyledTable";
 import actionCreators from "../../store/actions/action-creators";
@@ -66,10 +66,9 @@ const MyBlogsPageTable = () => {
           // Other values are through row.values.[nameofthevalue]
           // Original Object (ID + values) is stored in row.original
 
-          // ADD LIKE - FUNCTION
-          // Add Like Function had to be located inside the useMemo
-          // to get ESLINT stop its "missing dependency" Warning
           // DELETE BLOG - FUNCTION
+          // Delete Blog Function had to be located inside the useMemo
+          // to get ESLINT stop its "missing dependency" Warning
           const handleDeleteBlog = (id) => {
             try {
               // Delete Blog - Dispatch - Redux State
