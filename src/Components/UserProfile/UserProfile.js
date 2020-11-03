@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Typography } from "@material-ui/core";
 import { Redirect, useRouteMatch } from "react-router-dom";
-import SingleUserBlogsList from "../SingleUser.js/SingleUserBlogsList";
+import SingleUserCard from "../SingleUser.js/SingleUserCard";
 
 const UserProfile = () => {
   // ALL USERS - REDUX STATE
@@ -26,7 +26,7 @@ const UserProfile = () => {
       <Typography display={"block"} variant={"caption"} fontStyle="italic">
         {singleUser.username}
       </Typography>
-      <SingleUserBlogsList singleUser={singleUser} />
+      <SingleUserCard singleUser={singleUser} />
     </React.Fragment>
   );
 };

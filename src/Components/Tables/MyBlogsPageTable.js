@@ -14,6 +14,10 @@ const StyledMyBlogsTable = styled(StyledTable)`
   td {
     width: 20%;
   }
+  caption {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
 `;
 
 const StyledRemoveIcon = styled(RemoveIcon)`
@@ -34,7 +38,7 @@ const MyBlogsPageTable = () => {
   const columns = React.useMemo(
     () => [
       {
-        Header: "Blog",
+        Header: "Title",
         accessor: "title", // Accessor is the "key" in the data
         Cell: ({ row }) => {
           // ID is accessed through row.original id
@@ -122,6 +126,7 @@ const MyBlogsPageTable = () => {
   return (
     <React.Fragment>
       <StyledMyBlogsTable {...getTableProps()}>
+        <caption>MY BLOGS</caption>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>

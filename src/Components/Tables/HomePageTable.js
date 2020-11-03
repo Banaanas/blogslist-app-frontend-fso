@@ -7,6 +7,7 @@ import { AiTwotoneLike as LikeIcon } from "react-icons/ai";
 import { IconButton } from "@chakra-ui/core";
 import actionCreators from "../../store/actions/action-creators";
 import StyledTable from "../StyledComponents/StyledTable";
+import displayToast from "../../utils/displayToast";
 
 const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;
@@ -24,7 +25,12 @@ const HomePageTable = () => {
       // Get blogsAllUsers - Dispatch - Redux State
       dispatch(actionCreators.getBlogsAllUsers());
     } catch (e) {
-      dispatch(actionCreators.displayNotification("warning", "Something went wrong with the server"));
+      dispatch(
+        actionCreators.displayNotification(
+          "warning",
+          "Something went wrong with the server",
+        ),
+      );
     }
   }, [dispatch]);
 
@@ -81,27 +87,9 @@ const HomePageTable = () => {
               // Like Blog - Dispatch - Redux State
               dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
 
-              if (loggedInUser === "") {
-                dispatch(
-                  actionCreators.displayNotification(
-                    "error",
-                    "You must be logged in to vote !",
-                  ),
-                );
-              } else {
-                dispatch(
-                  actionCreators.displayNotification(
-                    "success",
-                    "One more Like for this blog !",
-                  ),
-                );
-              }
+              displayToast("+ 1", "One more vote for the Blog", "success");
             } catch (e) {
-              dispatch(
-                actionCreators.displayNotification(
-                  `The blog "${updatedBlog.title}" was already deleted from server`,
-                ),
-              );
+              displayToast("Error", "Something wrong happened with the Server", "error");
             }
           };
           return (

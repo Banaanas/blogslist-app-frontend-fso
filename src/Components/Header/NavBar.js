@@ -8,7 +8,7 @@ const StyledNav = styled.nav`
   display: none;
   flex-direction: row;
   justify-content: space-around;
-  width: 50%;
+  width: 55%;
   min-width: 40rem;
   padding: 1rem;
 
@@ -29,6 +29,7 @@ const StyledNavLink = styled(NavLink, {
   text-decoration: none;
   opacity: 0.6;
 
+  /* Login NavLink */
   &:last-child {
     padding: 1rem;
     color: ${(props) =>
@@ -39,6 +40,7 @@ const StyledNavLink = styled(NavLink, {
       props.loggedIn
         ? ({ theme }) => theme.colors.primary.dark
         : ({ theme }) => theme.colors.secondary.dark};
+    border: 3px solid ${({ theme }) => theme.colors.primary.dark};
     border-radius: 5px;
   }
 
@@ -78,7 +80,7 @@ const NavBar = () => {
         <StyledNavLink exact to="/">
           HOME
         </StyledNavLink>
-        <StyledNavLink to="/my-blogs">MY BLOGS</StyledNavLink>
+        <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
         <StyledNavLink to="/users">ALL USERS</StyledNavLink>
         {loggedInUser !== "" ? (
           <StyledNavLink

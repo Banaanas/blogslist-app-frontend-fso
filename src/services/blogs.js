@@ -41,6 +41,12 @@ const update = async (id, newObject) => {
   return response.data;
 };
 
+// UPDATE BLOG
+const like = async (id, newObject) => {
+  const response = await axios.put(`${baseUrl}/like/${id}`, newObject);
+  return response.data;
+};
+
 // DELETE BLOG
 const blogDelete = async (id) => {
   const config = {
@@ -56,5 +62,6 @@ export default {
   getBlog,
   create,
   update,
+  like,
   blogDelete,
 };

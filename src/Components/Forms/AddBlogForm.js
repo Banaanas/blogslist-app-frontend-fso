@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Formik, Form, Field } from "formik";
 import { object, string } from "yup";
@@ -57,6 +58,9 @@ const AddBlogForm = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
+  // USEHISTORY - REACT ROUTER
+  const history = useHistory();
+
   // ADD BLOG - FUNCTION
   const handleAddBlog = (newBlogObject) => {
     try {
@@ -90,6 +94,7 @@ const AddBlogForm = () => {
         handleAddBlog(values);
         setSubmitting(false); // Set Submitting to false - Submit Chakra UI Button (isLoading)
         resetForm(formikInitialValues); // Reset Form Initial Values
+        history.push("/");
       }}
     >
       {({ isValid, errors, touched, isSubmitting }) => (

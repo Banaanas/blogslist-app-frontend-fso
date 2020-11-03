@@ -10,6 +10,7 @@ import {
   IoMdLogIn as LogInIcon,
   IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
+import { Divider } from "@chakra-ui/core";
 import actionCreators from "../../store/actions/action-creators";
 
 const StyledMenu = styled.nav`
@@ -116,14 +117,14 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
         </StyledNavLink>
 
         <StyledNavLink
-          to="/my-blogs"
+          to="/my-profile"
           tabIndex={tabIndex}
           onClick={() => setMenuOpen(false)}
         >
           <span aria-hidden="true">
             <MyBlogsIcon />
           </span>
-          My Blogs
+          My Profile
         </StyledNavLink>
 
         <StyledNavLink
@@ -137,6 +138,8 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
           All Users
         </StyledNavLink>
 
+        <Divider borderColor="primary.dark" />
+
         {loggedInUser !== "" ? (
           <StyledNavLink
             to="/login"
@@ -146,6 +149,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
               handleLogout();
             }}
           >
+            <Divider borderColor="red.900" />
             <span aria-hidden="true">
               <LogOutIcon />
             </span>
@@ -163,6 +167,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
             LOGIN
           </StyledNavLink>
         )}
+        <Divider borderColor="primary.dark" />
       </StyledNav>
     </StyledMenu>
   );

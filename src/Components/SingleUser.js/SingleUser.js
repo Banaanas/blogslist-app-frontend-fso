@@ -61,7 +61,7 @@ const SingleUser = () => {
       url: newBlogURL,
     };
 
-    // Like Blog - Dispatch - Redux State
+    // Add Blog - Dispatch - Redux State
     dispatch(actionCreators.addBlog(blogObject));
 
     // Reinitialize Inputs

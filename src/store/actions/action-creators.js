@@ -24,7 +24,6 @@ const gedLoggedInUser = (user) => ({
 const getBlogsAllUsers = () => async (dispatch) => {
   // Async Action
   const allBlogs = await blogsService.getBlogsAllUsers();
-  console.log(allBlogs);
   dispatch({
     type: actionTypes.GET_BLOGS_ALL_USERS,
     allBlogs,
@@ -61,9 +60,10 @@ const addBlog = (content) => async (dispatch) => {
 };
 
 // LIKE BLOG
+// Unlike general Update, Blog Like is authorized without Authentication
 const likeBlog = (id, newObject) => async (dispatch) => {
   // Async Action
-  const blog = await blogsService.update(id, newObject);
+  const blog = await blogsService.like(id, newObject);
   dispatch({
     type: actionTypes.LIKE_BLOG,
     updatedBlog: blog,

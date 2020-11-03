@@ -43,7 +43,7 @@ const NavBar = () => {
       <StyledNavLink exact to="/">
         HOME
       </StyledNavLink>
-      <StyledNavLink to="/my-blogs">MY BLOGS</StyledNavLink>
+      <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
       <StyledNavLink to="/users">ALL USERS</StyledNavLink>
       {loggedInUser !== "" ? null : (
         <StyledNavLink to="/login">LOGIN</StyledNavLink>
