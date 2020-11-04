@@ -1,16 +1,15 @@
-import { createStandaloneToast } from "@chakra-ui/core"
+import { createStandaloneToast } from "@chakra-ui/core";
 
-const toast = createStandaloneToast()
+const toast = createStandaloneToast();
 
 const displayToast = (title, description, status) => {
-
-  return (toast({
+  return toast({
     title,
     description,
     status,
-    duration: 9000,
+    duration: 9000000,
     isClosable: true,
-  }));
-}
+  });
+};
 
 export default displayToast;
