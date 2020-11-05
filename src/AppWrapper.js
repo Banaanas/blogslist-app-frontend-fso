@@ -8,7 +8,7 @@ import App from "./App";
 const AppWrapper = () => (
   <ChakraUIThemeProvider theme={appTheme}>
     <EmotionThemeProvider theme={appTheme}>
-      <GlobalStyles /> Apply Emotion Global Styles
+      <GlobalStyles /> {/* Apply Emotion Global Styles */}
       <App />
     </EmotionThemeProvider>
   </ChakraUIThemeProvider>

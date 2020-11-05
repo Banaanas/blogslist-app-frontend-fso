@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
 import { FaBloggerB as MyBlogsIcon } from "react-icons/fa";
@@ -11,7 +11,7 @@ import {
   IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
 import { Divider } from "@chakra-ui/core";
-import actionCreators from "../../store/actions/action-creators";
+import displayToast from "../../utils/displayToast";
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -39,18 +39,18 @@ const StyledNav = styled.nav`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 1rem;
+  padding: .5rem;
 `;
 
 const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
-  font-size: 3rem;
-  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
   text-decoration: none;
   opacity: 0.6;
@@ -69,13 +69,11 @@ const StyledNavLink = styled(NavLink)`
 
   /* Icons */
   span {
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 `;
 
 const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
-  // USEDISPATCH - REDUX STATE
-  const dispatch = useDispatch();
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
 
@@ -83,8 +81,13 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   const handleLogout = () => {
     window.localStorage.clear(); // Clear localStorage
     window.location.reload(false); // Reload The Page (--> loggedInUser === null)
-
-    dispatch(actionCreators.displayNotification("success", "User Logged Out"));
+    console.log("zob");
+    // Display Success Toast
+    displayToast(
+      "Logout Successful.",
+      "You are disconnected from the Application.",
+      "success",
+    );
   };
 
   const isMenuDisplayed = isMenuOpen ? true : false;

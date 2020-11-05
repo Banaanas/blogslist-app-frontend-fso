@@ -7,7 +7,6 @@ import { AiTwotoneLike as LikeIcon } from "react-icons/ai";
 import { IconButton } from "@chakra-ui/core";
 import actionCreators from "../../store/actions/action-creators";
 import StyledTable from "../StyledComponents/StyledTable";
-import displayToast from "../../utils/displayToast";
 
 const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;
@@ -83,14 +82,8 @@ const HomePageTable = () => {
               likes: updatedLikeNumber,
             };
 
-            try {
-              // Like Blog - Dispatch - Redux State
-              dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
-
-              displayToast("+ 1", "One more vote for the Blog", "success");
-            } catch (e) {
-              displayToast("Error", "Something wrong happened with the Server", "error");
-            }
+            // Like Blog - Dispatch - Redux State
+            dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
           };
           return (
             <React.Fragment>
@@ -109,7 +102,7 @@ const HomePageTable = () => {
         },
       },
     ],
-    [dispatch, loggedInUser],
+    [dispatch],
   );
 
   // React-Table Hook

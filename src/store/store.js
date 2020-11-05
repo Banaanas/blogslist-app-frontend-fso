@@ -1,6 +1,4 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore } from "@reduxjs/toolkit";
 
 import loggedInSingleUserReducer from "./reducers/loggedInSingleUserReducer";
 import notificationReducer from "./reducers/notificationReducer";
@@ -10,19 +8,14 @@ import allUsersReducer from "./reducers/allUsersReducer";
 
 // REDUX STORE
 
-// Root Reducer
-const rootReducer = combineReducers({
-  allUsers: allUsersReducer,
-  loggedInUser: loggedInSingleUserReducer,
-  blogsAllUsers: blogsAllUsersReducer,
-  blogsSingleUser: blogsSingleUserReducer,
-  notificationMessage: notificationReducer,
+const store = configureStore({
+  reducer: {
+    allUsers: allUsersReducer,
+    loggedInUser: loggedInSingleUserReducer,
+    blogsAllUsers: blogsAllUsersReducer,
+    blogsSingleUser: blogsSingleUserReducer,
+    notificationMessage: notificationReducer,
+  },
 });
-
-// Store
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk)),
-);
 
 export default store;

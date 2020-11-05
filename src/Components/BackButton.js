@@ -13,8 +13,8 @@ const BackButton = () => {
       variant="outline"
       size="lg"
       fontSize={20}
-      py={10}
-      mb={[10, 1, 0, 0]}
+      py={5}
+      mb={5}
     >
       GO BACK
     </Button>

@@ -1,6 +1,7 @@
 import blogsService from "../../services/blogs";
 import usersService from "../../services/users";
 import actionTypes from "./actions-types";
+import displayToast from "../../utils/displayToast";
 
 /* ACTIONS CREATORS */
 
@@ -15,7 +16,7 @@ const getAllUsers = () => async (dispatch) => {
 };
 
 // GET LOGGED IN USER
-const gedLoggedInUser = (user) => ({
+const getLoggedInUser = (user) => ({
   type: actionTypes.USER_LOGGED_IN,
   user,
 });
@@ -45,39 +46,71 @@ const getBlogsSingleUser = (id) => async (dispatch) => {
 
 // ADD BLOG
 const addBlog = (content) => async (dispatch) => {
-  // Async Action
-  const blog = await blogsService.create(content);
-  dispatch({
-    type: actionTypes.ADD_BLOG,
-    blog: {
-      title: blog.title,
-      author: blog.author,
-      url: blog.url,
-      likes: blog.likes,
-      id: blog.id,
-    },
-  });
+  try {
+    // Async Action
+    const blog = await blogsService.create(content);
+    dispatch({
+      type: actionTypes.ADD_BLOG,
+      blog: {
+        title: blog.title,
+        author: blog.author,
+        url: blog.url,
+        likes: blog.likes,
+        id: blog.id,
+      },
+    });
+
+    // Display Success Toast
+    displayToast(
+      "Blog Added.",
+      `You've successfully added ${blog.title}.`,
+      "success",
+    );
+  } catch (e) {
+    // Display Error Toast
+    displayToast("Error", "Something wrong happened with the Server", "error");
+  }
 };
 
 // LIKE BLOG
 // Unlike general Update, Blog Like is authorized without Authentication
 const likeBlog = (id, newObject) => async (dispatch) => {
-  // Async Action
-  const blog = await blogsService.like(id, newObject);
-  dispatch({
-    type: actionTypes.LIKE_BLOG,
-    updatedBlog: blog,
-  });
+  try {
+    // Async Action
+    const blog = await blogsService.like(id, newObject);
+    dispatch({
+      type: actionTypes.LIKE_BLOG,
+      updatedBlog: blog,
+    });
+
+    // Display Success Toast
+    displayToast("Successful Vote.", "+1 for the Blog.", "success");
+  } catch (e) {
+    // Display Error Toast
+    displayToast("Error", "Something wrong happened with the Server", "error");
+  }
 };
 
 // DELETE BLOG
 const deleteBlog = (id) => async (dispatch) => {
-  // Async Action
-  await blogsService.blogDelete(id);
-  dispatch({
-    type: actionTypes.DELETE_BLOG,
-    deletedBlogID: id,
-  });
+  try {
+    // Async Action
+    await blogsService.blogDelete(id);
+    dispatch({
+      type: actionTypes.DELETE_BLOG,
+      deletedBlogID: id,
+    });
+
+    // Display Success Toast
+    displayToast(
+      "Successful Deletion.",
+      "You've successfully deleted the Blog.",
+      "success",
+    );
+  } catch (e) {
+    // Display Error Toast
+    displayToast("Error", "Something wrong happened with the Server", "error");
+  }
 };
 
 // HIDE NOTIFICATION
@@ -127,7 +160,7 @@ export default {
   getAllUsers,
   getBlogsAllUsers,
   getBlogsSingleUser,
-  loggedInUser: gedLoggedInUser,
+  getLoggedInUser,
   displayNotification,
   addBlog,
   likeBlog,

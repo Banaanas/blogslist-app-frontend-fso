@@ -18,12 +18,12 @@ const SingleUserCard = () => {
   return (
     <React.Fragment>
       <VStack
-        spacing="3rem"
+        spacing="1.5rem"
         mb={10}
-        px={10}
+        px={0}
         py={5}
-        width={["100%", "75%", "75%", "50%"]}
-        borderWidth="1rem"
+        width={["100%", "75%", "50%", "50%"]}
+        borderWidth=".5rem"
         borderColor="secondary.main"
         borderRadius="10px"
         shadow="md"
@@ -38,15 +38,15 @@ const SingleUserCard = () => {
           USER
         </Heading>
         <Avatar bg="secondary.dark" name={user.username} size="2xl" />
-        <PageHeading w="full" p={2} bg="primary.dark" borderRadius={3}>
-          {user.username}{" "}
+        <PageHeading w="full" mr={0} p={2} bg="primary.dark" borderRadius={3}>
+          {user.username}
         </PageHeading>
 
-        <Heading>BLOGS</Heading>
+        <Heading size="sm">BLOGS</Heading>
 
         <Flex
           justifyContent="space-around"
-          mt="2rem"
+          mt="1rem"
           p={4}
           color="primary.dark"
           fontWeight="bold"

@@ -18,10 +18,15 @@ const GlobalStyles = () => {
         html {
           box-sizing: border-box;
           height: 100%;
-          font-size: 62.5%;
+          font-size: 16px;
+
+          /* Fixed Default Font Size - Because Relative Value (rm / %) would break 
+          the layout if User changed Default Font Size in navigator. So layout will
+           stay the same, if User changes Default Font Size. But Zoom is still
+           possible, because of REM unit use through the App */
         }
         body {
-          min-width: 350px;
+        min-width: 320px;
           height: 100%;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
             Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",

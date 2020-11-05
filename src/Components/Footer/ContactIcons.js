@@ -11,12 +11,12 @@ const StyledSocialIconsContainer = styled.div`
   width: 100%;
 
   a {
-    margin: 0 1rem;
+    margin: 0 .5rem;
   }
 
   svg {
     color: ${({ theme }) => theme.colors.primary.dark};
-    font-size: 3rem;
+    font-size: 1.5rem;
     background-color: ${({ theme }) => theme.colors.secondary.main};
   }
 `;

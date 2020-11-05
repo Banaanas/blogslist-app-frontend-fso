@@ -9,15 +9,15 @@ const GlobalContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  max-width: 40rem;
-  height: 20rem;
+  max-width: 25rem;
+  height: 14rem;
   padding: 1rem 0;
   color: ${({ theme }) => theme.colors.secondary.dark};
   text-align: center;
 `;
 
 const StyledLink = styled(Link)`
-  width: 100%;
+  width: 90%;
   padding: 1rem 0;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;

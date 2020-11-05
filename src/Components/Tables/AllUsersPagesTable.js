@@ -20,7 +20,7 @@ const AllUsersPagesTable = () => {
       dispatch(
         actionCreators.displayNotification(
           "warning",
-          "Something went wrong with the server",
+          "Something went wrong on the Server",
         ),
       );
     }

@@ -14,7 +14,7 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 25rem;
+  min-width: 15rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 ${({ theme }) => theme.colors.primary.dark};
 `;
@@ -26,7 +26,7 @@ const StyledBlogContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 50rem;
+  max-width: 30rem;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
   background-color: ${({ theme }) => theme.colors.secondary.main};
@@ -39,21 +39,21 @@ const StyledLikesContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.2rem;
   vertical-align: baseline;
   background-color: ${({ theme }) => theme.colors.primary.light};
 
   /* LIKE ICON */
   svg {
-    margin-left: 0.5rem;
-    font-size: 2.5rem;
+    margin-left: 0.2rem;
+    font-size: 1.4rem;
   }
 `;
 
 // BOOK ICON
 const StyledBookIcon = styled(BookIcon)`
-  margin: 3rem 0;
-  font-size: 10rem;
+  margin: 2rem 0;
+  font-size: 6rem;
 `;
 
 // AUTHOR CONTAINER
@@ -63,7 +63,7 @@ const StyledAuthorContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1.2rem;
 
   /* AUTHOR'S NAME */
   p {
@@ -77,7 +77,7 @@ const StyledBlogLink = styled(Link)`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
   color: ${({ theme }) => theme.colors.secondary.dark};
   text-transform: uppercase;
   background-color: ${({ theme }) => theme.colors.primary.dark};
@@ -93,7 +93,7 @@ const StyledBlogLink = styled(Link)`
 // LINK ICON
 const StyledLinkIcon = styled(LinkIcon)`
   color: ${({ theme }) => theme.colors.secondary.dark};
-  font-size: 3rem;
+  font-size: 2rem;
 `;
 
 const SingleBlogCard = () => {
@@ -113,7 +113,7 @@ const SingleBlogCard = () => {
         <StyledBlogContainer>
           <Heading
             as="h2"
-            size="2xl"
+            size="xl"
             bg="primary.dark"
             color="secondary.dark"
             w="100%"

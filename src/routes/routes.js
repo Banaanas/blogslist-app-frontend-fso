@@ -5,7 +5,6 @@ import MyProfilePage from "../pages/MyProfilePage";
 import LoginPage from "../pages/LoginPage";
 import AllUsersPage from "../pages/AllUsersPage";
 import SingleBlogPage from "../pages/SingleBlogPage";
-import SingleUser from "../Components/SingleUser.js/SingleUser";
 import AddBlogPage from "../pages/AddBlogPage";
 import PrivateRoutes from "./PrivateRoutes";
 import SingleUserPage from "../pages/SingleUserPage";

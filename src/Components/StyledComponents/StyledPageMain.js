@@ -11,8 +11,8 @@ const StyledPageMain = styled.main`
   width: 100%;
   height: auto;
   margin-top: 8rem; /* To match the Fixed Header Height */
-  padding: 4rem;
-  font-size: 2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
 `;
 
 export default StyledPageMain;

@@ -1,19 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import actionCreators from "./store/actions/action-creators";
 import blogService from "./services/blogs";
 import userService from "./services/users";
-import Notification from "./Components/Notification/Notification";
 import Routes from "./routes/routes";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 
 const App = () => {
-  // NOTIFICATION Message TO DISPLAY - REDUX STATE
-  const notificationMessage = useSelector(
-    (state) => state.notificationMessage.message,
-  );
-  const severity = useSelector((state) => state.notificationMessage.severity);
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
@@ -23,20 +17,11 @@ const App = () => {
       "loggedBlogslistappUser",
     );
 
-    try {
-      // Get all Users - Dispatch - Redux State
-      dispatch(actionCreators.getAllUsers());
+    // Get all Users - Dispatch - Redux State
+    dispatch(actionCreators.getAllUsers());
 
-      // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsAllUsers());
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          "Something Wrong Happened with Data",
-        ),
-      );
-    }
+    // Get blogsAllUsers - Dispatch - Redux State
+    dispatch(actionCreators.getBlogsAllUsers());
 
     // If no User logged in, Return
     if (!loggedUserJSON) return;
@@ -47,28 +32,16 @@ const App = () => {
     blogService.setToken(user.token);
     userService.setToken(user.token);
 
-    try {
-      // Get loggedInUser - Dispatch - Redux State
-      dispatch(actionCreators.loggedInUser(user));
+    // Get loggedInUser - Dispatch - Redux State
+    dispatch(actionCreators.getLoggedInUser(user));
 
-      // Get allBlogsSingleUser - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsSingleUser(user.id));
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          "Something went wrong with the server",
-        ),
-      );
-    }
+    // Get allBlogsSingleUser - Dispatch - Redux State
+    dispatch(actionCreators.getBlogsSingleUser(user.id));
   }, [dispatch]);
 
   return (
     <React.Fragment>
-      <Header className="header" />
-      {notificationMessage ? (
-        <Notification message={notificationMessage} severity={severity} />
-      ) : null}
+      <Header />
       <Routes />
       <Footer />
     </React.Fragment>

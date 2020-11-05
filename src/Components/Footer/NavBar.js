@@ -9,7 +9,7 @@ const StyledNav = styled.nav`
   justify-content: space-around;
   width: 100%;
   max-width: 350px;
-  padding: 1rem;
+  padding: .5rem;
 `;
 
 const StyledNavLink = styled(NavLink)`

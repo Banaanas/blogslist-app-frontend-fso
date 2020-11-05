@@ -18,9 +18,9 @@ const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 30rem;
-  margin-top: 2rem;
-  padding: 2rem;
+  width: 20rem;
+  margin-top: 1rem;
+  padding: 1rem;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
   background-color: ${({ theme }) => theme.colors.secondary.main};
@@ -29,11 +29,16 @@ const StyledForm = styled(Form)`
 
   label {
     font-weight: bold;
-    font-size: 2.3rem;
+    font-size: 1.5rem;
   }
 
   input {
-    font-size: 2rem;
+    font-size: 1.2rem;
+    
+    &::placeholder {
+      color: grey;
+      font-style: italic;
+    }
   }
 `;
 
@@ -63,20 +68,11 @@ const AddBlogForm = () => {
 
   // ADD BLOG - FUNCTION
   const handleAddBlog = (newBlogObject) => {
-    try {
-      // Like Blog - Dispatch - Redux State
-      dispatch(actionCreators.addBlog(newBlogObject));
+    // Like Blog - Dispatch - Redux State
+    dispatch(actionCreators.addBlog(newBlogObject));
 
-      // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsAllUsers());
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          `The blog "${newBlogObject.title}" could not been added`,
-        ),
-      );
-    }
+    // Get blogsAllUsers - Dispatch - Redux State
+    dispatch(actionCreators.getBlogsAllUsers());
   };
 
   const formikInitialValues = {
@@ -84,6 +80,7 @@ const AddBlogForm = () => {
     author: "Rimbaud",
     url: "https://saisonenenfer.fr",
   };
+
   return (
     /* By default Formik validates after Change, Blur and Submit events */
     <Formik
@@ -166,20 +163,20 @@ const AddBlogForm = () => {
               </FormControl>
             )}
           </Field>
-            <Button
-              type="submit"
-              size="xl"
-              mt={10}
-              py={2}
-              width="full"
-              bg="primary.dark"
-              color="secondary.dark"
-              data-cy="login-button"
-              disabled={!isValid}
-              isLoading={isSubmitting}
-            >
-              Submit
-            </Button>
+          <Button
+            type="submit"
+            size="xl"
+            mt={10}
+            py={2}
+            width="full"
+            bg="primary.dark"
+            color="secondary.dark"
+            data-cy="login-button"
+            disabled={!isValid}
+            isLoading={isSubmitting}
+          >
+            ADD
+          </Button>
         </StyledForm>
       )}
     </Formik>

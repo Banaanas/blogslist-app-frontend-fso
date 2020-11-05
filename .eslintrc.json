@@ -9,6 +9,8 @@
   ],
   "plugins": ["cypress", "jest", "jsx-a11y"],
   "rules": {
+    "no-console": "error",
+
     // Authorize double-quote use
     "quotes": [
       1,

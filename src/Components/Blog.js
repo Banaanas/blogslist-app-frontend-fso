@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
+import { useToast } from "@chakra-ui/core";
 import actionCreators from "../store/actions/action-creators";
+import displayToast from "../utils/displayToast";
 
 const Blog = ({ blog }) => {
   // USEDISPATCH - REDUX STATE
@@ -12,6 +14,9 @@ const Blog = ({ blog }) => {
 
   // TOGGLE VISIBLE STATE - FUNCTION
   const toggleVisible = () => setVisible(!visible);
+
+  // Chakra-UI Toast
+  const toast = useToast();
 
   // ADD LIKE - FUNCTION
   const handleAddLike = () => {
@@ -25,12 +30,16 @@ const Blog = ({ blog }) => {
     try {
       // Like Blog - Dispatch - Redux State
       dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
+      toast({
+        title: "Login Successful.",
+        description: "You are connected to the Application.",
+        status: "success",
+      });
     } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          `The blog "${updatedBlog.title}" was already deleted from server`,
-        ),
+      displayToast(
+        "Login Successful.",
+        "You are connected to the Application.",
+        "success",
       );
     }
   };
@@ -40,20 +49,9 @@ const Blog = ({ blog }) => {
     try {
       // Delete Blog - Dispatch - Redux State
       dispatch(actionCreators.deleteBlog(blog.id));
-
-      dispatch(
-        actionCreators.displayNotification(
-          "success",
-          "The blog has been deleted from server",
-        ),
-      );
     } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          "Something wrong happened. Please refresh the page",
-        ),
-      );
+      // eslint-disable-next-line no-console
+      console.log(e);
     }
   };
 

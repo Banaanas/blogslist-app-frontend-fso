@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  useToast,
-} from "@chakra-ui/core";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/core";
 import blogService from "../../services/blogs";
 import userService from "../../services/users";
 import actionCreators from "../../store/actions/action-creators";
 import login from "../../services/login";
-import getToast from "../../utils/displayToast";
+import displayToast from "../../utils/displayToast";
 
 const StyledForm = styled.form`
   display: flex;
@@ -45,12 +40,12 @@ const LoginForm = () => {
     setPassword(event.target.value);
   };
 
-  const toast = useToast();
+  // USEHISTORY - REACT ROUTER
+  const history = useHistory();
 
   // LOGIN - FUNCTION
   const handleLogin = async (event) => {
     event.preventDefault();
-    getToast();
 
     const userObject = {
       username,
@@ -60,6 +55,7 @@ const LoginForm = () => {
     try {
       // Store user in localStorage
       const user = await login(userObject);
+
       window.localStorage.setItem(
         "loggedBlogslistappUser",
         JSON.stringify(user),
@@ -77,7 +73,7 @@ const LoginForm = () => {
       dispatch(actionCreators.getAllUsers());
 
       // Get loggedInUser - Dispatch - Redux State
-      dispatch(actionCreators.loggedInUser(user));
+      dispatch(actionCreators.getLoggedInUser(user));
 
       // Get blogsAllUsers - Dispatch - Redux State
       dispatch(actionCreators.getBlogsAllUsers());
@@ -85,21 +81,21 @@ const LoginForm = () => {
       // Get allBlogsSingleUser - Dispatch - Redux State
       dispatch(actionCreators.getBlogsSingleUser(user.id));
 
+      // Redirect to HomePage
+      history.push("/");
 
-
-      toast({
-        title: "Account created.",
-        description: "We've created your account for you.",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      })
-
-
-      dispatch(actionCreators.displayNotification("success", "Login Success"));
+      // Display Success Toast
+      displayToast(
+        "Login Successful.",
+        "You are connected to the Application.",
+        "success",
+      );
     } catch (error) {
-      dispatch(
-        actionCreators.displayNotification("warning", "Wrong Credentials"),
+      // Display Error Toast
+      displayToast(
+        "Login Failed.",
+        "You are not connected to the Application.",
+        "error",
       );
     }
   };

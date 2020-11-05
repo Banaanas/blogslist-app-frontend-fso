@@ -9,7 +9,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-around;
   width: 55%;
-  min-width: 40rem;
+  min-width: 35rem;
   padding: 1rem;
 
   @media (min-width: 710px) {
@@ -25,7 +25,7 @@ const StyledNavLink = styled(NavLink, {
   justify-content: center;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-decoration: none;
   opacity: 0.6;
 
@@ -56,7 +56,7 @@ const StyledNavLink = styled(NavLink, {
   }
 
   @media (min-width: 850px) {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 `;
 

@@ -22,6 +22,7 @@ const StyledMyBlogsTable = styled(StyledTable)`
 
 const StyledRemoveIcon = styled(RemoveIcon)`
   margin: 0 !important;
+  font-size: 0.5rem;
 `;
 
 const MyBlogsPageTable = () => {
@@ -73,25 +74,10 @@ const MyBlogsPageTable = () => {
           // DELETE BLOG - FUNCTION
           // Delete Blog Function had to be located inside the useMemo
           // to get ESLINT stop its "missing dependency" Warning
-          const handleDeleteBlog = (id) => {
-            try {
-              // Delete Blog - Dispatch - Redux State
-              dispatch(actionCreators.deleteBlog(id));
 
-              dispatch(
-                actionCreators.displayNotification(
-                  "success",
-                  "The blog has been deleted from server",
-                ),
-              );
-            } catch (e) {
-              dispatch(
-                actionCreators.displayNotification(
-                  "warning",
-                  "Something wrong happened. Please refresh the page",
-                ),
-              );
-            }
+          const handleDeleteBlog = (id) => {
+            // Delete Blog - Dispatch - Redux State
+            dispatch(actionCreators.deleteBlog(id));
           };
 
           return (
