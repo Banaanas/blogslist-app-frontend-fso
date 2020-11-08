@@ -18,7 +18,6 @@ const getAllUsers = async () => {
   return response.data;
 };
 
-// GET SINGLE USER
 const getUser = async (userID) => {
   const config = {
     headers: { Authorization: token },

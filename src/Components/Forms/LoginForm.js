@@ -6,9 +6,12 @@ import styled from "@emotion/styled";
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/core";
 import blogService from "../../services/blogs";
 import userService from "../../services/users";
-import actionCreators from "../../store/actions/action-creators";
 import login from "../../services/login";
 import displayToast from "../../utils/displayToast";
+import { getAllUsers } from "../../store/slices/allUsersSlice";
+import { getLoggedInUser } from "../../store/slices/loggedInUserSlice";
+import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
+import { getBlogsSingleUser } from "../../store/slices/blogsSingleUserSlice";
 
 const StyledForm = styled.form`
   display: flex;
@@ -70,16 +73,16 @@ const LoginForm = () => {
       userService.setToken(user.token);
 
       // Get all Users - Dispatch - Redux State
-      dispatch(actionCreators.getAllUsers());
+      dispatch(getAllUsers());
 
       // Get loggedInUser - Dispatch - Redux State
-      dispatch(actionCreators.getLoggedInUser(user));
+      dispatch(getLoggedInUser(user));
 
       // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsAllUsers());
+      dispatch(getBlogsAllUsers());
 
       // Get allBlogsSingleUser - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsSingleUser(user.id));
+      dispatch(getBlogsSingleUser(user.id));
 
       // Redirect to HomePage
       history.push("/");

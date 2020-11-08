@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/core";
-import actionCreators from "../store/actions/action-creators";
 import displayToast from "../utils/displayToast";
 
 const Blog = ({ blog }) => {

@@ -1,30 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTable } from "react-table";
 import StyledTable from "../StyledComponents/StyledTable";
-import actionCreators from "../../store/actions/action-creators";
 
 const AllUsersPagesTable = () => {
-  // USEDISPATCH - REDUX STATE
-  const dispatch = useDispatch();
-
   // ALL USERS - REDUX STATE
-  const data = useSelector((state) => state.allUsers);
-
-  useEffect(() => {
-    try {
-      // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(actionCreators.getAllUsers());
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          "Something went wrong on the Server",
-        ),
-      );
-    }
-  }, [dispatch]);
+  const data = useSelector((state) => state.allUsers.data);
 
   // Table Columns
   const columns = React.useMemo(

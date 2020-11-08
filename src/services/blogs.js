@@ -41,7 +41,7 @@ const update = async (id, newObject) => {
   return response.data;
 };
 
-// UPDATE BLOG
+// LIKE BLOG - (For not signed up Users to vote, authentication has not been set for this route)
 const like = async (id, newObject) => {
   const response = await axios.put(`${baseUrl}/like/${id}`, newObject);
   return response.data;

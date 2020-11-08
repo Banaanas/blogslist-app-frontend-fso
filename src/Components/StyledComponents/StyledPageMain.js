@@ -1,8 +1,6 @@
 import styled from "@emotion/styled";
 
 const StyledPageMain = styled.main`
-  position: ${({ relativePosition }) =>
-    relativePosition ? "relative" : "static"};
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -11,7 +9,7 @@ const StyledPageMain = styled.main`
   width: 100%;
   height: auto;
   margin-top: 8rem; /* To match the Fixed Header Height */
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   font-size: 1.2rem;
 `;
 

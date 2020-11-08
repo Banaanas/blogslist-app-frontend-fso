@@ -6,7 +6,7 @@ import { useTable } from "react-table";
 import { IconButton } from "@chakra-ui/core";
 import { IoIosRemoveCircle as RemoveIcon } from "react-icons/io";
 import StyledTable from "../StyledComponents/StyledTable";
-import actionCreators from "../../store/actions/action-creators";
+import { deleteBlogSingleUser } from "../../store/slices/blogsSingleUserSlice";
 
 const StyledMyBlogsTable = styled(StyledTable)`
   /* 4 Columns */
@@ -27,7 +27,7 @@ const StyledRemoveIcon = styled(RemoveIcon)`
 
 const MyBlogsPageTable = () => {
   // ALL BLOGS SINGLE USER - REDUX STATE
-  const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser);
+  const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
 
   // ALL BLOGS ALL USERS - REDUX STATE
   const data = [...allBlogsSingleUser];
@@ -77,7 +77,7 @@ const MyBlogsPageTable = () => {
 
           const handleDeleteBlog = (id) => {
             // Delete Blog - Dispatch - Redux State
-            dispatch(actionCreators.deleteBlog(id));
+            dispatch(deleteBlogSingleUser(id));
           };
 
           return (

@@ -5,8 +5,11 @@ import { useTable } from "react-table";
 import styled from "@emotion/styled";
 import { AiTwotoneLike as LikeIcon } from "react-icons/ai";
 import { IconButton } from "@chakra-ui/core";
-import actionCreators from "../../store/actions/action-creators";
 import StyledTable from "../StyledComponents/StyledTable";
+import {
+  getBlogsAllUsers,
+  likeBlog,
+} from "../../store/slices/blogsAllUsersSlice";
 
 const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;
@@ -17,28 +20,16 @@ const HomePageTable = () => {
   const dispatch = useDispatch();
 
   // ALL BLOGS ALL USERS - REDUX STATE
-  const allBlogs = useSelector((state) => state.blogsAllUsers);
-
-  useEffect(() => {
-    try {
-      // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(actionCreators.getBlogsAllUsers());
-    } catch (e) {
-      dispatch(
-        actionCreators.displayNotification(
-          "warning",
-          "Something went wrong with the server",
-        ),
-      );
-    }
-  }, [dispatch]);
-
-  // ALL BLOGS ALL USERS - REDUX STATE
-  const loggedInUser = useSelector((state) => state.loggedInUser);
+  const allBlogs = useSelector((state) => state.blogsAllUsers.data);
 
   // SORT BLOGS IN FUNCTION OF LIKES NUMBER - FUNCTION
-  const sortBlogsFunction = (arr) =>
-    arr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
+  const sortBlogsFunction = (arr) => {
+    const sortedArr = [...arr];
+    sortedArr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
+
+    return sortedArr;
+  };
+
   const sortedAllBlogs = sortBlogsFunction(allBlogs);
 
   // Data for React-Table
@@ -82,8 +73,14 @@ const HomePageTable = () => {
               likes: updatedLikeNumber,
             };
 
+            const updatedBlogObject = {
+              blogId: blog.id,
+              updatedBlog,
+            };
+
             // Like Blog - Dispatch - Redux State
-            dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
+            // dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
+            dispatch(likeBlog(updatedBlogObject));
           };
           return (
             <React.Fragment>

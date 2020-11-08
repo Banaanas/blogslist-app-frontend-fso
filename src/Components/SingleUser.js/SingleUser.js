@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import actionCreators from "../../store/actions/action-creators";
 
 const SingleUser = () => {
   // USEDISPATCH - REDUX STATE

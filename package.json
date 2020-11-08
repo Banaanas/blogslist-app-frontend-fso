@@ -27,9 +27,7 @@
     "react-scripts": "^3.4.4",
     "react-swipeable": "^5.5.1",
     "react-table": "^7.6.0",
-    "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
     "yup": "^0.29.3"
   },
   "scripts": {

@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import actionCreators from "../../store/actions/action-creators";
+import { useSelector } from "react-redux";
 
 const StyledNav = styled.nav`
   display: none;
@@ -61,8 +60,6 @@ const StyledNavLink = styled(NavLink, {
 `;
 
 const NavBar = () => {
-  // USEDISPATCH - REDUX STATE
-  const dispatch = useDispatch();
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const loggedInUser = useSelector((state) => state.loggedInUser);
 
@@ -70,8 +67,6 @@ const NavBar = () => {
   const handleLogout = () => {
     window.localStorage.clear(); // Clear localStorage
     window.location.reload(false); // Reload The Page (--> loggedInUser === null)
-
-    dispatch(actionCreators.displayNotification("success", "User Logged Out"));
   };
 
   return (

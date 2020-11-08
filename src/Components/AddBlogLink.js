@@ -8,7 +8,7 @@ const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
   font-size: 1rem;
-  background-color: ${({ theme }) => theme.colors.secondary.dark};
+  background-color: floralwhite;
   border: 5px solid ${({ theme }) => theme.colors.primary.dark};
   border-radius: 10px;
   transform: scale(1);

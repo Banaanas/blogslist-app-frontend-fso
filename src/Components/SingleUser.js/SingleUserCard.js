@@ -6,10 +6,9 @@ import PageHeading from "../PageHeading";
 
 const SingleUserCard = () => {
   // ALL USERS - REDUX STATE
-  const allUsers = useSelector((state) => state.allUsers);
+  const allUsers = useSelector((state) => state.allUsers.data);
   // useRouteMatch - Router
   const match = useRouteMatch("/users/:id");
-
   const userID = match.params.id;
   const user = allUsers.find((user) => user.id === userID);
   // To prevent Rendering of undefined blog and Page Refresh issue

@@ -81,7 +81,6 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   const handleLogout = () => {
     window.localStorage.clear(); // Clear localStorage
     window.location.reload(false); // Reload The Page (--> loggedInUser === null)
-    console.log("zob");
     // Display Success Toast
     displayToast(
       "Logout Successful.",

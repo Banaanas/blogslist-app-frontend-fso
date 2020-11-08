@@ -11,7 +11,8 @@ import {
   FormLabel,
   Input,
 } from "@chakra-ui/core";
-import actionCreators from "../../store/actions/action-creators";
+import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
+import { addBlogSingleUser } from "../../store/slices/blogsSingleUserSlice";
 
 // Form
 const StyledForm = styled(Form)`
@@ -68,11 +69,11 @@ const AddBlogForm = () => {
 
   // ADD BLOG - FUNCTION
   const handleAddBlog = (newBlogObject) => {
-    // Like Blog - Dispatch - Redux State
-    dispatch(actionCreators.addBlog(newBlogObject));
+    // Add Blog - Dispatch - Redux State
+    dispatch(addBlogSingleUser(newBlogObject));
 
     // Get blogsAllUsers - Dispatch - Redux State
-    dispatch(actionCreators.getBlogsAllUsers());
+    dispatch(getBlogsAllUsers());
   };
 
   const formikInitialValues = {

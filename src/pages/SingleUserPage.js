@@ -7,7 +7,7 @@ import BackButton from "../Components/BackButton";
 
 const SingleUserPage = () => {
   // ALL USERS - REDUX STATE
-  const allUsers = useSelector((state) => state.allUsers);
+  const allUsers = useSelector((state) => state.allUsers.data);
   // useRouteMatch - Router
   const match = useRouteMatch("/users/:id");
 
