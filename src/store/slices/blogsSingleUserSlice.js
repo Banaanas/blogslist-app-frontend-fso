@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import blogsService from "../../services/blogs";
 import usersService from "../../services/users";
-import { getBlogsAllUsers } from "./blogsAllUsersSlice";
 
 // ALL BLOGS SINGLE USER - ASYNC THUNK
 // Single User is first retrieved. Then, at the Reducer step, All Blogs
@@ -53,17 +52,18 @@ const blogsSingleUserSlice = createSlice({
     [getBlogsSingleUser.pending]: (state) => {
       state.loading = true;
     },
-    [getBlogsSingleUser.rejected](state) {
+    [getBlogsSingleUser.rejected]: (state) => {
       state.loading = false;
     },
-    [addBlogSingleUser.fulfilled](state, action) {
+    [addBlogSingleUser.fulfilled]: (state, action) => {
       const createdBlog = action.payload;
-      state.push(createdBlog);
-      return state;
+      state.loading = false;
+      state.data.push(createdBlog);
     },
-    [deleteBlogSingleUser.fulfilled](state, action) {
+    [deleteBlogSingleUser.fulfilled]: (state, action) => {
       const deletedBlogID = action.payload;
-      return state.filter((blog) => blog.id !== deletedBlogID);
+      state.loading = false;
+      state.data = state.data.filter((blog) => blog.id !== deletedBlogID);
     },
   },
 });

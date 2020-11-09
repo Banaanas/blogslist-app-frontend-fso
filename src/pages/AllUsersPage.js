@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Spinner } from "@chakra-ui/core";
 import AllUsersPagesTable from "../Components/Tables/AllUsersPagesTable";
 import PageHeading from "../Components/PageHeading";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { getAllUsers } from "../store/slices/allUsersSlice";
+import Spinner from "../Components/Spinner";
 
 const AllUsersPage = () => {
   // ISLOADING - REDUX STATE
@@ -23,14 +23,7 @@ const AllUsersPage = () => {
     <StyledPageMain>
       <PageHeading>All Users</PageHeading>
       {isLoading ? (
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.500"
-          size="xl"
-          aria-busy="true"
-        />
+        <Spinner />
       ) : (
         <AllUsersPagesTable />
       )}

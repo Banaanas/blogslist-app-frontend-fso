@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/Footer";
 import { getLoggedInUser } from "./store/slices/loggedInUserSlice";
 import { getAllUsers } from "./store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
+import GithubBanner from "./Components/GithubBanner";
 
 const App = () => {
   // USEDISPATCH - REDUX STATE
@@ -41,6 +42,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Header />
+      <GithubBanner/>
       <Routes />
       <Footer />
     </React.Fragment>

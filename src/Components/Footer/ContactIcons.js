@@ -11,13 +11,21 @@ const StyledSocialIconsContainer = styled.div`
   width: 100%;
 
   a {
-    margin: 0 .5rem;
+    margin: 0 0.5rem;
   }
 
   svg {
     color: ${({ theme }) => theme.colors.primary.dark};
     font-size: 1.5rem;
     background-color: ${({ theme }) => theme.colors.secondary.main};
+    transform: scale(1);
+    opacity: .9;
+    transition: transform, opacity, 200ms ease;
+  }
+
+  svg:hover {
+    transform: scale(1.1);
+    opacity: 1;
   }
 `;
 
@@ -30,14 +38,15 @@ const ContactIcons = () => (
       rel="noopener noreferrer"
     >
       <PersonalWebsiteIcon />
-    </a> <a
-    aria-label="Github Profile Link"
-    href="https://github.com/Banaanas"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <GithubIcon />
-  </a>
+    </a>{" "}
+    <a
+      aria-label="Github Profile Link"
+      href="https://github.com/Banaanas"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <GithubIcon />
+    </a>
     <a aria-label="Cyrilo Dev Mail" href="mailto:cyrilodev@gmail.com">
       <MailIcon />
     </a>

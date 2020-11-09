@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
@@ -6,10 +6,7 @@ import styled from "@emotion/styled";
 import { AiTwotoneLike as LikeIcon } from "react-icons/ai";
 import { IconButton } from "@chakra-ui/core";
 import StyledTable from "../StyledComponents/StyledTable";
-import {
-  getBlogsAllUsers,
-  likeBlog,
-} from "../../store/slices/blogsAllUsersSlice";
+import { likeBlog } from "../../store/slices/blogsAllUsersSlice";
 
 const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;

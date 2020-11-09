@@ -46,7 +46,7 @@ const StyledForm = styled(Form)`
 // Form Validation Schema - Yup
 const ValidationSchemaYup = object().shape({
   title: string()
-    .min(5, "Title must be at least 3 characters long")
+    .min(5, "Title must be at least 5 characters long")
     .max(20, "Title can't exceed 20 characters")
     .required("Enter Blog's Title"),
   author: string()
@@ -172,8 +172,6 @@ const AddBlogForm = () => {
             width="full"
             bg="primary.dark"
             color="secondary.dark"
-            data-cy="login-button"
-            disabled={!isValid}
             isLoading={isSubmitting}
           >
             ADD

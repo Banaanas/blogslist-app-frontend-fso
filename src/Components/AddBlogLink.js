@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 
 const StyledLink = styled(Link)`
   margin: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
   font-size: 1rem;

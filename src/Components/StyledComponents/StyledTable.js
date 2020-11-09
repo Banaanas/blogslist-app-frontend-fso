@@ -72,11 +72,19 @@ const StyledTable = styled.table`
       }
     }
 
-    /* Icon */
+    /* Icon(s) in Table */
     svg {
       margin-right: 3rem;
       color: ${({ theme }) => theme.colors.primary.dark};
       font-size: 1.8rem;
+      transform: scale(1);
+      opacity:1;
+      transition: transform, opacity, 200ms ease;
+    }
+
+    svg:hover {
+      transform: scale(1.1);
+      opacity: 0.9;
     }
 
     /* Links */

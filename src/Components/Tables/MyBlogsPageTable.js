@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,6 +29,7 @@ const MyBlogsPageTable = () => {
   // ALL BLOGS SINGLE USER - REDUX STATE
   const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
 
+  useEffect(() => {}, [allBlogsSingleUser]);
   // ALL BLOGS ALL USERS - REDUX STATE
   const data = [...allBlogsSingleUser];
 
