@@ -16,7 +16,7 @@ const BackButton = () => {
       py={5}
       mb={5}
     >
-      GO BACK
+      HOME
     </Button>
   );
 };

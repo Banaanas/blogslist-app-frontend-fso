@@ -1,14 +1,19 @@
+/* * FRAMER MOTION * */
+
+// Page Variants
 const pageVariants = {
   initial: {
     opacity: 0,
-    x: "-100vh",
   },
   animate: {
     opacity: 1,
-    x: 0,
   },
 };
 
-const pageTransition = {};
+// Page Transition
+const pageTransition = {
+  type: "spring",
+  duration: .3,
+};
 
 export { pageVariants, pageTransition };

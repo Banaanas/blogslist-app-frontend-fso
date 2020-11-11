@@ -9,6 +9,7 @@ import SingleBlogPage from "../pages/SingleBlogPage";
 import AddBlogPage from "../pages/AddBlogPage";
 import PrivateRoute from "./PrivateRoute";
 import SingleUserPage from "../pages/SingleUserPage";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const Routes = () => {
   // Get localStorage
@@ -18,34 +19,48 @@ const Routes = () => {
   const location = useLocation();
 
   return (
-    /*
-       Page Transition - Framer Motion
-*/
     <AnimatePresence exitBeforeEnter>
+      {" "}
+      {/* Page Transition - Framer Motion */}
       <Switch location={location} key={location.pathname}>
         <Route exact path="/">
           <HomePage />
         </Route>
+
         <Route exact path="/my-profile">
           <MyProfilePage />
         </Route>
+
         <Route exact path="/users">
           <AllUsersPage />
         </Route>
+
         <Route exact path="/users/:id">
           <SingleUserPage />
         </Route>
+
         <Route path="/blogs/:id">
           <SingleBlogPage />
         </Route>
+
         <Route exact path="/login">
           {isTokenVerified !== null ? <Redirect to="/" /> : <LoginPage />}
         </Route>
+
         <PrivateRoute exact path="/add-blog" component={AddBlogPage} />
+
+        <Route>
+          <NotFoundPage />
+        </Route>
+
+        {/* Frame Motion - React Router Redirect - Issue
+          Wrapping the <Redirect /> component into a <motion /> component
+          with exit="undefined"
+          --> https://github.com/framer/motion/issues/466
 
         <motion.div exit="undefined">
           <Redirect to="/" />
-        </motion.div>
+        </motion.div> */}
       </Switch>
     </AnimatePresence>
   );

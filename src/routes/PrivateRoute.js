@@ -1,6 +1,10 @@
 import React from "react";
 import { Route, Redirect, useLocation } from "react-router-dom";
 
+/* * PRIVATE ROUTE  * */
+
+// Redirect if User not authorized
+
 // If Page Access or Content is sensitive, it would be MANDATORY to check
 // if Token is valid with Server Side process.
 // (the actual implementation only checks if there is one Token,
