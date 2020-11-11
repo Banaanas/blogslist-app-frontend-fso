@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Heading } from "@chakra-ui/core";
 import { getBlogsAllUsers } from "../store/slices/blogsAllUsersSlice";
-import StyledMainPage from "../Components/StyledComponents/StyledPageMain";
+import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
+import { pageTransition, pageVariants } from "../styles/animations";
 import HomePageTable from "../Components/Tables/HomePageTable";
 import PageHeading from "../Components/PageHeading";
 import AddBlogLink from "../Components/AddBlogLink";
@@ -28,7 +29,13 @@ const HomePage = () => {
   }, [dispatch]);
 
   return (
-    <StyledMainPage>
+    <StyledPageMain
+      variants={pageVariants}
+      transition={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="initial"
+    >
       <PageHeading>All Blogs</PageHeading>
       {loggedInUser !== "" ? <AddBlogLink /> : null}
       {isLoading ? <Spinner /> : null}
@@ -47,7 +54,7 @@ const HomePage = () => {
           No Blogs yet
         </Heading>
       )}
-    </StyledMainPage>
+    </StyledPageMain>
   );
 };
 

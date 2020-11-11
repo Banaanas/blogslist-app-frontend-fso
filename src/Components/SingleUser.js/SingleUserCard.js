@@ -43,22 +43,30 @@ const SingleUserCard = () => {
 
         <Heading size="sm">BLOGS</Heading>
 
-        <Flex
-          justifyContent="space-around"
-          mt="1rem"
-          p={4}
-          color="primary.dark"
-          fontWeight="bold"
-          bg="secondary.main"
-          borderRadius="1rem"
-          overflow="hidden"
-        >
-          <List>
-            {user.blogs.map((blog) => (
-              <ListItem key={blog.id}>- {blog.title}</ListItem>
-            ))}
-          </List>
-        </Flex>
+        {/* Conditional Rendering, because <Flex> would still appear (Margin and Padding)
+            even with no Blog created by User */}
+        {user.blogs.length > 0 ? (
+          <Flex
+            justifyContent="space-around"
+            mt="1rem"
+            p={4}
+            color="primary.dark"
+            fontWeight="bold"
+            bg="secondary.main"
+            borderRadius="1rem"
+            overflow="hidden"
+          >
+            <List>
+              {user.blogs.map((blog) => (
+                <ListItem key={blog.id}>- {blog.title}</ListItem>
+              ))}
+            </List>
+          </Flex>
+        ) : (
+          <Heading size="sm" color="secondary.light" fontStyle="italic">
+            No Blog Yet
+          </Heading>
+        )}
       </VStack>
     </React.Fragment>
   );

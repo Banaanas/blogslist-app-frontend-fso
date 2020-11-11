@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Spinner as ChakraUISpinner } from "@chakra-ui/core";
+import { Spinner as ChakraUISpinner } from "@chakra-ui/core";
 
 const Spinner = (props) => {
   return (

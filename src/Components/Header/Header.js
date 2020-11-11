@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
+import { useTheme } from "emotion-theming";
 import blogsListLogo from "../../assets/blogslist-logo.svg";
 
 import NavBar from "./NavBar";
 import SideMenu from "../SideMenu/SideMenu";
-import { useTheme } from "emotion-theming";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -57,9 +57,9 @@ const Header = () => {
   // Emotion Theme
   const theme = useTheme();
 
+  // Throttle Scroll Event with requestAnimationFrame() - Performance Issue
   useEffect(() => {
     const handleScroll = () => {
-
       // Header Drop Shadow when Scroll - No Drop Shadow on Top
       if (window.pageYOffset > 1) {
         setboxShadow(`0 0 10px 0 ${theme.colors.primary.dark}`);

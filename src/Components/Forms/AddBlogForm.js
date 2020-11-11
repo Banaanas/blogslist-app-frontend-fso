@@ -35,7 +35,7 @@ const StyledForm = styled(Form)`
 
   input {
     font-size: 1.2rem;
-    
+
     &::placeholder {
       color: grey;
       font-style: italic;

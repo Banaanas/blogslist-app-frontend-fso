@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Heading } from "@chakra-ui/core";
-import PageHeading from "../Components/PageHeading";
+import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
+import { getBlogsSingleUser } from "../store/slices/blogsSingleUserSlice";
+import { pageTransition, pageVariants } from "../styles/animations";import PageHeading from "../Components/PageHeading";
 import MyBlogsPageTable from "../Components/Tables/MyBlogsPageTable";
 import AddBlogLink from "../Components/AddBlogLink";
 import AuthRedirectPage from "../Components/AuthRedirectPage";
-import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
-import { getBlogsSingleUser } from "../store/slices/blogsSingleUserSlice";
 import Spinner from "../Components/Spinner";
 
 const MyProfilePage = () => {
@@ -29,7 +29,13 @@ const MyProfilePage = () => {
   const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
 
   return (
-    <StyledPageMain>
+    <StyledPageMain
+      variants={pageVariants}
+      transition={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="initial"
+    >
       <PageHeading>{loggedInUser.name}</PageHeading>
       {isLoading === true ? <Spinner /> : null}
       {isLoading === false && loggedInUser !== "" ? (

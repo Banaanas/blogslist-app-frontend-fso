@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { pageTransition, pageVariants } from "../styles/animations";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleUserCard from "../Components/SingleUser.js/SingleUserCard";
 import BackButton from "../Components/BackButton";
@@ -17,7 +18,13 @@ const SingleUserPage = () => {
   if (user === undefined) return null;
 
   return (
-    <StyledPageMain>
+    <StyledPageMain
+      variants={pageVariants}
+      transition={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="initial"
+    >
       <BackButton />
       <SingleUserCard />
     </StyledPageMain>

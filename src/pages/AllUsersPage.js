@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { pageTransition, pageVariants } from "../styles/animations";
 import AllUsersPagesTable from "../Components/Tables/AllUsersPagesTable";
 import PageHeading from "../Components/PageHeading";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
@@ -20,13 +21,15 @@ const AllUsersPage = () => {
   }, [dispatch]);
 
   return (
-    <StyledPageMain>
+    <StyledPageMain
+      variants={pageVariants}
+      transition={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="initial"
+    >
       <PageHeading>All Users</PageHeading>
-      {isLoading ? (
-        <Spinner />
-      ) : (
-        <AllUsersPagesTable />
-      )}
+      {isLoading ? <Spinner /> : <AllUsersPagesTable />}
     </StyledPageMain>
   );
 };
