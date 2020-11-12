@@ -20,7 +20,6 @@ const Routes = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      {" "}
       {/* Page Transition - Framer Motion */}
       <Switch location={location} key={location.pathname}>
         <Route exact path="/">
@@ -44,8 +43,15 @@ const Routes = () => {
         </Route>
 
         <Route exact path="/login">
-          {isTokenVerified !== null ? <Redirect to="/" /> : <LoginPage />}
+          {isTokenVerified !== null ? (
+            <motion.div exit="undefined"> {/* Read the note below */}
+              <Redirect to="/" />
+            </motion.div>
+          ) : (
+            <LoginPage />
+          )}
         </Route>
+
 
         <PrivateRoute exact path="/add-blog" component={AddBlogPage} />
 
@@ -53,14 +59,11 @@ const Routes = () => {
           <NotFoundPage />
         </Route>
 
-        {/* Frame Motion - React Router Redirect - Issue
+        {/* Framer Motion - React Router Redirect - Issue
           Wrapping the <Redirect /> component into a <motion /> component
           with exit="undefined"
           --> https://github.com/framer/motion/issues/466
-
-        <motion.div exit="undefined">
-          <Redirect to="/" />
-        </motion.div> */}
+        */}
       </Switch>
     </AnimatePresence>
   );

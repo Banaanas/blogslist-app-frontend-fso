@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Redirect, useLocation } from "react-router-dom";
+import { Route, Redirect, useLocation, Switch } from "react-router-dom";
+import { motion } from "framer-motion";
 
 /* * PRIVATE ROUTE  * */
 
@@ -11,9 +12,8 @@ import { Route, Redirect, useLocation } from "react-router-dom";
 // without verifying its validity)
 
 const PrivateRoute = ({ path, component, ...rest }) => {
-  const Component = component;
-
   const isTokenVerified = window.localStorage.getItem("loggedBlogslistappUser");
+  const Component = component;
   const location = useLocation();
 
   return isTokenVerified ? (
@@ -21,14 +21,20 @@ const PrivateRoute = ({ path, component, ...rest }) => {
       <Component {...rest} />
     </Route>
   ) : (
-    <Redirect
-      to={{
-        pathname: "/",
-        state: {
-          from: location,
-        },
-      }}
-    />
+    <motion.div exit="undefined">
+      <Redirect
+        to={{
+          pathname: "/",
+          state: {
+            from: location.pathname,
+          },
+        }}
+      />
+    </motion.div>
+    /* Framer Motion - React Router Redirect - Issue
+       Wrapping the <Redirect /> component into a <motion /> component
+       with exit="undefined"
+       --> https://github.com/framer/motion/issues/466 */
   );
 };
 

@@ -6,3 +6,4 @@
 // Todo - Pages Transition
 // Todo - Logout Redirection
 // Todo - Header Scroll
+// Todo - If vote are identical, then class by date
