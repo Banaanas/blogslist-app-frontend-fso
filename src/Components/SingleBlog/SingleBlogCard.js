@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
 import { Heading, Link } from "@chakra-ui/core";
 import styled from "@emotion/styled";
@@ -7,6 +7,7 @@ import { ImBook as BookIcon } from "react-icons/im";
 import { FcLike as LikeIcon } from "react-icons/fc";
 import { FaPen as WriterIcon } from "react-icons/fa";
 import { BiCaretRight as LinkIcon } from "react-icons/bi";
+import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
 
 // BLOG CARD
 const StyledCard = styled.div`
@@ -104,6 +105,13 @@ const SingleBlogCard = () => {
   const blogID = match.params.id;
   const blog = allBlogs.find((blog) => blog.id === blogID);
 
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(getBlogsAllUsers())
+  }, [dispatch])
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (blog === undefined) return null;
 

@@ -22,8 +22,10 @@ const HomePageTable = () => {
   // SORT BLOGS IN FUNCTION OF LIKES NUMBER - FUNCTION
   const sortBlogsFunction = (arr) => {
     const sortedArr = [...arr];
+
+    // Reverse Array to first display
+    sortedArr.reverse() //
     sortedArr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
-    console.log(arr);
     return sortedArr;
   };
 
