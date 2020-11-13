@@ -1,17 +1,23 @@
-
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import usersService from "../../services/users";
+import displayServerErrorToast from "../../utils/displayServerErrorToast";
 
 // ALL USERS - ASYNC THUNK
-const getAllUsers = createAsyncThunk("allUsers/getAllUsers", async () => {
-  const response = await usersService.getAllUsers();
-  return response;
-});
+const getAllUsers = createAsyncThunk(
+  "allUsers/getAllUsers",
+  async (payload, { rejectWithValue }) => {
+    try {
+      return await usersService.getAllUsers();
+    } catch (e) {
+      return rejectWithValue(e.response.data);
+    }
+  },
+);
 
 // Initial State
 const initialState = {
   data: [],
-  loading: false,
+  isLoading: false,
 };
 
 // ALL USERS - SLICE
@@ -25,14 +31,15 @@ const allUsersSlice = createSlice({
   },
   extraReducers: {
     [getAllUsers.fulfilled]: (state, action) => {
-      state.loading = false;
+      state.isLoading = false;
       state.data = action.payload;
     },
     [getAllUsers.pending]: (state) => {
-      state.loading = true;
+      state.isLoading = true;
     },
     [getAllUsers.rejected](state) {
-      state.loading = false;
+      state.isLoading = false;
+      displayServerErrorToast();
     },
   },
 });
@@ -40,44 +47,3 @@ const allUsersSlice = createSlice({
 export default allUsersSlice.reducer;
 export const { resetAllUsers } = allUsersSlice.actions;
 export { getAllUsers };
-
-
-/*
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import usersService from "../../services/users";
-
-// ALL USERS - ASYNC THUNK
-const getAllUsers = createAsyncThunk("allUsers/getAllUsers", async () => {
-  const response = await usersService.getAllUsers();
-  return response;
-});
-
-// Initial State
-const initialState = [];
-
-// ALL USERS - SLICE
-const allUsersSlice = createSlice({
-  name: "allUsers",
-  initialState,
-  reducers: {
-    resetAllUsers() {
-      return initialState;
-    },
-  },
-  extraReducers: {
-    [getAllUsers.fulfilled](state, action) {
-      return action.payload;
-    },
-    [getAllUsers.pending](state, action) {
-      return state;
-    },
-    [getAllUsers.rejected](state, action) {
-      return state;
-    },
-  },
-});
-
-export default allUsersSlice.reducer;
-export const { resetAllUsers } = allUsersSlice.actions;
-export { getAllUsers };
-*/

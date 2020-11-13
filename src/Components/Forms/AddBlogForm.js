@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
-import { Formik, Form, Field } from "formik";
+import { Field, Form, Formik } from "formik";
 import { object, string } from "yup";
 import {
   Button,
@@ -50,7 +50,7 @@ const ValidationSchemaYup = object().shape({
     .max(20, "Title can't exceed 20 characters")
     .required("Enter Blog's Title"),
   author: string()
-    .min(5, "Author must be at least 3 characters long")
+    .min(5, "Author must be at least 5 characters long")
     .max(10, "Author can't exceed 10 characters")
     .required("Enter Blog's Author"),
   url: string()
@@ -92,7 +92,7 @@ const AddBlogForm = () => {
         handleAddBlog(values);
         setSubmitting(false); // Set Submitting to false - Submit Chakra UI Button (isLoading)
         resetForm(formikInitialValues); // Reset Form Initial Values
-        history.push("/");
+        history.push("/my-profile");
       }}
     >
       {({ isValid, errors, touched, isSubmitting }) => (

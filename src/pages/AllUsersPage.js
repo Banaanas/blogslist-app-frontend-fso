@@ -9,7 +9,7 @@ import Spinner from "../Components/Spinner";
 
 const AllUsersPage = () => {
   // ISLOADING - REDUX STATE
-  const isLoading = useSelector((state) => state.allUsers.loading);
+  const isLoading = useSelector((state) => state.allUsers.isLoading);
 
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();

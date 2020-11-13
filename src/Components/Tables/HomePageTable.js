@@ -23,7 +23,7 @@ const HomePageTable = () => {
   const sortBlogsFunction = (arr) => {
     const sortedArr = [...arr];
     sortedArr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
-
+    console.log(arr);
     return sortedArr;
   };
 
@@ -76,7 +76,6 @@ const HomePageTable = () => {
             };
 
             // Like Blog - Dispatch - Redux State
-            // dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
             dispatch(likeBlog(updatedBlogObject));
           };
           return (

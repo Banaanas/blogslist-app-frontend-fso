@@ -25,7 +25,7 @@ const StyledRemoveIcon = styled(RemoveIcon)`
   font-size: 0.5rem;
 `;
 
-const MyBlogsPageTable = () => {
+const MyProfilePageTable = () => {
   // ALL BLOGS SINGLE USER - REDUX STATE
   const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
 
@@ -142,4 +142,4 @@ const MyBlogsPageTable = () => {
   );
 };
 
-export default MyBlogsPageTable;
+export default MyProfilePageTable;

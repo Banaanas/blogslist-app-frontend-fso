@@ -11,7 +11,7 @@ import {
   IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
 import { Divider } from "@chakra-ui/core";
-import displayToast from "../../utils/displayToast";
+import handleLogOut from "../../utils/handleLogOut";
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -39,7 +39,7 @@ const StyledNav = styled.nav`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: .5rem;
+  padding: 0.5rem;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -75,19 +75,7 @@ const StyledNavLink = styled(NavLink)`
 
 const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
-
-  // LOGOUT - FUNCTION
-  const handleLogout = () => {
-    window.localStorage.clear(); // Clear localStorage
-    window.location.reload(false); // Reload The Page (--> loggedInUser === null)
-    // Display Success Toast
-    displayToast(
-      "Logout Successful.",
-      "You are disconnected from the Application.",
-      "success",
-    );
-  };
+  const isAuthenticated = useSelector((state) => state.userAuthentication.isAuthenticated);
 
   const isMenuDisplayed = isMenuOpen ? true : false;
   const tabIndex = isMenuDisplayed ? 0 : -1;
@@ -142,13 +130,13 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
 
         <Divider borderColor="primary.dark" />
 
-        {loggedInUser !== "" ? (
+        {isAuthenticated ? (
           <StyledNavLink
             to="/login"
             tabIndex={tabIndex}
             onClick={() => {
               setMenuOpen(false);
-              handleLogout();
+              handleLogOut();
             }}
           >
             <Divider borderColor="red.900" />

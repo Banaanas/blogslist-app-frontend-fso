@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import handleLogOut from "../../utils/handleLogOut";
 
 const StyledNav = styled.nav`
   display: none;
@@ -17,7 +18,7 @@ const StyledNav = styled.nav`
 `;
 
 const StyledNavLink = styled(NavLink, {
-  shouldForwardProp: (prop) => prop !== "loggedIn", // loggedIn prop is not passed to the DOM
+  shouldForwardProp: (prop) => prop !== "isAuthenticated", // isAuthenticated prop is not passed to the DOM
 })`
   display: flex;
   align-items: center;
@@ -32,11 +33,11 @@ const StyledNavLink = styled(NavLink, {
   &:last-child {
     padding: 1rem;
     color: ${(props) =>
-      props.loggedIn
+      props.isAuthenticated
         ? ({ theme }) => theme.colors.secondary.dark
         : ({ theme }) => theme.colors.primary.dark};
     background-color: ${(props) =>
-      props.loggedIn
+      props.isAuthenticated
         ? ({ theme }) => theme.colors.primary.dark
         : ({ theme }) => theme.colors.secondary.dark};
     border: 3px solid ${({ theme }) => theme.colors.primary.dark};
@@ -60,14 +61,10 @@ const StyledNavLink = styled(NavLink, {
 `;
 
 const NavBar = () => {
-  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
-
-  // LOGOUT - FUNCTION
-  const handleLogout = () => {
-    window.localStorage.clear(); // Clear localStorage
-    window.location.reload(false); // Reload The Page (--> loggedInUser === null)
-  };
+  // ISAUTHENTICATED - REDUX STATE - (Without Blogs Array)
+  const isAuthenticated = useSelector(
+    (state) => state.userAuthentication.isAuthenticated,
+  );
 
   return (
     <React.Fragment>
@@ -77,16 +74,16 @@ const NavBar = () => {
         </StyledNavLink>
         <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
         <StyledNavLink to="/users">ALL USERS</StyledNavLink>
-        {loggedInUser !== "" ? (
+        {isAuthenticated ? (
           <StyledNavLink
-            loggedIn={loggedInUser}
+            isAuthenticated={isAuthenticated}
             to="/login"
-            onClick={handleLogout}
+            onClick={handleLogOut}
           >
             LOGOUT
           </StyledNavLink>
         ) : (
-          <StyledNavLink loggedIn={loggedInUser} to="/login">
+          <StyledNavLink isAuthenticated={isAuthenticated} to="/login">
             LOGIN
           </StyledNavLink>
         )}

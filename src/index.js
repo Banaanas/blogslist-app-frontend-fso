@@ -7,7 +7,6 @@ import store from "./store/store";
 import * as serviceWorker from "./serviceWorker";
 import AppWrapper from "./AppWrapper";
 
-
 ReactDOM.render(
   <Router>
     <React.StrictMode>

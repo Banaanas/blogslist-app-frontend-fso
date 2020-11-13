@@ -11,10 +11,10 @@ import Spinner from "../Components/Spinner";
 
 const HomePage = () => {
   // ISLOADING - REDUX STATE
-  const isLoading = useSelector((state) => state.allUsers.loading);
+  const isLoading = useSelector((state) => state.allUsers.isLoading);
 
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
+  const isAuthenticated = useSelector((state) => state.userAuthentication.isAuthenticated);
 
   // ALL BLOGS ALL USERS - REDUX STATE
   const allBlogs = useSelector((state) => state.blogsAllUsers.data);
@@ -28,6 +28,9 @@ const HomePage = () => {
     dispatch(getBlogsAllUsers());
   }, [dispatch]);
 
+  // To prevent Rendering of undefined blog and Page Refresh issue
+  if (allBlogs === undefined) return null;
+
   return (
     <StyledPageMain
       variants={pageVariants}
@@ -37,7 +40,7 @@ const HomePage = () => {
       exit="initial"
     >
       <PageHeading>All Blogs</PageHeading>
-      {loggedInUser !== "" ? <AddBlogLink /> : null}
+      {isAuthenticated ? <AddBlogLink /> : null}
       {isLoading ? <Spinner /> : null}
       {allBlogs.length > 0 ? (
         <HomePageTable />

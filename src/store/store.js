@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import allUsersReducer from "./slices/allUsersSlice";
-import loggedInSingleUserReducer from "./slices/loggedInUserSlice";
+import authenticatedUserReducer from "./slices/AuthenticationSlice";
 import blogsAllUsersReducer from "./slices/blogsAllUsersSlice";
 import blogsSingleUserReducer from "./slices/blogsSingleUserSlice";
 
@@ -9,7 +9,7 @@ import blogsSingleUserReducer from "./slices/blogsSingleUserSlice";
 const store = configureStore({
   reducer: {
     allUsers: allUsersReducer,
-    loggedInUser: loggedInSingleUserReducer,
+    userAuthentication: authenticatedUserReducer,
     blogsAllUsers: blogsAllUsersReducer,
     blogsSingleUser: blogsSingleUserReducer,
   },

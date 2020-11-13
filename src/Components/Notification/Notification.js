@@ -1,12 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/core";
-import styled from "@emotion/styled";
+import { Alert, AlertIcon } from "@chakra-ui/core";
 
 /*const StyledAlert = styled(Alert)`
   position: absolute;

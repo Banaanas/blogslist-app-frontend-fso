@@ -9,7 +9,7 @@ import userService from "../../services/users";
 import login from "../../services/login";
 import displayToast from "../../utils/displayToast";
 import { getAllUsers } from "../../store/slices/allUsersSlice";
-import { getLoggedInUser } from "../../store/slices/loggedInUserSlice";
+import { getAuthenticatedUser } from "../../store/slices/AuthenticationSlice";
 import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
 import { getBlogsSingleUser } from "../../store/slices/blogsSingleUserSlice";
 
@@ -60,7 +60,7 @@ const LoginForm = () => {
       const user = await login(userObject);
 
       window.localStorage.setItem(
-        "loggedBlogslistappUser",
+        "authenticatedUser",
         JSON.stringify(user),
       );
 
@@ -75,8 +75,8 @@ const LoginForm = () => {
       // Get all Users - Dispatch - Redux State
       dispatch(getAllUsers());
 
-      // Get loggedInUser - Dispatch - Redux State
-      dispatch(getLoggedInUser(user));
+      // Get Authenticated User - Dispatch - Redux State
+      dispatch(getAuthenticatedUser(user));
 
       // Get blogsAllUsers - Dispatch - Redux State
       dispatch(getBlogsAllUsers());
@@ -89,7 +89,7 @@ const LoginForm = () => {
 
       // Display Success Toast
       displayToast(
-        "Login Successful.",
+        "🙂 Login Successful 🏠",
         "You are connected to the Application.",
         "success",
       );

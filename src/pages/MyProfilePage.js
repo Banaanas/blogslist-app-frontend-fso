@@ -3,27 +3,39 @@ import { useDispatch, useSelector } from "react-redux";
 import { Heading } from "@chakra-ui/core";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { getBlogsSingleUser } from "../store/slices/blogsSingleUserSlice";
-import { pageTransition, pageVariants } from "../styles/animations";import PageHeading from "../Components/PageHeading";
-import MyBlogsPageTable from "../Components/Tables/MyBlogsPageTable";
+import { pageTransition, pageVariants } from "../styles/animations";
+import PageHeading from "../Components/PageHeading";
+import MyProfilePageTable from "../Components/Tables/MyProfilePageTable";
 import AddBlogLink from "../Components/AddBlogLink";
 import AuthRedirectPage from "../Components/AuthRedirectPage";
 import Spinner from "../Components/Spinner";
 
 const MyProfilePage = () => {
-  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
+  // AUTHENTICATED USER - REDUX STATE - (Without Blogs Array)
+  const authenticateUser = useSelector(
+    (state) => state.userAuthentication.user,
+  );
+
+  // ISAUTHENTICATED USER - REDUX STATE - (Without Blogs Array)
+
+  const isAuthenticated = useSelector(
+    (state) => state.userAuthentication.isAuthenticated,
+  );
 
   // ISLOADING - REDUX STATE
-  const isLoading = useSelector((state) => state.allUsers.loading);
+  const isLoading = useSelector((state) => state.allUsers.isLoading);
 
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
   // USEEFFECT
   useEffect(() => {
+    // Return if User is not Authenticated (to avoid console warning for Rejected Request)
+    if (authenticateUser === null) return;
+
     // Get allBlogsSingleUser - Dispatch - Redux State
-    dispatch(getBlogsSingleUser(loggedInUser.id));
-  }, [dispatch, loggedInUser.id]);
+    dispatch(getBlogsSingleUser(authenticateUser.id));
+  }, [dispatch, authenticateUser]);
 
   // ALL BLOGS SINGLE USER - REDUX STATE
   const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
@@ -36,12 +48,14 @@ const MyProfilePage = () => {
       animate="animate"
       exit="initial"
     >
-      <PageHeading>{loggedInUser.name}</PageHeading>
+      {authenticateUser ? (
+        <PageHeading>{authenticateUser.name}</PageHeading>
+      ) : null}
       {isLoading === true ? <Spinner /> : null}
-      {isLoading === false && loggedInUser !== "" ? (
+      {isAuthenticated && isLoading === false ? (
         <React.Fragment>
           <AddBlogLink />
-          {allBlogsSingleUser.length === 0 && loggedInUser !== "" ? (
+          {isAuthenticated && allBlogsSingleUser.length === 0 ? (
             <Heading
               as="h2"
               size="md"
@@ -54,12 +68,11 @@ const MyProfilePage = () => {
               You have no Blog in your List yet
             </Heading>
           ) : (
-            <MyBlogsPageTable />
+            <MyProfilePageTable />
           )}
         </React.Fragment>
-      ) : (
-        <AuthRedirectPage />
-      )}
+      ) : null}
+      {isAuthenticated === false ? <AuthRedirectPage /> : null}
     </StyledPageMain>
   );
 };

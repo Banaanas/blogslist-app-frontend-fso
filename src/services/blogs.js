@@ -32,16 +32,18 @@ const create = async (newObject) => {
   return response.data;
 };
 
-// UPDATE BLOG
+// UPDATE BLOG - For Authenticated Users - Not used in this App - Kept for example purpose
+// --> Like Blog function also updates blog BUT without Authentication
 const update = async (id, newObject) => {
   const config = {
     headers: { Authorization: token },
   };
+
   const response = await axios.put(`${baseUrl}/${id}`, newObject, config);
   return response.data;
 };
 
-// LIKE BLOG - (For not signed up Users to vote, authentication has not been set for this route)
+// LIKE BLOG - // Unlike general Update, Blog Like is authorized without Authentication
 const like = async (id, newObject) => {
   const response = await axios.put(`${baseUrl}/like/${id}`, newObject);
   return response.data;

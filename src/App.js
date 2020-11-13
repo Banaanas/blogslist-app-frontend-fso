@@ -5,32 +5,65 @@ import userService from "./services/users";
 import Routes from "./routes/routes";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import { getLoggedInUser } from "./store/slices/loggedInUserSlice";
+import { getAuthenticatedUser } from "./store/slices/AuthenticationSlice";
 import { getAllUsers } from "./store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
 import GithubBanner from "./Components/GithubBanner";
+import handleLogOut from "./utils/handleLogOut";
+import displayToast from "./utils/displayToast";
+import { useHistory } from "react-router-dom";
 
 const App = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
+  // USEHISTORY - REACT ROUTER
+  const history = useHistory();
+
+  // APP - USEEFFECT - STORAGE EVENT
+  useEffect(() => {
+    // LOGIN / LOGOUT - MULTI TABS
+    // Only works when 2 or more Tabs are opened
+    window.addEventListener("storage", (event) => {
+      // Login
+      if (event.key !== null) {
+        // Display Success Toast
+        displayToast(
+          "Login Successful.",
+          "You are connected to the Application.",
+          "success",
+        );
+
+        // Reload Page - (To get state synchronized)
+        window.location.reload(false);
+      }
+      // Logout
+      if (event.key === null) {
+        handleLogOut();
+        // Redirect to LoginPage
+        history.push("/login");
+        // Toast Display is handled by handleLogOut()
+      }
+    });
+  }, [history, dispatch]);
+
   // APP - USEEFFECT - LOCALSTORAGE - REDUX STATE
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem(
-      "loggedBlogslistappUser",
+    const authenticatedUserJSON = window.localStorage.getItem(
+      "authenticatedUser",
     );
 
-    // If no User logged in, Return
-    if (!loggedUserJSON) return;
+    // If User not Authenticated, Return
+    if (!authenticatedUserJSON) return;
 
-    const user = JSON.parse(loggedUserJSON);
+    const user = JSON.parse(authenticatedUserJSON);
 
     // Set Token for Axios Requests
     blogService.setToken(user.token);
     userService.setToken(user.token);
 
-    // Get loggedInUser - Dispatch - Redux State
-    dispatch(getLoggedInUser(user));
+    // Get Authenticated User - Dispatch - Redux State
+    dispatch(getAuthenticatedUser(user));
 
     // Get all Users - Dispatch - Redux State
     dispatch(getAllUsers());
@@ -42,7 +75,7 @@ const App = () => {
   return (
     <React.Fragment>
       <Header />
-      <GithubBanner/>
+      <GithubBanner />
       <Routes />
       <Footer />
     </React.Fragment>

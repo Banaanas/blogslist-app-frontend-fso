@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, useLocation, Switch } from "react-router-dom";
+import { Redirect, Route, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
 /* * PRIVATE ROUTE  * */
@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 // without verifying its validity)
 
 const PrivateRoute = ({ path, component, ...rest }) => {
-  const isTokenVerified = window.localStorage.getItem("loggedBlogslistappUser");
+  const isTokenVerified = window.localStorage.getItem("authenticatedUser");
   const Component = component;
   const location = useLocation();
 

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 const StyledNav = styled.nav`
   display: flex;
@@ -9,7 +8,7 @@ const StyledNav = styled.nav`
   justify-content: space-around;
   width: 100%;
   max-width: 350px;
-  padding: .5rem;
+  padding: 0.5rem;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -35,9 +34,6 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const NavBar = () => {
-  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const loggedInUser = useSelector((state) => state.loggedInUser);
-
   return (
     <StyledNav>
       <StyledNavLink exact to="/">
@@ -45,9 +41,6 @@ const NavBar = () => {
       </StyledNavLink>
       <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
       <StyledNavLink to="/users">ALL USERS</StyledNavLink>
-      {loggedInUser !== "" ? null : (
-        <StyledNavLink to="/login">LOGIN</StyledNavLink>
-      )}
     </StyledNav>
   );
 };
