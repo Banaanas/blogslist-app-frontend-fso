@@ -11,6 +11,7 @@ import AddBlogPage from "../pages/AddBlogPage";
 import PrivateRoute from "./PrivateRoute";
 import SingleUserPage from "../pages/SingleUserPage";
 import NotFoundPage from "../pages/NotFoundPage";
+import SignUpPage from "../pages/SignUpPage";
 
 const Routes = () => {
   // AUTHENTICATED USER - REDUX STATE
@@ -47,11 +48,23 @@ const Routes = () => {
 
         <Route exact path="/login">
           {isAuthenticated ? (
-            <motion.div exit="undefined"> {/* Read the note below */}
-              <Redirect to="/" />
+            <motion.div exit="undefined">
+              {/* Read the note below */}
+              <Redirect to="/my-profile" />
             </motion.div>
           ) : (
             <LoginPage />
+          )}
+        </Route>
+
+        <Route exact path="/signup">
+          {isAuthenticated ? (
+            <motion.div exit="undefined">
+              {/* Read the note below */}
+              <Redirect to="/my-profile" />
+            </motion.div>
+          ) : (
+            <SignUpPage />
           )}
         </Route>
 

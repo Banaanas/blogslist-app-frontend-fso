@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 
 const StyledLink = styled(Link)`
-  margin: 1rem;
+  width: fit-content;
+  margin: 2rem 1rem 1rem 0;
   padding: 0.5rem;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
-  font-size: 1rem;
+  font-size: .1rem;
+  font-style: italic;
   text-align: center;
   background-color: floralwhite;
   border: 5px solid ${({ theme }) => theme.colors.primary.dark};
@@ -21,8 +23,8 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const AddBlogLink = () => {
-  return <StyledLink to="/add-blog">ADD BLOG</StyledLink>;
+const SignupLink = () => {
+  return <StyledLink to="/signup">SIGN UP</StyledLink>;
 };
 
-export default AddBlogLink;
+export default SignupLink;

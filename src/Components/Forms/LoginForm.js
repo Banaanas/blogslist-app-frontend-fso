@@ -1,17 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/core";
-import blogService from "../../services/blogs";
-import userService from "../../services/users";
-import login from "../../services/login";
-import displayToast from "../../utils/displayToast";
-import { getAllUsers } from "../../store/slices/allUsersSlice";
-import { getAuthenticatedUser } from "../../store/slices/AuthenticationSlice";
-import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
-import { getBlogsSingleUser } from "../../store/slices/blogsSingleUserSlice";
+import userLogin from "../../utils/userLogin";
 
 const StyledForm = styled.form`
   display: flex;
@@ -26,8 +17,6 @@ const StyledForm = styled.form`
 `;
 
 const LoginForm = () => {
-  // USEDISPATCH - REDUX STATE
-  const dispatch = useDispatch();
 
   // STATE - LOGIN
   const [username, setUsername] = useState("");
@@ -43,64 +32,16 @@ const LoginForm = () => {
     setPassword(event.target.value);
   };
 
-  // USEHISTORY - REACT ROUTER
-  const history = useHistory();
-
   // LOGIN - FUNCTION
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    const userObject = {
-      username,
-      password,
-    };
+    // Reinitialize Inputs (Before userLogin() - Component Unmount)
+    setUsername("");
+    setPassword("");
 
-    try {
-      // Store user in localStorage
-      const user = await login(userObject);
-
-      window.localStorage.setItem(
-        "authenticatedUser",
-        JSON.stringify(user),
-      );
-
-      // Reinitialize Inputs
-      setUsername("");
-      setPassword("");
-
-      // Set Token for Axios Requests
-      blogService.setToken(user.token);
-      userService.setToken(user.token);
-
-      // Get all Users - Dispatch - Redux State
-      dispatch(getAllUsers());
-
-      // Get Authenticated User - Dispatch - Redux State
-      dispatch(getAuthenticatedUser(user));
-
-      // Get blogsAllUsers - Dispatch - Redux State
-      dispatch(getBlogsAllUsers());
-
-      // Get allBlogsSingleUser - Dispatch - Redux State
-      dispatch(getBlogsSingleUser(user.id));
-
-      // Redirect to HomePage
-      history.push("/");
-
-      // Display Success Toast
-      displayToast(
-        "🙂 Login Successful 🏠",
-        "You are connected to the Application.",
-        "success",
-      );
-    } catch (error) {
-      // Display Error Toast
-      displayToast(
-        "Login Failed.",
-        "You are not connected to the Application.",
-        "error",
-      );
-    }
+    // userLogin - Async Function
+    await userLogin(username, password);
   };
 
   return (

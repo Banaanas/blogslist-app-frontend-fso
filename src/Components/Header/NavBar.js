@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import handleLogOut from "../../utils/handleLogOut";
+import userLogout from "../../utils/userLogout";
 
 const StyledNav = styled.nav`
   display: none;
@@ -32,12 +32,12 @@ const StyledNavLink = styled(NavLink, {
   /* Login NavLink */
   &:last-child {
     padding: 1rem;
-    color: ${(props) =>
-      props.isAuthenticated
+    color: ${({ isAuthenticated }) =>
+      isAuthenticated
         ? ({ theme }) => theme.colors.secondary.dark
         : ({ theme }) => theme.colors.primary.dark};
-    background-color: ${(props) =>
-      props.isAuthenticated
+    background-color: ${({ isAuthenticated }) =>
+      isAuthenticated
         ? ({ theme }) => theme.colors.primary.dark
         : ({ theme }) => theme.colors.secondary.dark};
     border: 3px solid ${({ theme }) => theme.colors.primary.dark};
@@ -78,7 +78,7 @@ const NavBar = () => {
           <StyledNavLink
             isAuthenticated={isAuthenticated}
             to="/login"
-            onClick={handleLogOut}
+            onClick={userLogout}
           >
             LOGOUT
           </StyledNavLink>

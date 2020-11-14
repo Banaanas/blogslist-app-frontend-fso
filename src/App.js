@@ -9,7 +9,7 @@ import { getAuthenticatedUser } from "./store/slices/AuthenticationSlice";
 import { getAllUsers } from "./store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
 import GithubBanner from "./Components/GithubBanner";
-import handleLogOut from "./utils/handleLogOut";
+import userLogout from "./utils/userLogout";
 import displayToast from "./utils/displayToast";
 import { useHistory } from "react-router-dom";
 
@@ -39,10 +39,10 @@ const App = () => {
       }
       // Logout
       if (event.key === null) {
-        handleLogOut();
+        userLogout();
         // Redirect to LoginPage
         history.push("/login");
-        // Toast Display is handled by handleLogOut()
+        // Toast Display is handled by userLogout()
       }
     });
   }, [history, dispatch]);

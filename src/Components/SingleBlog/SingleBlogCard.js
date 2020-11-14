@@ -108,10 +108,9 @@ const SingleBlogCard = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
-
   useEffect(() => {
-    dispatch(getBlogsAllUsers())
-  }, [dispatch])
+    dispatch(getBlogsAllUsers());
+  }, [dispatch]);
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (blog === undefined) return null;
 

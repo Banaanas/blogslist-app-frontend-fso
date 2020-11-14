@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Heading } from "@chakra-ui/core";
 import styled from "@emotion/styled";
+import SignupLink from "../Components/SignupLink";
 
 const GlobalContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const GlobalContainer = styled.div`
   justify-content: space-around;
   width: 100%;
   max-width: 25rem;
-  height: 14rem;
+  height: 25rem;
   padding: 1rem 0;
   color: ${({ theme }) => theme.colors.secondary.dark};
   text-align: center;
@@ -19,7 +20,8 @@ const GlobalContainer = styled.div`
 const StyledLink = styled(Link)`
   width: 90%;
   padding: 1rem 0;
-  color: ${({ theme }) => theme.colors.primary.dark};
+  color:${({ signup }) =>
+  signup ? "hotpink" : ({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.secondary.main};
@@ -47,6 +49,7 @@ const AuthRedirectPage = () => {
           You are not authenticated
         </Heading>
         <StyledLink to="/login">LOGIN</StyledLink>
+      <SignupLink/>
       </GlobalContainer>
     </React.Fragment>
   );

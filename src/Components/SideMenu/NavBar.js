@@ -11,7 +11,7 @@ import {
   IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
 import { Divider } from "@chakra-ui/core";
-import handleLogOut from "../../utils/handleLogOut";
+import userLogout from "../../utils/userLogout";
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -136,7 +136,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
             tabIndex={tabIndex}
             onClick={() => {
               setMenuOpen(false);
-              handleLogOut();
+              userLogout();
             }}
           >
             <Divider borderColor="red.900" />

@@ -7,7 +7,7 @@ import { pageTransition, pageVariants } from "../styles/animations";
 import PageHeading from "../Components/PageHeading";
 import MyProfilePageTable from "../Components/Tables/MyProfilePageTable";
 import AddBlogLink from "../Components/AddBlogLink";
-import AuthRedirectPage from "../Components/AuthRedirectPage";
+import AuthRedirectPage from "./AuthRedirectPage";
 import Spinner from "../Components/Spinner";
 
 const MyProfilePage = () => {

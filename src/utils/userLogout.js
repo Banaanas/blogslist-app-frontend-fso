@@ -4,7 +4,7 @@ import { resetAuthenticatedUser } from "../store/slices/AuthenticationSlice";
 import { resetblogsSingleUser } from "../store/slices/blogsSingleUserSlice";
 
 // LOGOUT - FUNCTION
-const handleLogOut = () => {
+const userLogout = () => {
   // Clear localStorage
   window.localStorage.clear(); // Clear localStorage
 
@@ -21,4 +21,4 @@ const handleLogOut = () => {
   );
 };
 
-export default handleLogOut;
+export default userLogout;
