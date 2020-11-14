@@ -13,7 +13,6 @@ import {
 } from "@chakra-ui/core";
 import displayToast from "../../utils/displayToast";
 import signUp from "../../services/signup";
-import userLogin from "../../utils/userLogin";
 import displayServerErrorToast from "../../utils/displayServerErrorToast";
 
 // Form
@@ -73,6 +72,7 @@ const SignUpForm = () => {
     try {
       // Sign Up User - Async Function
       await signUp(newUser);
+      // await userLogin(newUser.username, newUser.password);
 
       // Display Success Toast
       displayToast(
@@ -80,18 +80,25 @@ const SignUpForm = () => {
         "You successfully created your Account.",
         "success",
       );
-    } catch (error) {
-      displayServerErrorToast();
-    }
-
-    try {
-      await userLogin(newUser.username, newUser.password);
+      // Redirect to MyProfilePage
+      history.push("/my-profile");
     } catch (e) {
-      displayServerErrorToast();
-    }
+      // Display Warning Toast - Username has to be unique
+      const errorWords =
+        "expected `username` to be unique";
 
-    // Redirect to MyProfilePage
-    history.push("/my-profile");
+      // Check if 1 - e.response.data.error; 2 - e.response.data.error includes(errorWords)
+      if (e.response.data.error && e.response.data.error.includes(errorWords)) {
+        displayToast(
+          "Username not available",
+          "Please, chose another Username.",
+          "warning",
+        );
+      } else {
+        // Display Generic Server Error Toast
+        displayServerErrorToast();
+      }
+    }
   };
 
   const formikInitialValues = {

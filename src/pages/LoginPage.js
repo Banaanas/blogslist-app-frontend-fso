@@ -6,10 +6,10 @@ import SignupLink from "../Components/SignupLink";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 
 const StyledContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 const LoginPage = () => {
   return (
@@ -21,8 +21,7 @@ const LoginPage = () => {
       exit="initial"
     >
       <StyledContainer>
-      <LoginForm />
-
+        <LoginForm />
         <SignupLink />
       </StyledContainer>
     </StyledPageMain>

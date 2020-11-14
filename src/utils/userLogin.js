@@ -7,6 +7,7 @@ import blogService from "../services/blogs";
 import userService from "../services/users";
 import { getAllUsers } from "../store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "../store/slices/blogsAllUsersSlice";
+import displayServerErrorToast from "./displayServerErrorToast";
 
 // LOGIN - FUNCTION
 const userLogin = async (username, password) => {
@@ -45,13 +46,21 @@ const userLogin = async (username, password) => {
       "You are connected to the Application.",
       "success",
     );
-  } catch (error) {
-    // Display Error Toast
-    displayToast(
-      "Login Failed.",
-      "You are not connected to the Application.",
-      "error",
-    );
+  } catch (e) {
+    // Display Warning Toast - Username or Password is Invalid
+    const errorWords = "Invalid Username or Password";
+
+    // Check if 1 - e.response.data.error; 2 - e.response.data.error includes(errorWords)
+    if (e.response.data.error && e.response.data.error.includes(errorWords)) {
+      displayToast(
+        "Wrong Credentials",
+        "Invalid Username or Password.",
+        "warning",
+      );
+    } else {
+      // Display Generic Server Error Toast
+      displayServerErrorToast();
+    }
   }
 };
 

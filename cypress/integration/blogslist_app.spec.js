@@ -55,7 +55,7 @@ describe("Blogslist app", function () {
     cy.get("[data-cy=notification-message]").should(
       "have.css",
       "color",
-      "rgb(255, 0, 0)",
+      "rgb(255,0,0)",
     );
 
     // Notification for Failed Login is displayed - Border
