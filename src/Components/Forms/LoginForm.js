@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 
-import { Button, FormControl, FormLabel, Input } from "@chakra-ui/core";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import userLogin from "../../utils/userLogin";
 
 const StyledForm = styled.form`

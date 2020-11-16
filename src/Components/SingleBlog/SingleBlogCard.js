@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
-import { Heading, Link } from "@chakra-ui/core";
+import { Heading, Link } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { ImBook as BookIcon } from "react-icons/im";
 import { FcLike as LikeIcon } from "react-icons/fc";
@@ -103,7 +103,7 @@ const SingleBlogCard = () => {
   // useRouteMatch - Router
   const match = useRouteMatch("/blogs/:id");
   const blogID = match.params.id;
-  const blog = allBlogs.find((blog) => blog.id === blogID);
+  const blog = allBlogs.find((b) => b.id === blogID);
 
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();

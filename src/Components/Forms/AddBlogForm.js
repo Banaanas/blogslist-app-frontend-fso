@@ -10,7 +10,7 @@ import {
   FormErrorMessage,
   FormLabel,
   Input,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import { getBlogsAllUsers } from "../../store/slices/blogsAllUsersSlice";
 import { addBlogSingleUser } from "../../store/slices/blogsSingleUserSlice";
 

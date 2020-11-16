@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "@emotion/react";
 import blogsListLogo from "../../assets/blogslist-logo.svg";
 
 import NavBar from "./NavBar";

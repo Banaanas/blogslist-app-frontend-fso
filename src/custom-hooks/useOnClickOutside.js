@@ -12,7 +12,7 @@ const useOnClickOutside = (DOMRef, handler) => {
       handler();
     };
 
-    // Add the Event Listener - MouseDown instead of click for UX purpose
+    // Add Event Listener - MouseDown instead of click for UX purpose
     document.addEventListener("mousedown", listener);
     document.addEventListener("touchstart", listener);
 

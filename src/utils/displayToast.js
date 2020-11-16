@@ -1,4 +1,4 @@
-import { createStandaloneToast } from "@chakra-ui/core";
+import { createStandaloneToast } from "@chakra-ui/react";
 
 const toast = createStandaloneToast();
 

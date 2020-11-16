@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "@chakra-ui/core";
+import { Button } from "@chakra-ui/react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
 const BackButton = () => {

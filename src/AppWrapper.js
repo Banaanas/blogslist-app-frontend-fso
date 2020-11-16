@@ -1,6 +1,6 @@
 import React from "react";
-import { ChakraProvider as ChakraUIThemeProvider } from "@chakra-ui/core";
-import { ThemeProvider as EmotionThemeProvider } from "emotion-theming";
+import { ChakraProvider as ChakraUIThemeProvider } from "@chakra-ui/react";
+import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import GlobalStyles from "./styles/GlobalStyles";
 import appTheme from "./styles/appTheme";
 import App from "./App";

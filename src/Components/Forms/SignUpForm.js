@@ -10,7 +10,7 @@ import {
   FormHelperText,
   FormLabel,
   Input,
-} from "@chakra-ui/core";
+} from "@chakra-ui/react";
 import displayToast from "../../utils/displayToast";
 import signUp from "../../services/signup";
 import displayServerErrorToast from "../../utils/displayServerErrorToast";

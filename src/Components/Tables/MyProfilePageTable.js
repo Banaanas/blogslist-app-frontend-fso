@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
-import { IconButton } from "@chakra-ui/core";
+import { IconButton } from "@chakra-ui/react";
 import { IoIosRemoveCircle as RemoveIcon } from "react-icons/io";
 import StyledTable from "../StyledComponents/StyledTable";
 import { deleteBlogSingleUser } from "../../store/slices/blogsSingleUserSlice";

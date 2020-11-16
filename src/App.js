@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import blogService from "./services/blogs";
 import userService from "./services/users";
 import Routes from "./routes/routes";
@@ -11,7 +12,6 @@ import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
 import GithubBanner from "./Components/GithubBanner";
 import userLogout from "./utils/userLogout";
 import displayToast from "./utils/displayToast";
-import { useHistory } from "react-router-dom";
 
 const App = () => {
   // USEDISPATCH - REDUX STATE

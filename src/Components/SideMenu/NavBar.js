@@ -10,7 +10,7 @@ import {
   IoMdLogIn as LogInIcon,
   IoMdLogOut as LogOutIcon,
 } from "react-icons/io";
-import { Divider } from "@chakra-ui/core";
+import { Divider } from "@chakra-ui/react";
 import userLogout from "../../utils/userLogout";
 
 const StyledMenu = styled.nav`

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Heading } from "@chakra-ui/core";
+import { Heading } from "@chakra-ui/react";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { getBlogsSingleUser } from "../store/slices/blogsSingleUserSlice";
 import { pageTransition, pageVariants } from "../styles/animations";

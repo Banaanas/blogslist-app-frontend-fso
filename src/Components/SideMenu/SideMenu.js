@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FocusLock from "react-focus-lock";
 import styled from "@emotion/styled";
 import Burger from "./Burger";
@@ -12,11 +12,30 @@ const StyledDiv = styled.div`
 `;
 const SideMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
   const DOMRef = useRef(null);
   const menuId = "main-menu";
 
   // Close Side SideMenu when click outside the Ref- custom Hook
   useOnClickOutside(DOMRef, () => setMenuOpen(false));
+
+  useEffect(() => {
+
+    // handleResize - FUNCTION
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      if (window.innerWidth > 710) setMenuOpen(false);
+    };
+
+    // Add Event Listener - Resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove Event Listener - useEffect Clean Up
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <React.Fragment>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Heading } from "@chakra-ui/core";
+import { Heading } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import SignupLink from "../Components/SignupLink";
 

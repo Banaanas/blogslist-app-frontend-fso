@@ -1,7 +1,14 @@
 import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Avatar, Flex, Heading, List, ListItem, VStack } from "@chakra-ui/core";
+import {
+  Avatar,
+  Flex,
+  Heading,
+  List,
+  ListItem,
+  VStack,
+} from "@chakra-ui/react";
 import PageHeading from "../PageHeading";
 
 const SingleUserCard = () => {

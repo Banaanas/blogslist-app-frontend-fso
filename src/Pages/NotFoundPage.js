@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Icon } from "@chakra-ui/core";
+import { Heading, Icon } from "@chakra-ui/react";
 import { RiErrorWarningFill as NotFoundIcon } from "react-icons/ri";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
