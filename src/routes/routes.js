@@ -2,16 +2,16 @@ import React from "react";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
-import HomePage from "../pages/HomePage";
-import MyProfilePage from "../pages/MyProfilePage";
-import LoginPage from "../pages/LoginPage";
-import AllUsersPage from "../pages/AllUsersPage";
-import SingleBlogPage from "../pages/SingleBlogPage";
-import AddBlogPage from "../pages/AddBlogPage";
+import HomePage from "../Pages/HomePage";
+import MyProfilePage from "../Pages/MyProfilePage";
+import LoginPage from "../Pages/LoginPage";
+import AllUsersPage from "../Pages/AllUsersPage";
+import SingleBlogPage from "../Pages/SingleBlogPage";
+import AddBlogPage from "../Pages/AddBlogPage";
 import PrivateRoute from "./PrivateRoute";
-import SingleUserPage from "../pages/SingleUserPage";
-import NotFoundPage from "../pages/NotFoundPage";
-import SignUpPage from "../pages/SignUpPage";
+import SingleUserPage from "../Pages/SingleUserPage";
+import NotFoundPage from "../Pages/NotFoundPage";
+import SignUpPage from "../Pages/SignUpPage";
 
 const Routes = () => {
   // AUTHENTICATED USER - REDUX STATE

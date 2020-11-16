@@ -51,12 +51,12 @@ const ValidationSchemaYup = object().shape({
     .required("Enter Blog's Title"),
   author: string()
     .min(5, "Author must be at least 5 characters long")
-    .max(10, "Author can't exceed 10 characters")
+    .max(20, "Author can't exceed 20 characters")
     .required("Enter Blog's Author"),
   url: string()
     .url("URL must be a valid URL")
     .min(3, "URL must be at least 3 characters long")
-    .max(50, "URL must be less than 50 characters long")
+    .max(80, "URL can't exceed 80 characters")
     .required("Enter Blog's URL"),
 });
 

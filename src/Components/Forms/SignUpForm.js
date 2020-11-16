@@ -14,6 +14,7 @@ import {
 import displayToast from "../../utils/displayToast";
 import signUp from "../../services/signup";
 import displayServerErrorToast from "../../utils/displayServerErrorToast";
+import userLogin from "../../utils/userLogin";
 
 // Form
 const StyledForm = styled(Form)`
@@ -72,7 +73,9 @@ const SignUpForm = () => {
     try {
       // Sign Up User - Async Function
       await signUp(newUser);
-      // await userLogin(newUser.username, newUser.password);
+
+      // Login User - Async Function
+      await userLogin(newUser.username, newUser.password);
 
       // Display Success Toast
       displayToast(

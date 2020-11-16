@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/core";
-import displayToast from "../utils/displayToast";
+import displayToast from "../src/utils/displayToast";
 
 const Blog = ({ blog }) => {
   // USEDISPATCH - REDUX STATE

@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { fireEvent, render } from "@testing-library/react";
-import SingleUser from "./SingleUser";
+import SingleUser from "../src/Components/SingleUser.js/SingleUser";
 
 describe("<Blog /> Component", () => {
   // Likes and id are not passed (they are not Input entries)

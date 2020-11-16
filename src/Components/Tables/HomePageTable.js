@@ -42,7 +42,7 @@ const HomePageTable = () => {
         accessor: "title", // Accessor is the "key" in the data
         Cell: ({ row }) => {
           // ID is accessed through row.original id
-          // Other values are through row.values.[nameofthevalue]
+          // Other values are accessed through row.values.[nameofthevalue]
 
           return (
             <Link to={`/blogs/${row.original.id}`}>{row.values.title}</Link>

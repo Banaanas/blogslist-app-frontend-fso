@@ -1,5 +1,5 @@
 {
-  "name": "part7-03-blogslist-extension",
+  "name": "part7-03-blogslist-frontend-extension",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

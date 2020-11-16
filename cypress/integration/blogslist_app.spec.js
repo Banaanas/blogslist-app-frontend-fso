@@ -1,7 +1,7 @@
 // 1 - For Cypress Tests to work :
-// - Testing Router must have been set up in the backend
+// - Testing Router must have been set up in the Backend
 // (testingRouter.js - app.js)
-// - Backend must be running in Test mode (NPM Script)
+// - Backend must be running (start) in Test mode (NPM Script)
 // 2 - Cypress custom commands are defined in cypress/support/commands.js
 // 3 - Install Cypress ESLint Plugin activated it in the extends configuration
 // either in package.json or in .eslintrc.json (located in the Project's root directory)
