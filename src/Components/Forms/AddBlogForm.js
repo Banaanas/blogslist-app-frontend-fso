@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
@@ -87,7 +86,7 @@ const AddBlogForm = () => {
     <Formik
       initialValues={formikInitialValues}
       validationSchema={ValidationSchemaYup}
-      validateOnMount /* Boolean - Run (also) validation when Formik component mounts - This way, Submit is disabled on mount */
+      validateOnMount /* Boolean - Run (also) validation when Formik Component mounts - This way, Submit is disabled on mount */
       onSubmit={(values, { setSubmitting, resetForm }) => {
         handleAddBlog(values);
         setSubmitting(false); // Set Submitting to false - Submit Chakra UI Button (isLoading)

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import blogService from "./services/blogs";
@@ -73,12 +73,12 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <React.Fragment>
+    <>
       <Header />
       <GithubBanner />
       <Routes />
       <Footer />
-    </React.Fragment>
+    </>
   );
 };
 

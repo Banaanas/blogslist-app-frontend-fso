@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Heading } from "@chakra-ui/react";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
@@ -53,7 +53,7 @@ const MyProfilePage = () => {
       ) : null}
       {isLoading === true ? <Spinner /> : null}
       {isAuthenticated && isLoading === false ? (
-        <React.Fragment>
+        <>
           <AddBlogLink />
           {isAuthenticated && allBlogsSingleUser.length === 0 ? (
             <Heading
@@ -70,7 +70,7 @@ const MyProfilePage = () => {
           ) : (
             <MyProfilePageTable />
           )}
-        </React.Fragment>
+        </>
       ) : null}
       {isAuthenticated === false ? <AuthRedirectPage /> : null}
     </StyledPageMain>

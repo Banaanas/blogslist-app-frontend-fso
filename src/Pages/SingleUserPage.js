@@ -1,4 +1,3 @@
-import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { pageTransition, pageVariants } from "../styles/animations";

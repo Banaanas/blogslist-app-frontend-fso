@@ -1,24 +1,14 @@
 {
   "extends": [
-    "react-app",
-    "airbnb",
-    "airbnb/hooks",
+    /* "airbnb",
+     "airbnb/hooks",*/
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "react-app"
   ],
   "plugins": ["cypress", "jest", "jsx-a11y"],
   "rules": {
-    "no-console": "error",
-
-    // Authorize double-quote use
-    "quotes": [
-      1,
-      "double",
-      {
-        "avoidEscape": true
-      }
-    ],
     "comma-dangle": [
       "error",
       {
@@ -32,13 +22,30 @@
         "functions": "only-multiline"
       }
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react/jsx-fragments": ["error", "element"],
+    // Authorize double-quote use
+    "quotes": [
+      1,
+      "double",
+      {
+        "avoidEscape": true
+      }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "react/jsx-pascal-case": [
       1,
       {
         "allowAllCaps": false
       }
-    ]
+    ],
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

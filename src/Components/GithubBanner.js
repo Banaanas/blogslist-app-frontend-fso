@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 
 /* Inspired by : https://github.com/tholman/github-corners */

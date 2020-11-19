@@ -2,26 +2,27 @@
 // - Testing Router must have been set up in the Backend
 // (testingRouter.js - app.js)
 // - Backend must be running (start) in Test mode (NPM Script)
-// 2 - Cypress custom commands are defined in cypress/support/commands.js
-// 3 - Install Cypress ESLint Plugin activated it in the extends configuration
-// either in package.json or in .eslintrc.json (located in the Project's root directory)
+// 2 - Cypress CUSTOM COMMANDS are defined in cypress/support/commands.js
+// 3 - Install Cypress ESLint Plugin and activate it in the extends configuration
+// either in /package.json or in /.eslintrc.json
 // 4 - Cypress prefers function expressions over arrow functions :
-// To get this ESLint rule DISABLED ONLY FOR CYPRESS, create a .eslintrc.json
+// To get this ESLint rule DISABLED ONLY FOR CYPRESS, create a cypress/.eslintrc.json
 // IN THE CYPRESS DIRECTORY, then set up rules.
 
 // BLOGSLIST APP
-describe("Blogslist app", function () {
-  beforeEach(function () {
+describe("Blogslist app", function() {
+  beforeEach(function() {
     // Backend - 1 User / 0 Note
     cy.request("POST", "http://localhost:3001/api/testing/reset");
     const user = {
-      name: "Cyrilo Azul",
-      username: "Cyrilo",
-      password: "arcoiris",
+      name: "Banane Bleue",
+      username: "username",
+      password: "password",
+      passwordConfirmation: "password",
     };
     cy.request("POST", "http://localhost:3001/api/users/", user);
     // Front End
-    cy.visit("http://localhost:3000");
+    cy.visit("http://localhost:3000/login");
   });
 
   // FRONT PAGE OPEN
@@ -32,8 +33,8 @@ describe("Blogslist app", function () {
   // LOGIN SUCCESS
   it("Login succeeds with correct username and password", function () {
     cy.contains("LOGIN").click();
-    cy.get("[data-cy=username-input]").type("Cyrilo");
-    cy.get("[data-cy=password-input]").type("arcoiris");
+    cy.get("[data-cy=username-input]").type("username");
+    cy.get("[data-cy=password-input]").type("password");
     cy.get("[data-cy=login-button]").click();
 
     cy.contains("Cyrilo Azul logged in");

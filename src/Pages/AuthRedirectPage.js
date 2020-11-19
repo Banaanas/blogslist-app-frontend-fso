@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Heading } from "@chakra-ui/react";
 import styled from "@emotion/styled";
@@ -38,7 +37,7 @@ const StyledLink = styled(Link)`
 
 const AuthRedirectPage = () => {
   return (
-    <React.Fragment>
+    <>
       <GlobalContainer>
         <Heading
           size="lg"
@@ -51,7 +50,7 @@ const AuthRedirectPage = () => {
         <StyledLink to="/login">LOGIN</StyledLink>
       <SignupLink/>
       </GlobalContainer>
-    </React.Fragment>
+    </>
   );
 };
 

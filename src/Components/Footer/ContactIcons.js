@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { VscGithubInverted as GithubIcon } from "react-icons/vsc";
 import { IoMdMail as MailIcon } from "react-icons/io";

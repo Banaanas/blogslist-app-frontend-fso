@@ -1,4 +1,3 @@
-import React from "react";
 import { Redirect, Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -75,7 +74,7 @@ const Routes = () => {
         </Route>
 
         {/* Framer Motion - React Router Redirect - Issue
-          Wrapping the <Redirect /> component into a <motion /> component
+          Wrapping the <Redirect /> Component into a <motion /> Component
           with exit="undefined"
           --> https://github.com/framer/motion/issues/466
         */}

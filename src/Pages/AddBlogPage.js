@@ -1,4 +1,3 @@
-import React from "react";
 import { pageTransition, pageVariants } from "../styles/animations";
 import PageHeading from "../Components/PageHeading";
 import AddBlogForm from "../Components/Forms/AddBlogForm";

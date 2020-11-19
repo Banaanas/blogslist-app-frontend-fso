@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Heading } from "@chakra-ui/react";
 import { getBlogsAllUsers } from "../store/slices/blogsAllUsersSlice";
@@ -38,6 +38,7 @@ const HomePage = () => {
       initial="initial"
       animate="animate"
       exit="initial"
+      style={{ width: "100%" }}
     >
       <PageHeading>All Blogs</PageHeading>
       {isAuthenticated ? <AddBlogLink /> : null}

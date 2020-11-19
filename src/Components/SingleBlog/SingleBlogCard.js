@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouteMatch } from "react-router-dom";
 import { Heading, Link } from "@chakra-ui/react";
@@ -115,7 +115,7 @@ const SingleBlogCard = () => {
   if (blog === undefined) return null;
 
   return (
-    <React.Fragment>
+    <>
       <StyledCard>
         <StyledBlogContainer>
           <Heading
@@ -148,7 +148,7 @@ const SingleBlogCard = () => {
           </StyledBlogLink>
         </StyledBlogContainer>
       </StyledCard>
-    </React.Fragment>
+    </>
   );
 };
 

@@ -1,0 +1,13 @@
+/** CYPRESS FOLDER **/
+
+Those Cypress Tests were build for the previous version of the BlogsList App.
+Because the Component they are related to (Blog.js) is not used anymore,
+these Tests are no longer relevant.
+
+HOWEVER, these Tests are kept here as an example of what can be done with
+Cypress.
+
+They were heavily inspired from Part 5 of the FullStackOpen Course (2020) :
+https://fullstackopen.com/en/part5.
+
+NB: This Note also applies to React Testing Library (src/tests)

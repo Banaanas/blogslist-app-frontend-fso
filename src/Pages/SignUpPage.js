@@ -1,4 +1,3 @@
-import React from "react";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
 import SignUpForm from "../Components/Forms/SignUpForm";

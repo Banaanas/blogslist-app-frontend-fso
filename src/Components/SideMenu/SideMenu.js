@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FocusLock from "react-focus-lock";
 import styled from "@emotion/styled";
 import Burger from "./Burger";
@@ -21,7 +21,6 @@ const SideMenu = () => {
   useOnClickOutside(DOMRef, () => setMenuOpen(false));
 
   useEffect(() => {
-
     // handleResize - FUNCTION
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -38,7 +37,7 @@ const SideMenu = () => {
   }, []);
 
   return (
-    <React.Fragment>
+    <>
       <StyledDiv ref={DOMRef}>
         <FocusLock disabled={!isMenuOpen}>
           <Burger
@@ -53,7 +52,7 @@ const SideMenu = () => {
           />
         </FocusLock>
       </StyledDiv>
-    </React.Fragment>
+    </>
   );
 };
 

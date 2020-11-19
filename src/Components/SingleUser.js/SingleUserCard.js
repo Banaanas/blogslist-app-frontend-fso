@@ -1,4 +1,3 @@
-import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {
@@ -22,7 +21,7 @@ const SingleUserCard = () => {
   if (user === undefined) return null;
 
   return (
-    <React.Fragment>
+    <>
       <VStack
         spacing="1.5rem"
         mb={10}
@@ -75,7 +74,7 @@ const SingleUserCard = () => {
           </Heading>
         )}
       </VStack>
-    </React.Fragment>
+    </>
   );
 };
 

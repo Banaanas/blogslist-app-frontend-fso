@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,7 +37,7 @@ const MyProfilePageTable = () => {
   const dispatch = useDispatch();
 
   // Table Columns
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: "Title",
@@ -62,7 +62,7 @@ const MyProfilePageTable = () => {
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
           // Original Object (ID + values) is stored in row.original
-          return <React.Fragment>{row.values.likes}</React.Fragment>;
+          return <>{row.values.likes}</>;
         },
       },
       {
@@ -82,7 +82,7 @@ const MyProfilePageTable = () => {
           };
 
           return (
-            <React.Fragment>
+            <>
               <IconButton
                 aria-label="Remove Blog"
                 fontSize="1.5rem"
@@ -91,7 +91,7 @@ const MyProfilePageTable = () => {
                 icon={<StyledRemoveIcon />}
                 pos="static" // To make the Header overlap the IconButton
               />
-            </React.Fragment>
+            </>
           );
         },
       },
@@ -111,7 +111,7 @@ const MyProfilePageTable = () => {
   } = tableInstance;
 
   return (
-    <React.Fragment>
+    <>
       <StyledMyBlogsTable {...getTableProps()}>
         <caption>MY BLOGS</caption>
         <thead>
@@ -138,7 +138,7 @@ const MyProfilePageTable = () => {
           })}
         </tbody>
       </StyledMyBlogsTable>
-    </React.Fragment>
+    </>
   );
 };
 

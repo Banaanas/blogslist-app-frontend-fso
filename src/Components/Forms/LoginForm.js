@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "@emotion/styled";
 
 import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
@@ -67,7 +67,6 @@ const LoginForm = () => {
           fontSize="2rem"
           value={password}
           onChange={handlePasswordChange}
-          data-cy="password-input"
         >
           Password
         </FormLabel>

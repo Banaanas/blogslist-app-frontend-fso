@@ -1,4 +1,4 @@
-import React from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useTable } from "react-table";
@@ -24,7 +24,7 @@ const HomePageTable = () => {
     const sortedArr = [...arr];
 
     // Reverse Array to first display
-    sortedArr.reverse() //
+    sortedArr.reverse(); //
     sortedArr.sort((a, b) => (a.likes < b.likes ? 1 : -1));
     return sortedArr;
   };
@@ -35,7 +35,7 @@ const HomePageTable = () => {
   const data = [...sortedAllBlogs];
 
   // React-Table Columns
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: "Blog",
@@ -81,7 +81,7 @@ const HomePageTable = () => {
             dispatch(likeBlog(updatedBlogObject));
           };
           return (
-            <React.Fragment>
+            <>
               <IconButton
                 aria-label="Like Blog"
                 fontSize="1.5rem"
@@ -92,7 +92,7 @@ const HomePageTable = () => {
                 mr="1.5rem"
               />
               {row.values.likes}
-            </React.Fragment>
+            </>
           );
         },
       },
@@ -112,7 +112,7 @@ const HomePageTable = () => {
   } = tableInstance;
 
   return (
-    <React.Fragment>
+    <>
       <StyledTable {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -138,7 +138,7 @@ const HomePageTable = () => {
           })}
         </tbody>
       </StyledTable>
-    </React.Fragment>
+    </>
   );
 };
 

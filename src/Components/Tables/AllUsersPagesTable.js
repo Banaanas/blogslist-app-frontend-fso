@@ -1,4 +1,4 @@
-import React from "react";
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTable } from "react-table";
@@ -9,7 +9,7 @@ const AllUsersPagesTable = () => {
   const data = useSelector((state) => state.allUsers.data);
 
   // Table Columns
-  const columns = React.useMemo(
+  const columns = useMemo(
     () => [
       {
         Header: "Name",

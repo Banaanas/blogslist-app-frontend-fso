@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { FaOm as AumIcon } from "react-icons/fa";
 
@@ -19,13 +18,13 @@ const StyledSpan = styled.span`
 `;
 
 const SubFooter = () => (
-  <React.Fragment>
+  <>
     <StyledSpan>
       CyrilO | 2020 | Crafted with
       <StyledAumIcon />
       in France
     </StyledSpan>
-  </React.Fragment>
+  </>
 );
 
 export default SubFooter;

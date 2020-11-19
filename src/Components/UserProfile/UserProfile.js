@@ -1,6 +1,4 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import { Typography } from "@material-ui/core";
 import { Redirect, useRouteMatch } from "react-router-dom";
 import SingleUserCard from "../SingleUser.js/SingleUserCard";
 
@@ -19,7 +17,7 @@ const UserProfile = () => {
   if (allUsers.length === 0) return <Redirect to="/users" />;
 
   return (
-    <React.Fragment>
+    <>
       <Typography display={"block"} variant={"overline"}>
         {singleUser.name}
       </Typography>
@@ -27,7 +25,7 @@ const UserProfile = () => {
         {singleUser.username}
       </Typography>
       <SingleUserCard singleUser={singleUser} />
-    </React.Fragment>
+    </>
   );
 };
 

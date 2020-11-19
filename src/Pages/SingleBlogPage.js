@@ -1,4 +1,3 @@
-import React from "react";
 import { pageTransition, pageVariants } from "../styles/animations";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleBlogCard from "../Components/SingleBlog/SingleBlogCard";

@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -67,7 +66,7 @@ const NavBar = () => {
   );
 
   return (
-    <React.Fragment>
+    <>
       <StyledNav>
         <StyledNavLink exact to="/">
           HOME
@@ -88,7 +87,7 @@ const NavBar = () => {
           </StyledNavLink>
         )}
       </StyledNav>
-    </React.Fragment>
+    </>
   );
 };
 

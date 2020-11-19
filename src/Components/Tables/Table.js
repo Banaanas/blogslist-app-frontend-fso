@@ -1,4 +1,3 @@
-import React from "react";
 import { useTable } from "react-table";
 
 const Table = (tableColumns, tableData) => {
@@ -17,7 +16,7 @@ const Table = (tableColumns, tableData) => {
   } = tableInstance;
 
   return (
-    <React.Fragment>
+    <>
       <Table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -43,7 +42,7 @@ const Table = (tableColumns, tableData) => {
           })}
         </tbody>
       </Table>
-    </React.Fragment>
+    </>
   );
 };
 

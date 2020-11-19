@@ -2,10 +2,44 @@
   "name": "part7-03-blogslist-frontend-extension",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "cypress:open": "cypress open",
+    "eject": "react-scripts eject",
+    "server": "json-server -p3000 --watch db.json",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "test:e2e": "cypress run"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": "stylelint --fix",
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "dependencies": {
     "@chakra-ui/react": "^1.0.0",
     "@emotion/is-prop-valid": "^1.0.0",
-    "@emotion/react": "^11.0.0",
+    "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/jest-dom": "^5.11.6",
@@ -23,44 +57,18 @@
     "react-icons": "^3.11.0",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.4",
+    "react-scripts": "^4.0.0",
     "react-swipeable": "^6.0.0",
     "react-table": "^7.6.2",
     "redux-devtools-extension": "^2.13.8",
-    "web-vitals": "^0.2.4",
+    "web-vitals": "^1.0.1",
     "yup": "^0.29.3"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "json-server -p3001 --watch db.json",
-    "cypress:open": "cypress open",
-    "test:e2e": "cypress run"
-  },
-  "proxy": "http://localhost:3001",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "@testing-library/dom": "^7.26.6",
-    "@welldone-software/why-did-you-render": "^6.0.0-rc.1",
+    "@testing-library/dom": "^7.27.0",
     "babel-plugin-emotion": "^11.0.0",
     "cypress": "^5.6.0",
-    "eslint": "^6.6.0",
+    "eslint": "^7.13.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-cypress": "^2.11.2",
@@ -72,20 +80,19 @@
     "lint-staged": "^10.5.1",
     "prettier": "2.1.2",
     "regenerator-runtime": "^0.13.7",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix",
-    "*.{js,css,md}": "prettier --write"
+  "proxy": "http://localhost:3001",
+  "@comment scripts": {
+    "cypress:open": [
+      "Run Cypress tests using the graphical test runner"
+    ],
+    "test:e2e": [
+      "Run Cypress tests using with the command line"
+    ]
   }
 }

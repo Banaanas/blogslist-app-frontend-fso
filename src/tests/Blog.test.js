@@ -1,4 +1,3 @@
-import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { fireEvent, render } from "@testing-library/react";
 import Blog from "./Blog";
@@ -22,12 +21,12 @@ describe("<Blog /> Component", () => {
     );
     const blogLikes = component.getByText(/Likes/);
 
-    // Print the HTML rendered by the component to the console
+    // Print the HTML rendered by the Component to the console
     // component.debug();
 
     // Blog title must be visible
     expect(blogTitle).toBeVisible();
-    // Print a smaller part of the HTML rendered by the component to the console
+    // Print a smaller part of the HTML rendered by the Component to the console
     // console.log(prettyDOM(blogTitle));
 
     // Blog author, URL and like must NOT be visible

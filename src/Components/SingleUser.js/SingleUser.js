@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 const SingleUser = () => {
@@ -70,7 +70,7 @@ const SingleUser = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <form onSubmit={handleCreateBlog} data-testid="form">
         <div>
           <label htmlFor="title"> Title </label>
@@ -102,7 +102,7 @@ const SingleUser = () => {
         </div>
         <button type="submit">SAVE</button>
       </form>
-    </React.Fragment>
+    </>
   );
 };
 

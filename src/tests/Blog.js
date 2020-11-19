@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useToast } from "@chakra-ui/react";
-import displayToast from "../src/utils/displayToast";
+import displayToast from "../utils/displayToast";
+import displayServerErrorToast from "../utils/displayServerErrorToast";
+import { likeBlog } from "../store/slices/blogsAllUsersSlice";
+import { deleteBlogSingleUser } from "../store/slices/blogsSingleUserSlice";
 
 const Blog = ({ blog }) => {
   // USEDISPATCH - REDUX STATE
@@ -21,25 +24,21 @@ const Blog = ({ blog }) => {
   const handleAddLike = () => {
     const updatedLikeNumber = blog.likes + 1;
 
-    const updatedBlog = {
+    const updatedBlogObject = {
       ...blog,
       likes: updatedLikeNumber,
     };
 
     try {
       // Like Blog - Dispatch - Redux State
-      dispatch(actionCreators.likeBlog(blog.id, updatedBlog));
-      toast({
-        title: "Login Successful.",
-        description: "You are connected to the Application.",
-        status: "success",
-      });
-    } catch (e) {
+      dispatch(likeBlog(updatedBlogObject, updatedLikeNumber));
       displayToast(
-        "Login Successful.",
-        "You are connected to the Application.",
+        "🙂 Successful Vote 👍🏼",
+        "One more Like for this Blog.",
         "success",
       );
+    } catch (e) {
+      displayServerErrorToast();
     }
   };
 
@@ -47,10 +46,14 @@ const Blog = ({ blog }) => {
   const handleDeleteBlog = () => {
     try {
       // Delete Blog - Dispatch - Redux State
-      dispatch(actionCreators.deleteBlog(blog.id));
+      dispatch(deleteBlogSingleUser(blog.id));
+      displayToast(
+        "Delete Succeeded.",
+        "🗑️ Your Blog has been successfully deleted 🗑️",
+        "success",
+      );
     } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e);
+      displayServerErrorToast();
     }
   };
 
@@ -60,7 +63,7 @@ const Blog = ({ blog }) => {
 
   // BLOG DETAILS - FUNCTION
   const blogDetails = () => (
-    <React.Fragment>
+    <>
       <div style={hideWhenVisible}>
         <button onClick={toggleVisible}>View</button>
       </div>
@@ -74,7 +77,7 @@ const Blog = ({ blog }) => {
         </div>
         <button onClick={handleDeleteBlog}>REMOVE</button>
       </div>
-    </React.Fragment>
+    </>
   );
 
   return (

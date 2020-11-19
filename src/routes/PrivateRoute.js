@@ -1,4 +1,3 @@
-import React from "react";
 import { Redirect, Route, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -32,7 +31,7 @@ const PrivateRoute = ({ path, component, ...rest }) => {
       />
     </motion.div>
     /* Framer Motion - React Router Redirect - Issue
-       Wrapping the <Redirect /> component into a <motion /> component
+       Wrapping the <Redirect /> Component into a <motion /> Component
        with exit="undefined"
        --> https://github.com/framer/motion/issues/466 */
   );
