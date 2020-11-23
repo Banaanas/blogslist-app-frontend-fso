@@ -14,7 +14,9 @@ const HomePage = () => {
   const isLoading = useSelector((state) => state.allUsers.isLoading);
 
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const isAuthenticated = useSelector((state) => state.userAuthentication.isAuthenticated);
+  const isAuthenticated = useSelector(
+    (state) => state.userAuthentication.isAuthenticated,
+  );
 
   // ALL BLOGS ALL USERS - REDUX STATE
   const allBlogs = useSelector((state) => state.blogsAllUsers.data);
@@ -58,6 +60,61 @@ const HomePage = () => {
           No Blogs yet
         </Heading>
       )}
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+        blanditiis impedit nobis? Deserunt natus quae quo? Ab accusantium
+        blanditiis harum inventore iure maxime nihil, quia, quibusdam
+        repudiandae rerum voluptatem voluptates?
+      </div>
     </StyledPageMain>
   );
 };

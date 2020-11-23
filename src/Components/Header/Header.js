@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useThrottledFn, useWindowScroll } from "beautiful-react-hooks";
 import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
@@ -19,9 +20,6 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 5.5rem;
   background-color: ${({ theme }) => theme.colors.secondary.main};
-/*
-  box-shadow: 0 0 10px 0 ${({ theme }) => theme.colors.primary.dark};
-*/
   box-shadow: ${(props) => props.boxShadow};
 `;
 
@@ -52,23 +50,27 @@ const StyledButton = styled.button`
 
 const Header = () => {
   // STATE - HEADER CSS BOX-SHADOW
-  const [boxShadow, setboxShadow] = useState("none");
+  const [boxShadow, setBoxShadow] = useState("none");
 
   // Emotion Theme
   const theme = useTheme();
 
-  // Throttle Scroll Event with requestAnimationFrame() - Performance Issue
-  useEffect(() => {
-    const handleScroll = () => {
-      // Header Drop Shadow when Scroll - No Drop Shadow on Top
-      if (window.pageYOffset > 1) {
-        setboxShadow(`0 0 10px 0 ${theme.colors.primary.dark}`);
-      } else {
-        setboxShadow("none");
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-  }, [theme.colors.primary.dark]);
+  // useThrottledFn - CUSTOM HOOK
+  // Throttle the callback function to optimize  component performances by
+  // preventing too many useless renders
+  const onWindowScrollHandler = useThrottledFn(() => {
+    // Header Drop Shadow when Scroll - No Drop Shadow on Top
+    if (window.pageYOffset > 1) {
+      setBoxShadow(`0 0 10px 0 ${theme.colors.primary.dark}`);
+      console.log(window.pageYOffset);
+    } else {
+      setBoxShadow("none");
+    }
+  }, 200);
+
+  // useWindowScroll - CUSTOM HOOK
+  // Scroll Event Listener (Add AND Cleanup Event)
+  useWindowScroll(onWindowScrollHandler);
 
   return (
     <StyledHeader boxShadow={boxShadow}>

@@ -30,11 +30,13 @@ const StyledForm = styled(Form)`
   box-shadow: -3px 0 10px 0 ${({ theme }) => theme.colors.primary.dark};
 
   label {
+    margin-bottom: -0.3rem;
     font-weight: bold;
     font-size: 1.5rem;
   }
 
   input {
+    margin-bottom: 0.5rem;
     font-size: 1.2rem;
 
     &::placeholder {
@@ -86,8 +88,7 @@ const SignUpForm = () => {
       history.push("/my-profile");
     } catch (e) {
       // Display Warning Toast - Username has to be unique
-      const errorWords =
-        "expected `username` to be unique";
+      const errorWords = "expected `username` to be unique";
 
       // Check if 1 - e.response.data.error; 2 - e.response.data.error includes(errorWords)
       if (e.response.data.error && e.response.data.error.includes(errorWords)) {
@@ -120,7 +121,6 @@ const SignUpForm = () => {
         handleSignUp(values);
         setSubmitting(false); // Set Submitting to false - Submit Chakra UI Button (isLoading)
         resetForm(formikInitialValues); // Reset Form Initial Values
-        // history.push("/my-profile");
       }}
     >
       {({ isValid, errors, touched, isSubmitting }) => (

@@ -2,6 +2,24 @@ import "@testing-library/jest-dom/extend-expect";
 import { fireEvent, render } from "@testing-library/react";
 import Blog from "./Blog";
 
+/** TESTS FOLDER **/
+
+/*Those Tests were build for the previous version of the BlogsList App.
+  Because the Component they are related to (Blog.js) is not used anymore,
+  these Tests are no longer relevant.
+
+  HOWEVER, these Tests are kept here as an example of what can be done with
+  React Testing Library.
+
+  They were heavily inspired from Part 5 of the FullStackOpen Course (2020) :
+  https://fullstackopen.com/en/part5.
+
+  NB: This Note also applies to Cypress Tests (src/cypress)*/
+
+// IMPORTANT : Using data-testid query should ALWAYS be preferred over other selectors
+// whenever it is possible - https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
+// - https://testing-library.com/docs/dom-testing-library/api-queries/
+
 describe("<Blog /> Component", () => {
   const blog = {
     title: "Les Fleurs du Mal",
@@ -24,12 +42,12 @@ describe("<Blog /> Component", () => {
     // Print the HTML rendered by the Component to the console
     // component.debug();
 
-    // Blog title must be visible
+    // Blog Title must be visible
     expect(blogTitle).toBeVisible();
     // Print a smaller part of the HTML rendered by the Component to the console
     // console.log(prettyDOM(blogTitle));
 
-    // Blog author, URL and like must NOT be visible
+    // Blog Author, URL and Like must NOT be visible
     expect(blogAuthor).not.toBeVisible();
     expect(blogURL).not.toBeVisible();
     expect(blogLikes).not.toBeVisible();

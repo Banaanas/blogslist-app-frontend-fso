@@ -1,11 +1,18 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import { useToast } from "@chakra-ui/react";
-import displayToast from "../utils/displayToast";
-import displayServerErrorToast from "../utils/displayServerErrorToast";
-import { likeBlog } from "../store/slices/blogsAllUsersSlice";
-import { deleteBlogSingleUser } from "../store/slices/blogsSingleUserSlice";
+import displayToast from "../../utils/displayToast";
+import displayServerErrorToast from "../../utils/displayServerErrorToast";
+import { likeBlog } from "../../store/slices/blogsAllUsersSlice";
+import { deleteBlogSingleUser } from "../../store/slices/blogsSingleUserSlice";
+
+/*This Component (Blog.js) and the related Tests were build for the previous version of the BlogsList App.
+  None of them are used anymore; they are no longer relevant.
+
+  HOWEVER, they are kept here as an example of what can be done with
+  React Testing Library.
+
+  These Tests were heavily inspired from Part 5 of the FullStackOpen Course (2020) :
+  https://fullstackopen.com/en/part5. */
 
 const Blog = ({ blog }) => {
   // USEDISPATCH - REDUX STATE
@@ -16,9 +23,6 @@ const Blog = ({ blog }) => {
 
   // TOGGLE VISIBLE STATE - FUNCTION
   const toggleVisible = () => setVisible(!visible);
-
-  // Chakra-UI Toast
-  const toast = useToast();
 
   // ADD LIKE - FUNCTION
   const handleAddLike = () => {
@@ -86,22 +90,6 @@ const Blog = ({ blog }) => {
       {blogDetails()}
     </div>
   );
-};
-
-// PROPTYPES
-Blog.propTypes = {
-  blog: PropTypes.object.isRequired,
-};
-
-// PROPTYPES
-Blog.propTypes = {
-  blog: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    likes: PropTypes.number.isRequired,
-    id: PropTypes.string.isRequired,
-  }),
 };
 
 export default Blog;

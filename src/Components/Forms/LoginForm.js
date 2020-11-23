@@ -42,6 +42,8 @@ const LoginForm = () => {
 
     // userLogin - Async Function
     await userLogin(username, password);
+
+    // Then, LoginPage is Redirected to MyProfilePage by Router
   };
 
   return (

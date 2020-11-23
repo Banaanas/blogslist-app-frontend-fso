@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { useThrottledFn, useWindowResize } from "beautiful-react-hooks";
 import FocusLock from "react-focus-lock";
 import styled from "@emotion/styled";
 import Burger from "./Burger";
@@ -20,21 +21,19 @@ const SideMenu = () => {
   // Close Side SideMenu when click outside the Ref- custom Hook
   useOnClickOutside(DOMRef, () => setMenuOpen(false));
 
-  useEffect(() => {
-    // handleResize - FUNCTION
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      if (window.innerWidth > 710) setMenuOpen(false);
-    };
+  // useThrottledFn - CUSTOM HOOK
+  // Throttle the callback function to optimize  component performances by
+  // preventing too many useless renders
+  const onWindowResizeHandler = useThrottledFn(() => {
+    // Close SideMenu if it was Open
+    setWidth(window.innerWidth);
+    if (width > 710) setMenuOpen(false);
+    console.log("I am throttling", width);
+  }, 200);
 
-    // Add Event Listener - Resize
-    window.addEventListener("resize", handleResize);
-
-    // Remove Event Listener - useEffect Clean Up
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  // useWindowResize - CUSTOM HOOK
+  // Resize Event Listener (Add AND Cleanup Event)
+  useWindowResize(onWindowResizeHandler);
 
   return (
     <>

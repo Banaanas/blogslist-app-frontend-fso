@@ -6,10 +6,20 @@ import PageHeading from "../Components/PageHeading";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { getAllUsers } from "../store/slices/allUsersSlice";
 import Spinner from "../Components/Spinner";
+import { Heading } from "@chakra-ui/react";
+import SignupLink from "../Components/SignupLink";
 
 const AllUsersPage = () => {
   // ISLOADING - REDUX STATE
   const isLoading = useSelector((state) => state.allUsers.isLoading);
+
+  // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
+  const isAuthenticated = useSelector(
+    (state) => state.userAuthentication.isAuthenticated,
+  );
+
+  //  USERS - REDUX STATE
+  const allUsers = useSelector((state) => state.allUsers.data);
 
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
@@ -29,7 +39,26 @@ const AllUsersPage = () => {
       exit="initial"
     >
       <PageHeading>All Users</PageHeading>
-      {isLoading ? <Spinner /> : <AllUsersPagesTable />}
+      {isLoading ? <Spinner /> : null}
+
+      {allUsers.length > 0 ? (
+        <AllUsersPagesTable />
+      ) : (
+        <>
+          <Heading
+            as="h2"
+            size="md"
+            p={5}
+            bg="primary.dark"
+            textAlign="center"
+            textTransform="uppercase"
+            borderRadius={5}
+          >
+            No User registered yet
+          </Heading>
+          {isAuthenticated ? null : <SignupLink />}
+        </>
+      )}
     </StyledPageMain>
   );
 };

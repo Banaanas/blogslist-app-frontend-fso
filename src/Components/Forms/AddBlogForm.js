@@ -108,6 +108,7 @@ const AddBlogForm = () => {
                   placeholder="Les Fleurs du Mal"
                   size="lg"
                   bg="secondary.light"
+                  data-cy="new-blog-title-input"
                 />
                 {/* If this field has been touched, and it contains an error,
                 display it */}
@@ -132,6 +133,7 @@ const AddBlogForm = () => {
                   placeholder="Charles Baudelaire"
                   size="lg"
                   bg="secondary.light"
+                  data-cy="new-blog-author-input"
                 />
 
                 {errors.author && touched.author ? (
@@ -154,6 +156,7 @@ const AddBlogForm = () => {
                   placeholder="https://www.fleursdumal.fr"
                   size="lg"
                   bg="secondary.light"
+                  data-cy="new-blog-url-input"
                 />
                 {errors.url && touched.url ? (
                   <FormErrorMessage fontSize="1.5rem">
@@ -172,6 +175,7 @@ const AddBlogForm = () => {
             bg="primary.dark"
             color="secondary.dark"
             isLoading={isSubmitting}
+            data-cy="add-blog-button"
           >
             ADD
           </Button>

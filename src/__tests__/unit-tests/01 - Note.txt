@@ -1,0 +1,11 @@
+/** TESTS FOLDER **/
+
+These Tests were build for the previous version of the BlogsList App.
+Because the Components they are related to are not used anymore,
+these Tests are no longer relevant.
+
+HOWEVER, they were kept here as an example of what can be done with Jest and
+React Testing Library.
+
+They were heavily inspired from Part 5 of the FullStackOpen Course (2020) :
+https://fullstackopen.com/en/part5.

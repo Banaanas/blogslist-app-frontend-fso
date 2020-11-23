@@ -8,6 +8,13 @@ import { IconButton } from "@chakra-ui/react";
 import StyledTable from "../StyledComponents/StyledTable";
 import { likeBlog } from "../../store/slices/blogsAllUsersSlice";
 
+const StyledHomePageTable = styled(StyledTable)`
+  /* First Cell on each Row */
+  td:first-of-type {
+    text-align: left;
+  }
+`;
+
 const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;
 `;
@@ -45,7 +52,9 @@ const HomePageTable = () => {
           // Other values are accessed through row.values.[nameofthevalue]
 
           return (
-            <Link to={`/blogs/${row.original.id}`}>{row.values.title}</Link>
+            <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
+              {row.values.title}
+            </Link>
           );
         },
       },
@@ -113,15 +122,15 @@ const HomePageTable = () => {
 
   return (
     <>
-      <StyledTable {...getTableProps()}>
+      <StyledHomePageTable {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-              ))}
-            </tr>
-          ))}
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+            ))}
+          </tr>
+        ))}
         </thead>
         <tbody {...getTableBodyProps()}>
           {rows.map((row) => {
@@ -137,7 +146,7 @@ const HomePageTable = () => {
             );
           })}
         </tbody>
-      </StyledTable>
+      </StyledHomePageTable>
     </>
   );
 };

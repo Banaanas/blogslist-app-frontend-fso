@@ -1,10 +1,7 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-const SingleUser = () => {
-  // USEDISPATCH - REDUX STATE
-  const dispatch = useDispatch();
-
+const UserPage = ({ createBlog, displayMessage }) => {
   // STATE - NEW BLOG
   const [newBlogTitle, setNewBlogTitle] = useState("");
   const [newBlogAuthor, setNewBlogAuthor] = useState("");
@@ -25,34 +22,22 @@ const SingleUser = () => {
     setNewBlogURL(event.target.value);
   };
 
+  // NOTIFICATION MESSAGE - FUNCTION
+  const notificationMessage = (message) => {
+    displayMessage(message);
+  };
+
   // CREATE BLOG - FUNCTION
   const handleCreateBlog = (event) => {
     event.preventDefault();
 
     // Validation constraints
-    if (newBlogTitle.length < 5) {
-      return dispatch(
-        actionCreators.displayNotification(
-          "Titles must be at least 5 characters long",
-        ),
-      );
-    }
-
-    if (newBlogAuthor.length < 5) {
-      return dispatch(
-        actionCreators.displayNotification(
-          "Author must be at least 5 characters long",
-        ),
-      );
-    }
-
-    if (newBlogURL.length < 5) {
-      return dispatch(
-        actionCreators.displayNotification(
-          "URL must be at least 5 characters long",
-        ),
-      );
-    }
+    if (newBlogTitle.length < 5)
+      return notificationMessage("Titles must be at least 5 characters long");
+    if (newBlogAuthor.length < 5)
+      return notificationMessage("Author must be at least 5 characters long");
+    if (newBlogURL.length < 5)
+      return notificationMessage("URL must be at least 5 characters long");
 
     const blogObject = {
       title: newBlogTitle,
@@ -60,8 +45,7 @@ const SingleUser = () => {
       url: newBlogURL,
     };
 
-    // Add Blog - Dispatch - Redux State
-    dispatch(actionCreators.addBlog(blogObject));
+    createBlog(blogObject);
 
     // Reinitialize Inputs
     setNewBlogTitle("");
@@ -70,7 +54,7 @@ const SingleUser = () => {
   };
 
   return (
-    <>
+    <React.Fragment>
       <form onSubmit={handleCreateBlog} data-testid="form">
         <div>
           <label htmlFor="title"> Title </label>
@@ -83,6 +67,7 @@ const SingleUser = () => {
         </div>
         <div>
           <label htmlFor="author"> Author </label>
+
           <input
             id="author"
             value={newBlogAuthor}
@@ -101,8 +86,14 @@ const SingleUser = () => {
         </div>
         <button type="submit">SAVE</button>
       </form>
-    </>
+    </React.Fragment>
   );
 };
 
-export default SingleUser;
+// PROPTYPES
+UserPage.propTypes = {
+  createBlog: PropTypes.func.isRequired,
+  displayMessage: PropTypes.func.isRequired,
+};
+
+export default UserPage;

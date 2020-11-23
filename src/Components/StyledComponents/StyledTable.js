@@ -20,6 +20,7 @@ const StyledTable = styled.table`
     text-overflow: ellipsis;
   }
 
+  /* Table Cells */
   td {
     color: ${({ theme }) => theme.colors.primary.dark};
     word-break: break-word;
@@ -78,7 +79,7 @@ const StyledTable = styled.table`
       color: ${({ theme }) => theme.colors.primary.dark};
       font-size: 1.8rem;
       transform: scale(1);
-      opacity:1;
+      opacity: 1;
       transition: transform, opacity, 200ms ease;
     }
 
