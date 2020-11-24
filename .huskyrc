@@ -1,6 +1,6 @@
 {
   "hooks": {
     "pre-commit": "lint-staged",
-    "pre-push": "npm run test && npm run test:e2e"
+    "pre-push": "npx sort-package-json && npm run test && npm run test:e2e"
   }
 }

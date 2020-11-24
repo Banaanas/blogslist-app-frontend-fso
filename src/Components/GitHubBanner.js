@@ -13,10 +13,7 @@ const StyledDiv = styled.div`
     right: 0;
     color: floralwhite;
     border: 0;
-/*
     fill: ${({ theme }) => theme.colors.primary.dark};
-*/
-    mix-blend-mode: darken;
   }
 
   .octo-arm {
@@ -51,7 +48,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-const GithubBanner = () => {
+const GitHubBanner = () => {
   return (
     <StyledDiv>
       <a
@@ -79,4 +76,4 @@ const GithubBanner = () => {
   );
 };
 
-export default GithubBanner;
+export default GitHubBanner;

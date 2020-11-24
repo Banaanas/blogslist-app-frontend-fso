@@ -28,7 +28,6 @@ const SideMenu = () => {
     // Close SideMenu if it was Open
     setWidth(window.innerWidth);
     if (width > 710) setMenuOpen(false);
-    console.log("I am throttling", width);
   }, 200);
 
   // useWindowResize - CUSTOM HOOK

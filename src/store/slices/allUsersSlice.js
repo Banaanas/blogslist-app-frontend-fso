@@ -4,6 +4,8 @@ import displayServerErrorToast from "../../utils/displayServerErrorToast";
 
 // ALL USERS - ASYNC THUNK
 const getAllUsers = createAsyncThunk(
+  // The payloadCreator function needs 2 arguments, even is the first one is not used
+  // (in this case, "payload")
   "allUsers/getAllUsers",
   async (payload, { rejectWithValue }) => {
     try {

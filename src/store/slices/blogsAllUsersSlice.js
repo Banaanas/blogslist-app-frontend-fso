@@ -4,6 +4,8 @@ import displayToast from "../../utils/displayToast";
 import displayServerErrorToast from "../../utils/displayServerErrorToast";
 
 // ALL BLOGS ALL USERS - ASYNC THUNK
+// The payloadCreator function needs 2 arguments, even is the first one is not used
+// (in this case, "payload")
 const getBlogsAllUsers = createAsyncThunk(
   "blogsAllUsers/getBlogsAllUsers",
   async (payload, { rejectWithValue }) => {
@@ -71,7 +73,7 @@ const blogsAllUsersSlice = createSlice({
       );
     },
     [likeBlog.rejected]: () => {
-      displayServerErrorToast()
+      displayServerErrorToast();
     },
   },
 });

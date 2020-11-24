@@ -3,12 +3,19 @@
     /* "airbnb",
      "airbnb/hooks",*/
     "plugin:cypress/recommended",
+    "plugin:eslint-comments/recommended",
     "plugin:jsx-a11y/recommended",
     "prettier",
     "prettier/react",
     "react-app"
   ],
-  "plugins": ["cypress", "jest", "jsx-a11y"],
+  "plugins": [
+    "cypress",
+    "jest",
+    "jest-formatting",
+    "jsx-a11y",
+    "testing-library"
+  ],
   "rules": {
     "comma-dangle": [
       "error",

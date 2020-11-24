@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
-import { VscGithubInverted as GithubIcon } from "react-icons/vsc";
+import { VscGithubInverted as GitHubIcon } from "react-icons/vsc";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { ImLinkedin as LinkedInIcon } from "react-icons/im";
-import { HiOutlineGlobeAlt as PersonalWebsiteIcon } from "react-icons/hi";
+import { HiOutlineEmojiHappy as PersonalWebsiteIcon } from "react-icons/hi";
 
 const StyledSocialIconsContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const StyledSocialIconsContainer = styled.div`
     font-size: 1.5rem;
     background-color: ${({ theme }) => theme.colors.secondary.main};
     transform: scale(1);
-    opacity: .9;
+    opacity: 0.9;
     transition: transform, opacity, 200ms ease;
   }
 
@@ -35,18 +35,21 @@ const ContactIcons = () => (
       href="https://cyrilo.dev"
       target="_blank"
       rel="noopener noreferrer"
+      title="Personal Website"
     >
       <PersonalWebsiteIcon />
     </a>{" "}
     <a
-      aria-label="Github Profile Link"
+      aria-label="GitHub Profile Link"
       href="https://github.com/Banaanas"
       target="_blank"
       rel="noopener noreferrer"
+      title="GitHub Profile"
     >
-      <GithubIcon />
+      <GitHubIcon />
     </a>
-    <a aria-label="Cyrilo Dev Mail" href="mailto:cyrilodev@gmail.com">
+    <a aria-label="Cyrilo Dev Mail" href="mailto:cyrilodev@gmail.com"
+       title="cyrilodev@gmail.com">
       <MailIcon />
     </a>
     <a
@@ -54,6 +57,7 @@ const ContactIcons = () => (
       href="https://linkedin.com"
       target="_blank"
       rel="noopener noreferrer"
+      title="LinkedIn"
     >
       <LinkedInIcon />
     </a>

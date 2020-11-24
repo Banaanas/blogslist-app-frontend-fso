@@ -9,7 +9,7 @@ import Footer from "./Components/Footer/Footer";
 import { getAuthenticatedUser } from "./store/slices/AuthenticationSlice";
 import { getAllUsers } from "./store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
-import GithubBanner from "./Components/GithubBanner";
+import GitHubBanner from "./Components/GitHubBanner";
 import userLogout from "./utils/userLogout";
 import displayToast from "./utils/displayToast";
 
@@ -75,7 +75,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <GithubBanner />
+      <GitHubBanner />
       <Routes />
       <Footer />
     </>
