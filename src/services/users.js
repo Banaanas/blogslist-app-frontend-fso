@@ -27,4 +27,4 @@ const getUser = async (userID) => {
   return response.data;
 };
 
-export default { getAllUsers, getUser, setToken };
+export { getAllUsers, getUser, setToken };
