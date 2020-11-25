@@ -10,10 +10,8 @@ const PageHeading = (props) => {
       textTransform="uppercase"
       textAlign="center"
       letterSpacing="1rem"
-      /* eslint-disable react/jsx-props-no-spreading */
       {...props}
     >
-      {/* eslint-disable-next-line react/destructuring-assignment */}
       {props.children}
     </Heading>
   );
