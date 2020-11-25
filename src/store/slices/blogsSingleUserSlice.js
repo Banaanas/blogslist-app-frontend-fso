@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import blogsService from "../../services/blogs";
-import usersService from "../../services/users";
+import * as blogsService from "../../services/blogs";
+import * as usersService from "../../services/users";
 import displayServerErrorToast from "../../utils/displayServerErrorToast";
 import displayToast from "../../utils/displayToast";
 

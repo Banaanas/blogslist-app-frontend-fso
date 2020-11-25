@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import blogService from "./services/blogs";
-import userService from "./services/users";
+import * as blogService from "./services/blogs";
+import * as userService from "./services/users";
 import Routes from "./routes/routes";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";

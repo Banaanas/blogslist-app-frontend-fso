@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 
 const UserPage = ({ createBlog, displayMessage }) => {
   // STATE - NEW BLOG
@@ -88,12 +87,6 @@ const UserPage = ({ createBlog, displayMessage }) => {
       </form>
     </React.Fragment>
   );
-};
-
-// PROPTYPES
-UserPage.propTypes = {
-  createBlog: PropTypes.func.isRequired,
-  displayMessage: PropTypes.func.isRequired,
 };
 
 export default UserPage;

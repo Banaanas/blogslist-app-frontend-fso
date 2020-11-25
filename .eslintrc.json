@@ -1,7 +1,7 @@
 {
   "extends": [
-    /* "airbnb",
-     "airbnb/hooks",*/
+    "airbnb",
+    "airbnb/hooks",
     "plugin:cypress/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:jsx-a11y/recommended",
@@ -13,7 +13,6 @@
     "cypress",
     "jest",
     "jest-formatting",
-    "jsx-a11y",
     "testing-library"
   ],
   "rules": {
@@ -38,6 +37,8 @@
         "avoidEscape": true
       }
     ],
+    // Disable forbid-prop-types rule
+    "react/prop-types": 0,
     "react/jsx-filename-extension": [
       1,
       {

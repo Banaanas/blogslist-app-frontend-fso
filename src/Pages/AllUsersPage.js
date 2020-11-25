@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Heading } from "@chakra-ui/react";
 import { pageTransition, pageVariants } from "../styles/animations";
 import AllUsersPagesTable from "../Components/Tables/AllUsersPagesTable";
 import PageHeading from "../Components/PageHeading";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { getAllUsers } from "../store/slices/allUsersSlice";
 import Spinner from "../Components/Spinner";
-import { Heading } from "@chakra-ui/react";
 import SignupLink from "../Components/SignupLink";
 
 const AllUsersPage = () => {

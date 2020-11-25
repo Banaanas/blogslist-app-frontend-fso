@@ -58,7 +58,7 @@ const blogDelete = async (id) => {
   return response.data;
 };
 
-export default {
+export {
   setToken,
   getBlogsAllUsers,
   getBlog,
