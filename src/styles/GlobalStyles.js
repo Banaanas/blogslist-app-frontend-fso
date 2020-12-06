@@ -23,12 +23,13 @@ const GlobalStyles = () => {
            stay the same, if User changes Default Font Size. But Zoom is still
            possible, because of REM unit use through the App */
         }
+
         body {
-        min-width: 320px;
+          min-width: 320px;
           height: 100%;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-            Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-            "Segoe UI Symbol";
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
         }
 
         #root {

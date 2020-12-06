@@ -6,6 +6,7 @@
 // Todo - Change password for backend DBs
 // Todo - Verify passwords and .gitignore
 // Todo - ReadMe
+// Todo - Change HTML meta
 
 // Todo - AirBnb Config in .eslintrc.json has been disabled
 // Todo - Eslint Import has been added to package.json

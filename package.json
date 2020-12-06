@@ -28,9 +28,6 @@
       "last 1 safari version"
     ]
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "dependencies": {
     "@chakra-ui/react": "^1.0.1",
     "@emotion/is-prop-valid": "^1.0.0",

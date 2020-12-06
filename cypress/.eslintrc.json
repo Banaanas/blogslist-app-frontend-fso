@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "cypress"
+  ],
+  "rules": {
+    "prefer-arrow-callback": 0
+  }
+}

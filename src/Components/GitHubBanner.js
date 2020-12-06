@@ -23,6 +23,7 @@ const StyledDiv = styled.div`
   .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
+
   @keyframes octocat-wave {
     0%,
     100% {
@@ -52,11 +53,11 @@ const GitHubBanner = () => {
   return (
     <StyledDiv>
       <a
-        href="https://github.com/Banaanas"
+        href="https://github.com/Banaanas/blogslist-app-frontend-fso"
         className="github-corner"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="View source on GitHub"
+        aria-label="View Source on GitHub"
       >
         <svg width={80} height={80} viewBox="0 0 250 250" aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" />
