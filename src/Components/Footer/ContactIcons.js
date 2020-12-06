@@ -48,8 +48,8 @@ const ContactIcons = () => (
     >
       <GitHubIcon />
     </a>
-    <a aria-label="Cyrilo Dev Mail" href="mailto:cyrilodev@gmail.com"
-       title="cyrilodev@gmail.com">
+    <a aria-label="Cyrilo Dev Mail" href="mailto:cyrilo.dev@gmail.com"
+       title="cyrilo.dev@gmail.com">
       <MailIcon />
     </a>
     <a
