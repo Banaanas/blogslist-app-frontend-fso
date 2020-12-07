@@ -7,8 +7,7 @@ const StyledLink = styled(Link)`
   padding: 0.5rem;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
-  font-size: .1rem;
-  font-style: italic;
+  font-size: 1rem !important;
   text-align: center;
   background-color: floralwhite;
   border: 5px solid ${({ theme }) => theme.colors.primary.dark};
