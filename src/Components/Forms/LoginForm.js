@@ -19,8 +19,9 @@ const StyledForm = styled.form`
 const LoginForm = () => {
 
   // STATE - LOGIN
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  // New Users can test the App with test-account and password as initial value
+  const [username, setUsername] = useState("test-account");
+  const [password, setPassword] = useState("password");
 
   // SET USERNAME LOGIN - FUNCTION
   const handleUsernameChange = (event) => {

@@ -1,7 +1,7 @@
 import { pageTransition, pageVariants } from "../styles/animations";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleBlogCard from "../Components/SingleBlog/SingleBlogCard";
-import BackButton from "../Components/BackButton";
+import HomePageButton from "../Components/HomePageButton";
 
 const SingleBlogPage = () => {
   return (
@@ -12,7 +12,7 @@ const SingleBlogPage = () => {
       animate="animate"
       exit="initial"
     >
-      <BackButton />
+      <HomePageButton />
       <SingleBlogCard />
     </StyledPageMain>
   );

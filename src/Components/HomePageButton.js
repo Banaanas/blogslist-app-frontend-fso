@@ -2,11 +2,11 @@ import { useHistory } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-const BackButton = () => {
+const HomePageButton = () => {
   const history = useHistory();
   return (
     <Button
-      onClick={() => history.goBack()}
+      onClick={() => history.push("/")}
       aria-label="Back to previous page"
       leftIcon={<IoMdArrowRoundBack />}
       variant="outline"
@@ -20,4 +20,4 @@ const BackButton = () => {
   );
 };
 
-export default BackButton;
+export default HomePageButton;

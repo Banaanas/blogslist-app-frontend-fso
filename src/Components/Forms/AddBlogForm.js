@@ -76,9 +76,9 @@ const AddBlogForm = () => {
   };
 
   const formikInitialValues = {
-    title: "Une Saison en Enfer",
-    author: "Rimbaud",
-    url: "https://saisonenenfer.fr",
+    title: "",
+    author: "",
+    url: "",
   };
 
   return (

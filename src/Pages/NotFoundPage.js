@@ -2,7 +2,7 @@ import { Heading, Icon } from "@chakra-ui/react";
 import { RiErrorWarningFill as NotFoundIcon } from "react-icons/ri";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
-import BackButton from "../Components/BackButton";
+import HomePageButton from "../Components/HomePageButton";
 
 const NotFoundPage = () => {
   return (
@@ -13,7 +13,7 @@ const NotFoundPage = () => {
       animate="animate"
       exit="initial"
     >
-      <BackButton />
+      <HomePageButton />
       <Icon as={NotFoundIcon} boxSize={40} />
       <Heading> NOT FOUND</Heading>
     </StyledPageMain>

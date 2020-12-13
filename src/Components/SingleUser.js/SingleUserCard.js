@@ -1,5 +1,5 @@
 import { useRouteMatch } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Avatar,
   Flex,
@@ -9,14 +9,27 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import PageHeading from "../PageHeading";
+import { useEffect } from "react";
+import { getAllUsers } from "../../store/slices/allUsersSlice";
 
 const SingleUserCard = () => {
-  // ALL USERS - REDUX STATE
+  //  USERS - REDUX STATE
   const allUsers = useSelector((state) => state.allUsers.data);
+
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
+
+  // USEEFFECT
+  useEffect(() => {
+    // Get blogsAllUsers - Dispatch - Redux State
+    dispatch(getAllUsers());
+  }, [dispatch]);
+
   // useRouteMatch - Router
   const match = useRouteMatch("/users/:id");
   const userID = match.params.id;
   const user = allUsers.find((user) => user.id === userID);
+
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (user === undefined) return null;
 

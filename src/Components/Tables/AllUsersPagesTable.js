@@ -21,6 +21,7 @@ const AllUsersPagesTable = () => {
         Cell: ({ row }) => {
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
+          // Other values are through row.values.[nameofthevalue]
           return (
             <Link to={`/users/${row.original.id}`}>{row.values.username}</Link>
           );

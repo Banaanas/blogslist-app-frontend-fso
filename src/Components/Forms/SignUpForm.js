@@ -105,10 +105,10 @@ const SignUpForm = () => {
   };
 
   const formikInitialValues = {
-    name: "Name10",
-    username: "Username",
-    password: "password",
-    passwordConfirmation: "password",
+    name: "",
+    username: "",
+    password: "",
+    passwordConfirmation: "",
   };
 
   return (
@@ -134,7 +134,7 @@ const SignUpForm = () => {
                 <Input
                   {...field}
                   id="name"
-                  placeholder="John Doe"
+                  placeholder="Siddhārtha Gautama"
                   size="lg"
                   bg="secondary.light"
                 />
@@ -157,7 +157,7 @@ const SignUpForm = () => {
                 <Input
                   {...field}
                   id="username"
-                  placeholder="JohnDoe"
+                  placeholder="Buddha"
                   size="lg"
                   bg="secondary.light"
                 />
@@ -187,7 +187,7 @@ const SignUpForm = () => {
                   {...field}
                   type="password"
                   id="password"
-                  placeholder="password"
+                  placeholder="**********"
                   size="lg"
                   bg="secondary.light"
                 />
@@ -213,7 +213,7 @@ const SignUpForm = () => {
                   {...field}
                   type="password"
                   id="passwordConfirmation"
-                  placeholder="https://www.fleursdumal.fr"
+                  placeholder="**********"
                   size="lg"
                   bg="secondary.light"
                 />
