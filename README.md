@@ -133,6 +133,9 @@ npm install npm@latest -g
 ```sh
 git https://github.com/Banaanas/blogslist-app-frontend-fso.git
 ```
+```sh
+git https://github.com/Banaanas/blogslist-app-backend-fso.git
+```
 
 2 - Install NPM Packages / Dependencies
 
