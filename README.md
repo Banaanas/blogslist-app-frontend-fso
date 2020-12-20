@@ -30,13 +30,12 @@
 </p>
 
 <h1 align="center">📰 BlogsList App 👍🏽</h1>
+<h2 align="center">MongoDB - Express - React - Node.js</h2>
 
 <p align="center">
     Sophisticated, fluid and elegant Full Stack BlogsList Application.<br/><br/>
     <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
 </p>
-
-<p align="center">MongoDB - Express - React - Node.js</p>
 
 - Front-End 💻 [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
 - Back-End 🤖 [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
