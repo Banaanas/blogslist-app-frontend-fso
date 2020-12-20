@@ -36,6 +36,9 @@
     <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
 </p>
 
+- Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+
 <!-- TABLE OF CONTENTS -->
 
 ## Table of Contents
