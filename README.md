@@ -146,7 +146,7 @@ npm install
 3 - Development Server
 
 ```sh
-npm start
+npm run start
 ```
 
 4 - Production build
@@ -168,8 +168,8 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail.com)
 
 Project Links :
-- Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
-- Back-End: [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
+- Front-End 💻 [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Back-End 🤖 [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
 
 <!-- ACKNOWLEDGEMENTS -->
 
