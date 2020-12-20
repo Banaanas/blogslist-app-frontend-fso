@@ -67,12 +67,14 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 #### Principal Features
 
-- Vote for a Blog ;
-- Automatic Blogs ordering by Votes number ;
 - Add / Delete Blog ;
+- Vote for a Blog ;
+- Automatic Blogs ordering by number of Votes ;
 - User Sign Up / User Login ;
+- JSON Web Token Authentication ;
 - User's Profile ;
--
+- Blog Details ;
+- All Users List ;
 - Great User Interface ;
 - Responsive design.
 
