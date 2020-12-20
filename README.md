@@ -76,7 +76,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 - Blog Details ;
 - All Users List ;
 - Great User Interface ;
-- Responsive design.
+- Responsive Design.
 
 <p align="center">
   <a href="https://blogslist-app.cyrilo.app/">
