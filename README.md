@@ -36,8 +36,8 @@
     <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
 </p>
 
-- Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
-- Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Front-End 💻 [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Back-End 🤖 [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
 
 <!-- TABLE OF CONTENTS -->
 
@@ -156,7 +156,7 @@ Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail
 
 Project Links :
 - Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
-- Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Back-End: [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
 
 <!-- ACKNOWLEDGEMENTS -->
 
