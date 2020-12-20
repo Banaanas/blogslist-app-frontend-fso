@@ -61,7 +61,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 <p align="center">
   <a href="https://blogslist-app.cyrilo.app/">
-    <img src="src/assets/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="350">
+    <img src="./src/assets/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="350">
   </a>
 </p>
 
@@ -80,7 +80,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 <p align="center">
   <a href="https://blogslist-app.cyrilo.app/">
-    <img src="src/assets/README/animated-gif-2.gif" alt="Animated Gif" width="240" height="400">
+    <img src="./src/assets/README/animated-gif-2.gif" alt="Animated Gif" width="240" height="400">
   </a>
 </p>
 
