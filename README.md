@@ -30,7 +30,7 @@
 </p>
 
 <h1 align="center">📰 BlogsList App 👍🏽</h1>
-<h2 align="center">MongoDB - Express - React - Node.js</h2>
+<h3 align="center">MongoDB - Express - React - Node.js</h3>
 
 <p align="center">
     Sophisticated, fluid and elegant Full Stack BlogsList Application.<br/><br/>
