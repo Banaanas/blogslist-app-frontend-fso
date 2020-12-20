@@ -151,8 +151,9 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 
 Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail.com)
 
-- Project Link - Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
-- Project Link - Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+Project Links :
+- Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
 
 <!-- ACKNOWLEDGEMENTS -->
 
