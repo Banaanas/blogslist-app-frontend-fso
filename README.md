@@ -32,9 +32,11 @@
 <h1 align="center">📰 BlogsList App 👍🏽</h1>
 
 <p align="center">
-    Sophisticated, smooth and elegant Full Stack BlogsList Application.<br/><br/>
+    Sophisticated, fluid and elegant Full Stack BlogsList Application.<br/><br/>
     <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
 </p>
+
+<p align="center">MongoDB - Express - React - Node.js</p>
 
 - Front-End 💻 [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
 - Back-End 🤖 [https://github.com/Banaanas/blogslist-app-backend-fso](https://github.com/Banaanas/blogslist-app-backend-fso)
@@ -69,7 +71,9 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 - Vote for a Blog ;
 - Automatic Blogs ordering by Votes number ;
 - Add / Delete Blog ;
-- User Sign Up / User Login
+- User Sign Up / User Login ;
+- User's Profile ;
+-
 - Great User Interface ;
 - Responsive design.
 
@@ -82,17 +86,22 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 #### Built With
 
 - [Axios](https://github.com/axios/axios)
+- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js/)
 - [CSS3](https://www.w3.org/Style/CSS/Overview.html)
 - [Chakra UI](https://chakra-ui.com/)
 - [Cypress](https://www.cypress.io/)
 - [ESLint](https://eslint.org/)
 - [Emotion](https://emotion.sh/)
+- [Express](https://expressjs.com/fr/)
 - [Formik](https://formik.org/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [HTML5](https://www.w3.org/html/)
 - [Husky](https://github.com/typicode/husky)
+- [JSON Web Token](https://github.com/auth0/node-jsonwebtoken)
 - [Jest](https://jestjs.io/)
 - [lint-staged](https://github.com/okonet/lint-staged)
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/)
 - [Node.js](https://nodejs.org/)
 - [Prettier](https://prettier.io/)
 - [React Table](https://github.com/tannerlinsley/react-table)
