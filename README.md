@@ -57,7 +57,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 <p align="center">
   <a href="https://blogslist-app.cyrilo.app/">
-    <img src="src/assets/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="300">
+    <img src="src/assets/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="400">
   </a>
 </p>
 
@@ -79,7 +79,6 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 #### Built With
 
 - [Axios](https://github.com/axios/axios)
-- [Babel](https://babeljs.io/)
 - [CSS3](https://www.w3.org/Style/CSS/Overview.html)
 - [Chakra UI](https://chakra-ui.com/)
 - [Cypress](https://www.cypress.io/)
@@ -152,8 +151,8 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 
 Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail.com)
 
-Project Link - Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
-Project Link - Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Project Link - Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+- Project Link - Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
 
 <!-- ACKNOWLEDGEMENTS -->
 
