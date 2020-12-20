@@ -48,15 +48,15 @@ const MyProfilePageTable = () => {
       {
         Header: "Title",
         accessor: "title", // Accessor is the "key" in the data
-        Cell: ({ row }) => {
+        Cell: ({ row }) =>
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
-          return (
+           (
             <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
               {row.values.title}
             </Link>
-          );
-        },
+          )
+        ,
       },
       {
         Header: "Author",
@@ -66,12 +66,12 @@ const MyProfilePageTable = () => {
       {
         Header: "Likes",
         accessor: "likes",
-        Cell: ({ row }) => {
+        Cell: ({ row }) =>
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
           // Original Object (ID + values) is stored in row.original
-          return <>{row.values.likes}</>;
-        },
+           <>{row.values.likes}</>
+        ,
       },
       {
         Header: "Remove",
@@ -136,11 +136,9 @@ const MyProfilePageTable = () => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
+                {row.cells.map((cell) => (
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  );
-                })}
+                  ))}
               </tr>
             );
           })}

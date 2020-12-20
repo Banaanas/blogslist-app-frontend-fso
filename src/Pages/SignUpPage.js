@@ -2,8 +2,7 @@ import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
 import SignUpForm from "../Components/Forms/SignUpForm";
 
-const SignUpPage = () => {
-  return (
+const SignUpPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -14,6 +13,5 @@ const SignUpPage = () => {
       <SignUpForm />
     </StyledPageMain>
   );
-};
 
 export default SignUpPage;

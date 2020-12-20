@@ -1,7 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 
-const PageHeading = (props) => {
-  return (
+const PageHeading = (props) => (
     <Heading
       as="h1"
       size="2xl"
@@ -15,6 +14,5 @@ const PageHeading = (props) => {
       {props.children}
     </Heading>
   );
-};
 
 export default PageHeading;

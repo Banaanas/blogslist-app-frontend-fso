@@ -1,68 +1,171 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!--
+*** Useful links for the README.md file's redaction
+*** https://shields.io/ - Shields
+*** https://www.webfx.com/tools/emoji-cheat-sheet/ - Emojis
+*** https://github.com/othneildrew/Best-README-Template - General Inspiration for this file
+-->
 
-## Available Scripts
+<!-- PROJECT SHIELDS -->
+<!--
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+*** It is possible to use a personal logo, as for the Personal Website shield :
+*** Convert the logo to base 64 (https://b64.io/), then include it as explained on
+*** https://shields.io/.
+-->
 
-In the project directory, you can run:
+[![Personal Website][personal-website-shield]][personal-website-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![MIT License][license-shield]][license-url]
 
-### `npm start`
+<br/>
+<!-- PROJECT LOGO -->
+<br/>
+<p align="center">
+    <a href="https://blogslist-app.cyrilo.app/">
+        <img src="./src/images/README/project-logo.svg" alt="Project's Logo" width="120" height="120">
+    </a>
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h1 align="center">📰 BlogsList App 👍🏽</h1>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<p align="center">
+    Sophisticated, smooth and elegant Full Stack BlogsList Application.<br/><br/>
+    <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
+</p>
 
-### `npm test`
+<!-- TABLE OF CONTENTS -->
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Table of Contents
 
-### `npm run build`
+- [About the Project](#about-the-project)
+    - [Principal Features](#principal-features)
+    - [Built With](#built-with)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [License](#license)
+- [Contact](#contact)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- TABLE OF CONTENTS -->
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## About the Project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/">Full Stack Open - Full Stack JavaScript Curriculum</a>.
 
-### `npm run eject`
+<p align="center">
+  <a href="https://blogslist-app.cyrilo.app/">
+    <img src="src/images/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="300">
+  </a>
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Principal Features
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Vote for a Blog ;
+- Automatic Blogs ordering by Votes number ;
+- Add / Delete Blog ;
+- User Sign Up / User Login
+- Great User Interface ;
+- Responsive design.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<p align="center">
+  <a href="https://blogslist-app.cyrilo.app/">
+    <img src="src/images/README/animated-gif-2.gif" alt="Animated Gif" width="240" height="400">
+  </a>
+</p>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Built With
 
-## Learn More
+- [Axios](https://github.com/axios/axios)
+- [Babel](https://babeljs.io/)
+- [CSS3](https://www.w3.org/Style/CSS/Overview.html)
+- [Chakra UI](https://chakra-ui.com/)
+- [Cypress](https://www.cypress.io/)
+- [ESLint](https://eslint.org/)
+- [Emotion](https://emotion.sh/)
+- [Formik](https://formik.org/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [HTML5](https://www.w3.org/html/)
+- [Husky](https://github.com/typicode/husky)
+- [Jest](https://jestjs.io/)
+- [lint-staged](https://github.com/okonet/lint-staged)
+- [Node.js](https://nodejs.org/)
+- [Prettier](https://prettier.io/)
+- [React Table](https://github.com/tannerlinsley/react-table)
+- [React Testing Library](https://github.com/testing-library/react-testing-library)
+- [React](https://reactjs.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux](https://redux.js.org/)
+- [stylelint](https://stylelint.io/)
+- [Yup](https://github.com/jquense/yup)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- GETTING STARTED -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Getting Started
 
-### Code Splitting
+#### Prerequisites
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- Node.js
+- NPM - Node Package Manager
 
-### Analyzing the Bundle Size
+```sh
+npm install npm@latest -g
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+#### Installation
 
-### Making a Progressive Web App
+1 - Clone the Project's repository
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```sh
+git https://github.com/Banaanas/blogslist-app-frontend-fso.git
+```
 
-### Advanced Configuration
+2 - Install NPM Packages / Dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```sh
+npm install
+```
 
-### Deployment
+3 - Development Server
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+```sh
+npm start
+```
 
-### `npm run build` fails to minify
+4 - Production build
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```sh
+npm run build
+```
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for more information.
+
+<!-- CONTACT -->
+
+## Contact
+
+Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail.com)
+
+Project Link - Front-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+Project Link - Back-End: [https://github.com/Banaanas/blogslist-app-frontend-fso](https://github.com/Banaanas/blogslist-app-frontend-fso)
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+- [Full Stack Open](https://fullstackopen.com/en/)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[personal-website-shield]: https://img.shields.io/badge/-Personal_Website-9370DB?style=flat&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/PjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMDEgNTEyLjAwMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAwMSA1MTIuMDAxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+PHBhdGggZD0iTTUwMy40MDIsMjI4Ljg4NUwyNzMuNjg0LDE5LjU2N2MtMTAuMDgzLTkuMTg5LTI1LjI4OC05LjE4OC0zNS4zNjctMC4wMDFMOC41OTgsMjI4Ljg4NmMtOC4wNzcsNy4zNi0xMC43NDUsMTguNy02Ljc5OSwyOC44ODljMy45NDcsMTAuMTg5LDEzLjU1NywxNi43NzIsMjQuNDg0LDE2Ljc3MmgzNi42OXYyMDkuNzIxYzAsOC4zMTUsNi43NDIsMTUuMDU3LDE1LjA1NywxNS4wNTdoMTI1LjkxNGM4LjMxNSwwLDE1LjA1Ny02Ljc0MSwxNS4wNTctMTUuMDU3VjM1Ni45MzJoNzQuMDAydjEyNy4zMzdjMCw4LjMxNSw2Ljc0MiwxNS4wNTcsMTUuMDU3LDE1LjA1N2gxMjUuOTA4YzguMzE1LDAsMTUuMDU3LTYuNzQxLDE1LjA1Ny0xNS4wNTdWMjc0LjU0N2gzNi42OTdjMTAuOTI2LDAsMjAuNTM3LTYuNTg0LDI0LjQ4NC0xNi43NzJDNTE0LjE0NywyNDcuNTg1LDUxMS40NzksMjM2LjI0Niw1MDMuNDAyLDIyOC44ODV6IiBmaWxsPSIjZjhmOGZmIi8+PC9nPjwvZz48Zz48Zz48cGF0aCBkPSJNNDQ1LjA5Miw0Mi43M0gzNDMuOTczbDExNi4xNzYsMTA1LjYzNnYtOTAuNThDNDYwLjE0OSw0OS40NzEsNDUzLjQwOCw0Mi43Myw0NDUuMDkyLDQyLjczeiIgZmlsbD0iI2Y4ZjhmZiIvPjwvZz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PGc+PC9nPjxnPjwvZz48Zz48L2c+PC9zdmc+
+[personal-website-url]: https://cyrilo.dev
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin&
+[linkedin-url]: https://linkedin.com/mylink
+[license-shield]: https://img.shields.io/badge/License-MIT-limegreen.svg
+[license-url]: ./LICENSE

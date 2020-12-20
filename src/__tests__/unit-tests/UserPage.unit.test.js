@@ -17,9 +17,10 @@ They were heavily inspired from Part 5 of the FullStackOpen Course (2020) :
 https://fullstackopen.com/en/part5.
 
 IMPORTANT : Using data-testid query should ALWAYS be preferred over other selectors
-whenever it is possible - https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
+whenever it is possible.
+- https://kentcdodds.com/blog/making-your-ui-tests-resilient-to-change
 - https://testing-library.com/docs/dom-testing-library/api-queries/
- - https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
+- https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
 */
 
 describe("<Blog /> Component", () => {

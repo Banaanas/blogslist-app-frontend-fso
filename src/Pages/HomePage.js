@@ -42,7 +42,7 @@ const HomePage = () => {
       exit="initial"
       style={{ width: "100%" }}
     >
-      <PageHeading>All Blogs</PageHeading>
+      <PageHeading>Top Blogs</PageHeading>
       {isAuthenticated ? <AddBlogLink /> : null}
       {isLoading ? <Spinner /> : null}
       {allBlogs.length > 0 ? (

@@ -4,8 +4,7 @@ import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
 import HomePageButton from "../Components/HomePageButton";
 
-const NotFoundPage = () => {
-  return (
+const NotFoundPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -18,6 +17,5 @@ const NotFoundPage = () => {
       <Heading> NOT FOUND</Heading>
     </StyledPageMain>
   );
-};
 
 export default NotFoundPage;

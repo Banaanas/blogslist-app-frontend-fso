@@ -1,7 +1,6 @@
 import { Spinner as ChakraUISpinner } from "@chakra-ui/react";
 
-const Spinner = (props) => {
-  return (
+const Spinner = (props) => (
     <ChakraUISpinner
       thickness="4px"
       speed="0.65s"
@@ -12,6 +11,5 @@ const Spinner = (props) => {
       {...props}
     />
   );
-};
 
 export default Spinner;

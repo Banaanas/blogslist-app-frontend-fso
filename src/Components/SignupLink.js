@@ -21,8 +21,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const SignupLink = () => {
-  return <StyledLink to="/signup">SIGN UP</StyledLink>;
-};
+const SignupLink = () => <StyledLink to="/signup">SIGN UP</StyledLink>;
 
 export default SignupLink;

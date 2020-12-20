@@ -3,8 +3,7 @@ import PageHeading from "../Components/PageHeading";
 import AddBlogForm from "../Components/Forms/AddBlogForm";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 
-const AddBlogPage = () => {
-  return (
+const AddBlogPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -16,6 +15,5 @@ const AddBlogPage = () => {
       <AddBlogForm />
     </StyledPageMain>
   );
-};
 
 export default AddBlogPage;

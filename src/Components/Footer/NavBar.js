@@ -32,8 +32,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const NavBar = () => {
-  return (
+const NavBar = () => (
     <StyledNav>
       <StyledNavLink exact to="/">
         HOME
@@ -42,6 +41,5 @@ const NavBar = () => {
       <StyledNavLink to="/users">ALL USERS</StyledNavLink>
     </StyledNav>
   );
-};
 
 export default NavBar;

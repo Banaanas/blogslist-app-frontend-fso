@@ -47,16 +47,16 @@ const HomePageTable = () => {
       {
         Header: "Blog",
         accessor: "title", // Accessor is the "key" in the data
-        Cell: ({ row }) => {
+        Cell: ({ row }) =>
           // ID is accessed through row.original id
           // Other values are accessed through row.values.[nameofthevalue]
 
-          return (
+           (
             <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
               {row.values.title}
             </Link>
-          );
-        },
+          )
+        ,
       },
       {
         Header: "Author",
@@ -137,11 +137,9 @@ const HomePageTable = () => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return (
+              {row.cells.map((cell) => (
                   <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                );
-                })}
+                ))}
               </tr>
             );
           })}

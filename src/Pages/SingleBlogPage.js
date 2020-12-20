@@ -3,8 +3,7 @@ import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleBlogCard from "../Components/SingleBlog/SingleBlogCard";
 import HomePageButton from "../Components/HomePageButton";
 
-const SingleBlogPage = () => {
-  return (
+const SingleBlogPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -16,6 +15,5 @@ const SingleBlogPage = () => {
       <SingleBlogCard />
     </StyledPageMain>
   );
-};
 
 export default SingleBlogPage;

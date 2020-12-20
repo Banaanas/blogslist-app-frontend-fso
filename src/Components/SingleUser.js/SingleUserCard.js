@@ -8,8 +8,8 @@ import {
   ListItem,
   VStack,
 } from "@chakra-ui/react";
-import PageHeading from "../PageHeading";
 import { useEffect } from "react";
+import PageHeading from "../PageHeading";
 import { getAllUsers } from "../../store/slices/allUsersSlice";
 
 const SingleUserCard = () => {
@@ -28,7 +28,7 @@ const SingleUserCard = () => {
   // useRouteMatch - Router
   const match = useRouteMatch("/users/:id");
   const userID = match.params.id;
-  const user = allUsers.find((user) => user.id === userID);
+  const user = allUsers.find((userApp) => userApp.id === userID);
 
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (user === undefined) return null;

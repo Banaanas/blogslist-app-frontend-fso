@@ -20,7 +20,7 @@ const LoginForm = () => {
 
   // STATE - LOGIN
   // New Users can test the App with test-account and password as initial value
-  const [username, setUsername] = useState("test-account");
+  const [username, setUsername] = useState("Test-Account");
   const [password, setPassword] = useState("password");
 
   // SET USERNAME LOGIN - FUNCTION

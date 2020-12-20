@@ -3,8 +3,7 @@ import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleUserCard from "../Components/SingleUser.js/SingleUserCard";
 import HomePageButton from "../Components/HomePageButton";
 
-const SingleUserPage = () => {
-  return (
+const SingleUserPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -16,6 +15,5 @@ const SingleUserPage = () => {
       <SingleUserCard />
     </StyledPageMain>
   );
-};
 
 export default SingleUserPage;

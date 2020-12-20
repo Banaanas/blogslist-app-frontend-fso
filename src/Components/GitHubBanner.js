@@ -49,8 +49,7 @@ const StyledDiv = styled.div`
   }
 `;
 
-const GitHubBanner = () => {
-  return (
+const GitHubBanner = () => (
     <StyledDiv>
       <a
         href="https://github.com/Banaanas/blogslist-app-frontend-fso"
@@ -75,6 +74,5 @@ const GitHubBanner = () => {
       </a>
     </StyledDiv>
   );
-};
 
 export default GitHubBanner;

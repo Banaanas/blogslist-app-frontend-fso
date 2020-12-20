@@ -18,14 +18,14 @@ const AllUsersPagesTable = () => {
       {
         Header: "Username",
         accessor: "username",
-        Cell: ({ row }) => {
+        Cell: ({ row }) =>
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
           // Other values are through row.values.[nameofthevalue]
-          return (
+           (
             <Link to={`/users/${row.original.id}`}>{row.values.username}</Link>
-          );
-        },
+          )
+        ,
       },
       {
         Header: "Blogs Created",
@@ -62,9 +62,7 @@ const AllUsersPagesTable = () => {
           prepareRow(row);
           return (
             <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-              })}
+              {row.cells.map((cell) => <td {...cell.getCellProps()}>{cell.render("Cell")}</td>)}
             </tr>
           );
         })}

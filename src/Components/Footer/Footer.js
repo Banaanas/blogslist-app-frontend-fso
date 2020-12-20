@@ -15,14 +15,12 @@ const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.secondary.main};
 `;
 
-const Footer = () => {
-  return (
+const Footer = () => (
     <StyledFooter>
       <ContactIcons />
       <NavBar />
       <SubFooter />
     </StyledFooter>
   );
-};
 
 export default Footer;

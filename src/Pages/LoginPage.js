@@ -10,8 +10,7 @@ const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const LoginPage = () => {
-  return (
+const LoginPage = () => (
     <StyledPageMain
       variants={pageVariants}
       transition={pageTransition}
@@ -25,6 +24,5 @@ const LoginPage = () => {
       </StyledContainer>
     </StyledPageMain>
   );
-};
 
 export default LoginPage;

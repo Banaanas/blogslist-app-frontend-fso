@@ -35,8 +35,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const AuthRedirectPage = () => {
-  return (
+const AuthRedirectPage = () => (
     <>
       <GlobalContainer>
         <Heading
@@ -52,6 +51,5 @@ const AuthRedirectPage = () => {
       </GlobalContainer>
     </>
   );
-};
 
 export default AuthRedirectPage;

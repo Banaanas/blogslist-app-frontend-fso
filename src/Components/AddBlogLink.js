@@ -20,8 +20,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const AddBlogLink = () => {
-  return <StyledLink to="/add-blog">ADD BLOG</StyledLink>;
-};
+const AddBlogLink = () => <StyledLink to="/add-blog">ADD BLOG</StyledLink>;
 
 export default AddBlogLink;
