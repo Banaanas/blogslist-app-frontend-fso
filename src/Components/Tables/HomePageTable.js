@@ -19,6 +19,17 @@ const StyledLikeIcon = styled(LikeIcon)`
   margin: 0 !important;
 `;
 
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 395px) {
+    flex-direction: row;
+  }
+`;
+
 const HomePageTable = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
@@ -47,16 +58,14 @@ const HomePageTable = () => {
       {
         Header: "Blog",
         accessor: "title", // Accessor is the "key" in the data
-        Cell: ({ row }) =>
+        Cell: ({ row }) => (
           // ID is accessed through row.original id
           // Other values are accessed through row.values.[nameofthevalue]
 
-           (
-            <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
-              {row.values.title}
-            </Link>
-          )
-        ,
+          <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
+            {row.values.title}
+          </Link>
+        ),
       },
       {
         Header: "Author",
@@ -90,7 +99,7 @@ const HomePageTable = () => {
             dispatch(likeBlog(updatedBlogObject));
           };
           return (
-            <>
+            <StyledDiv>
               <IconButton
                 aria-label="Like Blog"
                 fontSize="1.5rem"
@@ -98,10 +107,9 @@ const HomePageTable = () => {
                 onClick={() => handleAddLike(row.original)}
                 icon={<StyledLikeIcon />}
                 pos="static" // To make the Header overlap the IconButton
-                mr="1.5rem"
               />
               {row.values.likes}
-            </>
+            </StyledDiv>
           );
         },
       },
@@ -124,20 +132,20 @@ const HomePageTable = () => {
     <>
       <StyledHomePageTable {...getTableProps()}>
         <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-            ))}
-          </tr>
-        ))}
+          {headerGroups.map((headerGroup) => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              ))}
+            </tr>
+          ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-        {rows.map((row) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => (
+          {rows.map((row) => {
+            prepareRow(row);
+            return (
+              <tr {...row.getRowProps()}>
+                {row.cells.map((cell) => (
                   <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                 ))}
               </tr>
