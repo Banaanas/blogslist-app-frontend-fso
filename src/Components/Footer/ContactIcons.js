@@ -54,7 +54,7 @@ const ContactIcons = () => (
     </a>
     <a
       aria-label="LinkedIn Link"
-      href="https://linkedin.com"
+      href="https://www.linkedin.com/in/cyril-dev/"
       target="_blank"
       rel="noopener noreferrer"
       title="LinkedIn"
