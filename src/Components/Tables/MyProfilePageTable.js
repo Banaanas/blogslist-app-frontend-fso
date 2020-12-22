@@ -14,12 +14,12 @@ const StyledMyBlogsTable = styled(StyledTable)`
   td {
     width: 20%;
   }
-  
+
   /* First Cell on each Row */
-   td:first-of-type {
-      text-align: left;
-    }
-  
+  td:first-of-type {
+    text-align: left;
+  }
+
   caption {
     margin-bottom: 1rem;
     font-weight: bold;
@@ -48,15 +48,13 @@ const MyProfilePageTable = () => {
       {
         Header: "Title",
         accessor: "title", // Accessor is the "key" in the data
-        Cell: ({ row }) =>
+        Cell: ({ row }) => (
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
-           (
-            <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
-              {row.values.title}
-            </Link>
-          )
-        ,
+          <Link to={`/blogs/${row.original.id}`} data-cy="blog-title">
+            {row.values.title}
+          </Link>
+        ),
       },
       {
         Header: "Author",
@@ -66,12 +64,12 @@ const MyProfilePageTable = () => {
       {
         Header: "Likes",
         accessor: "likes",
-        Cell: ({ row }) =>
+        Cell: ({ row }) => (
           // ID is accessed through row.original id
           // Other values are through row.values.[nameofthevalue]
           // Original Object (ID + values) is stored in row.original
-           <>{row.values.likes}</>
-        ,
+          <>{row.values.likes}</>
+        ),
       },
       {
         Header: "Remove",
@@ -137,8 +135,8 @@ const MyProfilePageTable = () => {
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                  ))}
+                  <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                ))}
               </tr>
             );
           })}

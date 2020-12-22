@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 import ContactIcons from "./ContactIcons";
 import NavBar from "./NavBar";
 import SubFooter from "./SubFooter";
@@ -11,16 +10,16 @@ const StyledFooter = styled.footer`
   justify-content: center;
   width: 100%;
   min-height: 3rem;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   background-color: ${({ theme }) => theme.colors.secondary.main};
 `;
 
 const Footer = () => (
-    <StyledFooter>
-      <ContactIcons />
-      <NavBar />
-      <SubFooter />
-    </StyledFooter>
-  );
+  <StyledFooter>
+    <ContactIcons />
+    <NavBar />
+    <SubFooter />
+  </StyledFooter>
+);
 
 export default Footer;

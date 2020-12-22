@@ -74,7 +74,9 @@ const StyledNavLink = styled(NavLink)`
 
 const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
-  const isAuthenticated = useSelector((state) => state.userAuthentication.isAuthenticated);
+  const isAuthenticated = useSelector(
+    (state) => state.userAuthentication.isAuthenticated,
+  );
 
   const isMenuDisplayed = isMenuOpen ? true : false;
   const tabIndex = isMenuDisplayed ? 0 : -1;

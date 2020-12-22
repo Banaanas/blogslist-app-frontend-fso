@@ -2,7 +2,8 @@ import { createStandaloneToast } from "@chakra-ui/react";
 
 const toast = createStandaloneToast();
 
-const displayToast = (title, description, status) => toast({
+const displayToast = (title, description, status) =>
+  toast({
     title,
     description,
     status,

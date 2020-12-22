@@ -33,13 +33,13 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const NavBar = () => (
-    <StyledNav>
-      <StyledNavLink exact to="/">
-        HOME
-      </StyledNavLink>
-      <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
-      <StyledNavLink to="/users">ALL USERS</StyledNavLink>
-    </StyledNav>
-  );
+  <StyledNav>
+    <StyledNavLink exact to="/">
+      HOME
+    </StyledNavLink>
+    <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
+    <StyledNavLink to="/users">ALL USERS</StyledNavLink>
+  </StyledNav>
+);
 
 export default NavBar;

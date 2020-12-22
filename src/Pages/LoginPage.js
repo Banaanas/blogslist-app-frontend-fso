@@ -11,18 +11,18 @@ const StyledContainer = styled.div`
   justify-content: center;
 `;
 const LoginPage = () => (
-    <StyledPageMain
-      variants={pageVariants}
-      transition={pageTransition}
-      initial="initial"
-      animate="animate"
-      exit="initial"
-    >
-      <StyledContainer>
-        <LoginForm />
-        <SignupLink />
-      </StyledContainer>
-    </StyledPageMain>
-  );
+  <StyledPageMain
+    variants={pageVariants}
+    transition={pageTransition}
+    initial="initial"
+    animate="animate"
+    exit="initial"
+  >
+    <StyledContainer>
+      <LoginForm />
+      <SignupLink />
+    </StyledContainer>
+  </StyledPageMain>
+);
 
 export default LoginPage;

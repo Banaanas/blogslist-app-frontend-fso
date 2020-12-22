@@ -19,8 +19,8 @@ const GlobalContainer = styled.div`
 const StyledLink = styled(Link)`
   width: 90%;
   padding: 1rem 0;
-  color:${({ signup }) =>
-  signup ? "hotpink" : ({ theme }) => theme.colors.primary.dark};
+  color: ${({ signup }) =>
+    signup ? "hotpink" : ({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.secondary.main};
@@ -36,20 +36,20 @@ const StyledLink = styled(Link)`
 `;
 
 const AuthRedirectPage = () => (
-    <>
-      <GlobalContainer>
-        <Heading
-          size="lg"
-          color="secondary.light"
-          textTransform="uppercase"
-          textAlign=""
-        >
-          You are not authenticated
-        </Heading>
-        <StyledLink to="/login">LOGIN</StyledLink>
-      <SignupLink/>
-      </GlobalContainer>
-    </>
-  );
+  <>
+    <GlobalContainer>
+      <Heading
+        size="lg"
+        color="secondary.light"
+        textTransform="uppercase"
+        textAlign=""
+      >
+        You are not authenticated
+      </Heading>
+      <StyledLink to="/login">LOGIN</StyledLink>
+      <SignupLink />
+    </GlobalContainer>
+  </>
+);
 
 export default AuthRedirectPage;

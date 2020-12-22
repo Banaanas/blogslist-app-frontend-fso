@@ -7,12 +7,14 @@
     "plugin:jsx-a11y/recommended",
     "prettier",
     "prettier/react",
-    "react-app"
+    "plugin:prettier/recommended" // Must be the last extension - https://www.npmjs.com/package/eslint-plugin-prettier
   ],
   "plugins": [
     "cypress",
+    "import",
     "jest",
     "jest-formatting",
+    "prettier",
     "testing-library"
   ],
   "rules": {
@@ -29,6 +31,7 @@
         "functions": "only-multiline"
       }
     ],
+    "prettier/prettier": "warn",
     // Authorize double-quote use
     "quotes": [
       1,

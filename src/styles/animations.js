@@ -13,7 +13,7 @@ const pageVariants = {
 // Page Transition
 const pageTransition = {
   type: "spring",
-  duration: .3,
+  duration: 0.3,
 };
 
 export { pageVariants, pageTransition };

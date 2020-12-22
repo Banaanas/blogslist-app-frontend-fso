@@ -4,7 +4,8 @@ import { createStandaloneToast } from "@chakra-ui/react";
 const toast = createStandaloneToast();
 
 // DISPLAY GENERIC SERVER ERROR TOAST
-const displayServerErrorToast = () => toast({
+const displayServerErrorToast = () =>
+  toast({
     title: "Server Error",
     description: "Something went wrong with the Server.️",
     status: "error",
