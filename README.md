@@ -38,7 +38,7 @@
 </p>
 
 - [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
-- [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-fso) - 🤖
+- [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-FSO) - 🤖
 
 
 <!-- TABLE OF CONTENTS -->
@@ -139,7 +139,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 git https://github.com/Banaanas/blogslist-app-frontend-FSO.git
 ```
 ```sh
-git https://github.com/Banaanas/blogslist-app-backend-fso.git
+git https://github.com/Banaanas/blogslist-app-backend-FSO.git
 ```
 
 2 - Install NPM Packages / Dependencies
@@ -176,7 +176,7 @@ Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail
 
 Project Links :
 - [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
-- [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-fso) - 🤖
+- [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-FSO) - 🤖
 
 
 <!-- ACKNOWLEDGEMENTS -->
