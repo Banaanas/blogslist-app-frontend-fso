@@ -37,7 +37,7 @@
     <a href="https://blogslist-app.cyrilo.app/">:computer: Live Demo :eyes:</a><br/><br/>
 </p>
 
-- [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-fso) - 💻
+- [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
 - [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-fso) - 🤖
 
 
@@ -136,7 +136,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 1 - Clone the Project's repositories
 
 ```sh
-git https://github.com/Banaanas/blogslist-app-frontend-fso.git
+git https://github.com/Banaanas/blogslist-app-frontend-FSO.git
 ```
 ```sh
 git https://github.com/Banaanas/blogslist-app-backend-fso.git
@@ -175,7 +175,7 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 Cyrilo - [Personal Website](https://cyrilo.dev) - [Mail](mailto:cyrilo.dev@gmail.com)
 
 Project Links :
-- [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-fso) - 💻
+- [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
 - [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-fso) - 🤖
 
 
