@@ -5,6 +5,7 @@
     "plugin:cypress/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:jsx-a11y/recommended",
+    /*"plugin:react/recommended",*/
     "prettier",
     "prettier/react",
     "plugin:prettier/recommended" // Must be the last extension - https://www.npmjs.com/package/eslint-plugin-prettier
