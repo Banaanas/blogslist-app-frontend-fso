@@ -17,6 +17,7 @@ const StyledSpan = styled.span`
   background-color: ${({ theme }) => theme.colors.primary.dark};
 
   a {
+    margin-right: .25rem;
     color: #f04328;
     text-decoration: none;
   }
@@ -26,7 +27,16 @@ const SubFooter = () => (
   <>
     <StyledSpan>
       <span>
-        <a href="https://cyrilo.dev">CyrilO</a> | Handcrafted with
+        <a
+          aria-label="Personal Website"
+          href="https://cyrilo.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="https://cyrilo.dev"
+        >
+          CyrilO
+        </a>
+        | Imagined with
       </span>
       <StyledAumIcon />
     </StyledSpan>
