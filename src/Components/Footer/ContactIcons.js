@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
+import { HiOutlineGlobeAlt as PersonalWebsiteIcon } from "react-icons/hi";
 import { VscGithubInverted as GitHubIcon } from "react-icons/vsc";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { ImLinkedin as LinkedInIcon } from "react-icons/im";
-import { HiOutlineEmojiHappy as PersonalWebsiteIcon } from "react-icons/hi";
 
 const StyledSocialIconsContainer = styled.div`
   display: flex;
@@ -35,10 +35,10 @@ const ContactIcons = () => (
       href="https://cyrilo.dev"
       target="_blank"
       rel="noopener noreferrer"
-      title="Personal Website"
+      title="https://cyrilo.dev"
     >
       <PersonalWebsiteIcon />
-    </a>{" "}
+    </a>
     <a
       aria-label="GitHub Profile Link"
       href="https://github.com/Banaanas"
@@ -56,11 +56,11 @@ const ContactIcons = () => (
       <MailIcon />
     </a>
     <a
-      aria-label="LinkedIn Link"
+      aria-label="LinkedIn Profile"
       href="https://www.linkedin.com/in/cyril-dev/"
       target="_blank"
       rel="noopener noreferrer"
-      title="LinkedIn"
+      title="LinkedIn Profile"
     >
       <LinkedInIcon />
     </a>

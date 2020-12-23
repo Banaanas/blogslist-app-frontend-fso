@@ -15,14 +15,20 @@ const StyledSpan = styled.span`
   padding: 0.5rem 0;
   font-size: 1rem;
   background-color: ${({ theme }) => theme.colors.primary.dark};
+
+  a {
+    color: #f04328;
+    text-decoration: none;
+  }
 `;
 
 const SubFooter = () => (
   <>
     <StyledSpan>
-      CyrilO | 2020 | Crafted with
+      <span>
+        <a href="https://cyrilo.dev">CyrilO</a> | Handcrafted with
+      </span>
       <StyledAumIcon />
-      in France
     </StyledSpan>
   </>
 );
