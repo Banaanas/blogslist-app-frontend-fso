@@ -38,7 +38,7 @@ const ContactIcons = () => (
       title="Personal Website"
     >
       <PersonalWebsiteIcon />
-    </a>{" "}
+    </a>
     <a
       aria-label="GitHub Profile Link"
       href="https://github.com/Banaanas"
