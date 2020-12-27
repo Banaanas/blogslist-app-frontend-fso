@@ -17,7 +17,7 @@
 -->
 
 [![Personal Website][personal-website-shield]][personal-website-url]
-[![Mail][personal-email-shield]][personal-email]
+[![Mail][personal-email-shield]](mailto:cyrilo.dev@gmail.com)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![MIT License][license-shield]][license-url]
 
