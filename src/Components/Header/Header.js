@@ -28,10 +28,6 @@ const StyledImg = styled.img`
   height: 4.5rem;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  padding: 0 !important;
-  background: url(${blogsListLogo}) no-repeat; /* Logo */
-  background-size: contain;
-  border: 0;
   cursor: pointer;
 
   &:hover {
@@ -76,7 +72,7 @@ const Header = () => {
   return (
     <StyledHeader boxShadow={boxShadow}>
       <NavLink to="/">
-        <StyledImg />
+        <StyledImg src={blogsListLogo} />
       </NavLink>
       <NavBar />
       <SideMenu />
