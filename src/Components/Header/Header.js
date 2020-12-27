@@ -23,7 +23,7 @@ const StyledHeader = styled.header`
   box-shadow: ${(props) => props.boxShadow};
 `;
 
-const StyledButton = styled.button`
+const StyledImg = styled.img`
   width: 4.5rem;
   height: 4.5rem;
   margin-top: 0.5rem;
@@ -76,7 +76,7 @@ const Header = () => {
   return (
     <StyledHeader boxShadow={boxShadow}>
       <NavLink to="/">
-        <StyledButton type="button" />
+        <StyledImg />
       </NavLink>
       <NavBar />
       <SideMenu />

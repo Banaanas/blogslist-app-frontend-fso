@@ -17,7 +17,7 @@ const StyledSpan = styled.span`
   background-color: ${({ theme }) => theme.colors.primary.dark};
 
   a {
-    margin-right: .25rem;
+    margin-right: 0.25rem;
     color: #f04328;
     text-decoration: none;
   }
