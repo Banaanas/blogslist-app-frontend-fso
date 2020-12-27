@@ -172,10 +172,10 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 
 ## Contact
 
-Cyrilo - [![Personal Website][personal-website-shield]][personal-website-url]
+[![Personal Website][personal-website-shield]][personal-website-url]
 [![LinkedIn][linkedin-shield]][linkedin-url] [![Mail][personal-email-shield]][personal-email]
 
-Project Links :
+## Project Links
 - [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
 - [Back-End Repository](https://github.com/Banaanas/blogslist-app-backend-FSO) - 🤖
 
