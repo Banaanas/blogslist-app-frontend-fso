@@ -25,7 +25,6 @@ const StyledHeader = styled.header`
 
 const StyledImg = styled.img`
   width: 4.5rem;
-  height: 4.5rem;
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   cursor: pointer;
