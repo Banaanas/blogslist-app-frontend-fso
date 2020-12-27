@@ -17,6 +17,7 @@
 -->
 
 [![Personal Website][personal-website-shield]][personal-website-url]
+[![Mail][personal-email-shield]][personal-email]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![MIT License][license-shield]][license-url]
 
@@ -173,7 +174,11 @@ Distributed under the MIT License. See <a href="./LICENSE">`LICENSE`</a> for mor
 ## Contact
 
 [![Personal Website][personal-website-shield]][personal-website-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] [![Mail][personal-email-shield]][personal-email]
+[![Mail][personal-email-shield]][personal-email]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+
+<!-- PROJECT LINKS -->
 
 ## Project Links
 - [Front-End Repository](https://github.com/Banaanas/blogslist-app-frontend-FSO) - 💻
