@@ -71,7 +71,7 @@ const Header = () => {
   return (
     <StyledHeader boxShadow={boxShadow}>
       <NavLink to="/">
-        <StyledImg src={blogsListLogo} />
+        <StyledImg src={blogsListLogo} alt="HomePage Link" />
       </NavLink>
       <NavBar />
       <SideMenu />
