@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 import blogsListLogo from "../../assets/blogslist-logo.svg";
-
 import NavBar from "./NavBar";
 import SideMenu from "../SideMenu/SideMenu";
 

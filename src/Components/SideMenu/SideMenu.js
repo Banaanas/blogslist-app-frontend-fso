@@ -11,6 +11,7 @@ const StyledDiv = styled.div`
     display: none;
   }
 `;
+
 const SideMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -25,6 +26,9 @@ const SideMenu = () => {
   // Throttle the callback function to optimize  component performances by
   // preventing too many useless renders
   const onWindowResizeHandler = useThrottledFn(() => {
+    // If SSR, Return (because Window is NOT defined on the Server)
+    if (typeof window === "undefined") return;
+
     // Close SideMenu if it was Open
     setWidth(window.innerWidth);
     if (width > 710) setMenuOpen(false);
