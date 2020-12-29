@@ -53,8 +53,9 @@ const Header = () => {
   // Throttle the callback function to optimize  component performances by
   // preventing too many useless renders
   const onWindowScrollHandler = useThrottledFn(() => {
-    // If SSR, Return
+    // If SSR, Return (because Window is NOT defined on the Node.js Server)
     if (typeof window === "undefined") return;
+
     if (window.pageYOffset > 1) {
       // Header Drop Shadow when Scroll - No Drop Shadow on Top
       setBoxShadow(`0 0 10px 0 ${theme.colors.primary.dark}`);

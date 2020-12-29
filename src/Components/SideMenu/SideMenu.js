@@ -26,7 +26,7 @@ const SideMenu = () => {
   // Throttle the callback function to optimize  component performances by
   // preventing too many useless renders
   const onWindowResizeHandler = useThrottledFn(() => {
-    // If SSR, Return (because Window is NOT defined on the Server)
+    // If SSR, Return (because Window is NOT defined on the Node.js Server)
     if (typeof window === "undefined") return;
 
     // Close SideMenu if it was Open
