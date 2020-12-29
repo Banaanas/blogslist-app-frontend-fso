@@ -50,7 +50,7 @@ const Header = () => {
   const theme = useTheme();
 
   // useThrottledFn - CUSTOM HOOK
-  // Throttle the callback function to optimize  component performances by
+  // Throttle the callback function to optimize component performances by
   // preventing too many useless renders
   const onWindowScrollHandler = useThrottledFn(() => {
     // If SSR, Return (because Window is NOT defined on the Node.js Server)

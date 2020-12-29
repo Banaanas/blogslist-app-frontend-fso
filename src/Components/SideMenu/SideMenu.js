@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useThrottledFn, useWindowResize } from "beautiful-react-hooks";
 import FocusLock from "react-focus-lock";
 import styled from "@emotion/styled";
@@ -14,7 +14,16 @@ const StyledDiv = styled.div`
 
 const SideMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+
+  // Width initially set to 0 instead of window.innerWidth
+  // Because, if SSR, Window is NOT defined on the Node.js Server
+  const [width, setWidth] = useState(0);
+
+  // Defined Width when Component is mounted
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    console.log(width);
+  });
 
   const DOMRef = useRef(null);
   const menuId = "main-menu";
@@ -23,7 +32,7 @@ const SideMenu = () => {
   useOnClickOutside(DOMRef, () => setMenuOpen(false));
 
   // useThrottledFn - CUSTOM HOOK
-  // Throttle the callback function to optimize  component performances by
+  // Throttle the callback function to optimize component performances by
   // preventing too many useless renders
   const onWindowResizeHandler = useThrottledFn(() => {
     // If SSR, Return (because Window is NOT defined on the Node.js Server)
