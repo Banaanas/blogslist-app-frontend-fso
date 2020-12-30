@@ -56,7 +56,7 @@ const Burger = ({ openMenu, setOpenMenu, menuID }) => {
 
     isExpanded
       ? (mainElement.style.filter = "blur(20px)")
-      : (mainElement.style.filter = "blur(0px)");
+      : (mainElement.style.filter = "blur(0)");
   });
 
   return (
