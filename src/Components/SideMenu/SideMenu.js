@@ -37,9 +37,13 @@ const SideMenu = () => {
     // If SSR, Return (because Window is NOT defined on the Node.js Server)
     if (typeof window === "undefined") return;
 
-    // Close SideMenu if it was Open
-    setWidth(window.innerWidth);
-    if (width > 710) setMenuOpen(false);
+    // Close SideMenu if it was Open - And set Background Blur to 0
+    setWidth(width);
+    if (window.innerWidth > 710) {
+      setMenuOpen(false);
+      const mainElement = document.querySelector("main");
+      mainElement.style.filter = "blur(0)";
+    }
   }, 200);
 
   // useWindowResize - CUSTOM HOOK
