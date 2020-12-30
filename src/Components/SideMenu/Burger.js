@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "@emotion/styled";
 
 const StyledSideMenuButton = styled.button`
@@ -50,19 +49,27 @@ const StyledSideMenuButton = styled.button`
 const Burger = ({ openMenu, setOpenMenu, menuID }) => {
   const isExpanded = openMenu ? true : false;
 
-  // Blur Main Background if Burger Menu is Open
-  useEffect(() => {
+  const handleBurgerOnClick = () => {
+    // Toggle OpenMenu
+    setOpenMenu(!openMenu);
+
+    // Set Background Blur if Menu is Open / Remove Background Blur if Menu is Closed
     const mainElement = document.querySelector("main");
 
     isExpanded
-      ? (mainElement.style.filter = "blur(20px)")
-      : (mainElement.style.filter = "blur(0)");
-  });
+      ? (mainElement.style.filter = "blur(0)")
+      : (mainElement.style.filter = "blur(20px)");
+
+    // Disable Scroll if Menu is Open / Enable Scroll if Menu is Close
+    openMenu
+      ? (document.body.style.overflow = "visible")
+      : (document.body.style.overflow = "hidden");
+  };
 
   return (
     <StyledSideMenuButton
       openMenu={openMenu}
-      onClick={() => setOpenMenu(!openMenu)}
+      onClick={handleBurgerOnClick}
       aria-label="Toggle SideMenu"
       aria-expanded={isExpanded}
       aria-controls={menuID}

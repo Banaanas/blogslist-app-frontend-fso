@@ -81,15 +81,22 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   const isMenuDisplayed = isMenuOpen ? true : false;
   const tabIndex = isMenuDisplayed ? 0 : -1;
 
+  // Handle Close Side Menu - FUNCTION
+  const handleCloseMenu = () => {
+    setMenuOpen(false);
+
+    // Remove Background Blur Effect
+    const mainElement = document.querySelector("main");
+    mainElement.style.filter = "blur(0)";
+
+    // Enable Scroll again
+    document.body.style.overflow = "visible";
+  };
+
   // React Swipe Event Handler - Close SideMenu when onSwipedLeft
-  // - And set Background Blur to 0
   const handlers = useSwipeable({
     trackMouse: true,
-    onSwipedLeft: () => {
-      setMenuOpen(false);
-      const mainElement = document.querySelector("main");
-      mainElement.style.filter = "blur(0)";
-      },
+    onSwipedLeft: () => handleCloseMenu(),
   });
 
   return (
@@ -104,7 +111,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
           exact
           to="/"
           tabIndex={tabIndex}
-          onClick={() => setMenuOpen(false)}
+          onClick={handleCloseMenu}
         >
           <span aria-hidden="true">
             <HomeIcon />
@@ -115,7 +122,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
         <StyledNavLink
           to="/my-profile"
           tabIndex={tabIndex}
-          onClick={() => setMenuOpen(false)}
+          onClick={handleCloseMenu}
         >
           <span aria-hidden="true">
             <MyBlogsIcon />
@@ -126,7 +133,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
         <StyledNavLink
           to="/users"
           tabIndex={tabIndex}
-          onClick={() => setMenuOpen(false)}
+          onClick={handleCloseMenu}
         >
           <span aria-hidden="true">
             <AllUsersIcon />
@@ -141,7 +148,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
             to="/login"
             tabIndex={tabIndex}
             onClick={() => {
-              setMenuOpen(false);
+              handleCloseMenu();
               userLogout();
             }}
           >
@@ -155,7 +162,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
           <StyledNavLink
             to="/login"
             tabIndex={tabIndex}
-            onClick={() => setMenuOpen(false)}
+            onClick={handleCloseMenu}
           >
             <span aria-hidden="true">
               <LogInIcon />
