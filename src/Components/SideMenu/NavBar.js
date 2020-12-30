@@ -82,9 +82,14 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   const tabIndex = isMenuDisplayed ? 0 : -1;
 
   // React Swipe Event Handler - Close SideMenu when onSwipedLeft
+  // - And set Background Blur to 0
   const handlers = useSwipeable({
     trackMouse: true,
-    onSwipedLeft: () => setMenuOpen(false),
+    onSwipedLeft: () => {
+      setMenuOpen(false);
+      const mainElement = document.querySelector("main");
+      mainElement.style.filter = "blur(0)";
+      },
   });
 
   return (
