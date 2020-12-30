@@ -111,6 +111,7 @@ const SingleBlogCard = () => {
   useEffect(() => {
     dispatch(getBlogsAllUsers());
   }, [dispatch]);
+
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (blog === undefined) return null;
 

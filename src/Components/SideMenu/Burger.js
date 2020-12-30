@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "@emotion/styled";
 
 const StyledSideMenuButton = styled.button`
@@ -48,6 +49,15 @@ const StyledSideMenuButton = styled.button`
 
 const Burger = ({ openMenu, setOpenMenu, menuID }) => {
   const isExpanded = openMenu ? true : false;
+
+  // Blur Main Background if Burger Menu is Open
+  useEffect(() => {
+    const mainElement = document.querySelector("main");
+
+    isExpanded
+      ? (mainElement.style.filter = "blur(20px)")
+      : (mainElement.style.filter = "blur(0px)");
+  });
 
   return (
     <StyledSideMenuButton
