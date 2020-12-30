@@ -25,7 +25,7 @@ const SideMenu = () => {
   });
 
   const DOMRef = useRef(null);
-  const menuId = "main-menu";
+  const menuId = "side-menu";
 
   // Close Side SideMenu when click outside the Ref- custom Hook
   useOnClickOutside(DOMRef, () => setMenuOpen(false));
