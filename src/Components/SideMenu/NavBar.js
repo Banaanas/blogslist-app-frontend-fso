@@ -13,7 +13,7 @@ import { Divider } from "@chakra-ui/react";
 import userLogout from "../../utils/userLogout";
 import removeMenuEffects from "../../utils/removeMenuEffects";
 
-const StyledMenu = styled.nav`
+const StyledMenu = styled.div`
   position: fixed;
   top: 0;
   left: 0;
