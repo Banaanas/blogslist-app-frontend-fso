@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import Burger from "./Burger";
 import useOnClickOutside from "../../custom-hooks/useOnClickOutside";
 import NavBar from "./NavBar";
+import removeMenuEffects from "../../utils/removeMenuEffects";
 
 const StyledDiv = styled.div`
   @media (min-width: 710px) {
@@ -53,9 +54,8 @@ const SideMenu = () => {
     if (window.innerWidth > 710) {
       setMenuOpen(false);
 
-      // Remove Background Blur Effect
-      const mainElement = document.querySelector("main");
-      mainElement.style.filter = "blur(0)";
+      // Remove Background Blur Effect and enable Scroll again
+      removeMenuEffects();
     }
   }, 200);
 

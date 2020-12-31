@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import removeMenuEffects from "../../utils/removeMenuEffects";
 
 const StyledSideMenuButton = styled.button`
   display: flex;
@@ -53,17 +54,15 @@ const Burger = ({ openMenu, setOpenMenu, menuID }) => {
     // Toggle OpenMenu
     setOpenMenu(!openMenu);
 
-    // Set Background Blur if Menu is Open / Remove Background Blur if Menu is Closed
-    const mainElement = document.querySelector("main");
-
-    isExpanded
-      ? (mainElement.style.filter = "blur(0)")
-      : (mainElement.style.filter = "blur(20px)");
-
-    // Disable Scroll if Menu is Open / Enable Scroll if Menu is Close
-    openMenu
-      ? (document.body.style.overflow = "visible")
-      : (document.body.style.overflow = "hidden");
+    if (isExpanded) {
+      // Remove Background Blur Effect / Enable Scroll again
+      removeMenuEffects();
+    } else {
+      // Set Background Blur if Menu is Open / Disable Scroll
+      const mainElement = document.querySelector("main");
+      mainElement.style.filter = "blur(20px)";
+      document.body.style.overflow = "hidden";
+    }
   };
 
   return (

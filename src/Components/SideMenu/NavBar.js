@@ -11,6 +11,7 @@ import {
 } from "react-icons/io";
 import { Divider } from "@chakra-ui/react";
 import userLogout from "../../utils/userLogout";
+import removeMenuEffects from "../../utils/removeMenuEffects";
 
 const StyledMenu = styled.nav`
   position: fixed;
@@ -85,12 +86,8 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   const handleCloseMenu = () => {
     setMenuOpen(false);
 
-    // Remove Background Blur Effect
-    const mainElement = document.querySelector("main");
-    mainElement.style.filter = "blur(0)";
-
-    // Enable Scroll again
-    document.body.style.overflow = "visible";
+    // Remove Background Blur Effect and enable Scroll again
+    removeMenuEffects();
   };
 
   // React Swipe Event Handler - Close SideMenu when onSwipedLeft
