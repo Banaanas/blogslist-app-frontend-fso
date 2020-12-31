@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
-import { FaBloggerB as MyBlogsIcon } from "react-icons/fa";
+import { CgProfile as MyProfileIcon } from "react-icons/cg";
 import {
   IoIosPeople as AllUsersIcon,
   IoMdLogIn as LogInIcon,
@@ -122,7 +122,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
           onClick={handleCloseMenu}
         >
           <span aria-hidden="true">
-            <MyBlogsIcon />
+            <MyProfileIcon />
           </span>
           My Profile
         </StyledNavLink>
