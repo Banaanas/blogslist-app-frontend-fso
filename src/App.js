@@ -6,7 +6,7 @@ import * as userService from "./services/users";
 import Routes from "./routes/routes";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import { getAuthenticatedUser } from "./store/slices/AuthenticationSlice";
+import { getAuthenticatedUser } from "./store/slices/authenticationSlice";
 import { getAllUsers } from "./store/slices/allUsersSlice";
 import { getBlogsAllUsers } from "./store/slices/blogsAllUsersSlice";
 import GitHubBanner from "./Components/GitHubBanner";

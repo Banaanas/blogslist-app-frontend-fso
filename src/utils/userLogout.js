@@ -1,6 +1,6 @@
 import displayToast from "./displayToast";
 import store from "../store/store";
-import { resetAuthenticatedUser } from "../store/slices/AuthenticationSlice";
+import { resetAuthenticatedUser } from "../store/slices/authenticationSlice";
 import { resetblogsSingleUser } from "../store/slices/blogsSingleUserSlice";
 
 // LOGOUT - FUNCTION

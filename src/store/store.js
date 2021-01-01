@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import allUsersReducer from "./slices/allUsersSlice";
-import authenticatedUserReducer from "./slices/AuthenticationSlice";
+import authenticatedUserReducer from "./slices/authenticationSlice";
 import blogsAllUsersReducer from "./slices/blogsAllUsersSlice";
 import blogsSingleUserReducer from "./slices/blogsSingleUserSlice";
 

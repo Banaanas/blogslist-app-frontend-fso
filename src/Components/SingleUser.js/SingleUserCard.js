@@ -30,7 +30,7 @@ const SingleUserCard = () => {
   const userID = match.params.id;
   const user = allUsers.find((userApp) => userApp.id === userID);
 
-  // To prevent Rendering of undefined blog and Page Refresh issue
+  // To prevent Rendering of undefined user and Page Refresh issue
   if (user === undefined) return null;
 
   return (

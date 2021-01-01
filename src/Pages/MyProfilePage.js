@@ -24,6 +24,7 @@ const MyProfilePage = () => {
 
   // ISLOADING - REDUX STATE
   const isLoading = useSelector((state) => state.allUsers.isLoading);
+  const isLoading2 = useSelector((state) => state.blogsSingleUser.isLoading);
 
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
@@ -40,6 +41,23 @@ const MyProfilePage = () => {
   // ALL BLOGS SINGLE USER - REDUX STATE
   const allBlogsSingleUser = useSelector((state) => state.blogsSingleUser.data);
 
+  // If isLoading
+  if (isLoading === true || isLoading2 === true) {
+    return (
+      <StyledPageMain
+        variants={pageVariants}
+        transition={pageTransition}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+        style={{ width: "100%" }}
+      >
+        <PageHeading>{authenticateUser.name}</PageHeading>
+        <Spinner />
+      </StyledPageMain>
+    );
+  }
+
   return (
     <StyledPageMain
       variants={pageVariants}
@@ -51,7 +69,6 @@ const MyProfilePage = () => {
       {authenticateUser ? (
         <PageHeading>{authenticateUser.name}</PageHeading>
       ) : null}
-      {isLoading === true ? <Spinner /> : null}
       {isAuthenticated && isLoading === false ? (
         <>
           <AddBlogLink />

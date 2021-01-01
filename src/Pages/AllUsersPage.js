@@ -30,6 +30,23 @@ const AllUsersPage = () => {
     dispatch(getAllUsers());
   }, [dispatch]);
 
+  // If isLoading
+  if (isLoading === true) {
+    return (
+      <StyledPageMain
+        variants={pageVariants}
+        transition={pageTransition}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+        style={{ width: "100%" }}
+      >
+        <PageHeading>All Users</PageHeading>
+        <Spinner />
+      </StyledPageMain>
+    );
+  }
+
   return (
     <StyledPageMain
       variants={pageVariants}
@@ -39,11 +56,10 @@ const AllUsersPage = () => {
       exit="initial"
     >
       <PageHeading>All Users</PageHeading>
-      {isLoading ? <Spinner /> : null}
-
-      {allUsers.length > 0 ? (
+      {isLoading === false && allUsers.length > 0 ? (
         <AllUsersPagesTable />
-      ) : (
+      ) : null}
+      {isLoading === false && allUsers.length === 0 ? (
         <>
           <Heading
             as="h2"
@@ -58,7 +74,7 @@ const AllUsersPage = () => {
           </Heading>
           {isAuthenticated ? null : <SignupLink />}
         </>
-      )}
+      ) : null}
     </StyledPageMain>
   );
 };

@@ -11,7 +11,7 @@ import Spinner from "../Components/Spinner";
 
 const HomePage = () => {
   // ISLOADING - REDUX STATE
-  const isLoading = useSelector((state) => state.allUsers.isLoading);
+  const isLoading = useSelector((state) => state.blogsAllUsers.isLoading);
 
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const isAuthenticated = useSelector(
@@ -30,9 +30,10 @@ const HomePage = () => {
     dispatch(getBlogsAllUsers());
   }, [dispatch]);
 
-  // To prevent Rendering of undefined blog and Page Refresh issue
+  // To prevent Rendering of undefined allBlogs and Page Refresh issue
   if (allBlogs === undefined) return null;
 
+  // If isLoading
   if (isLoading === true) {
     return (
       <StyledPageMain

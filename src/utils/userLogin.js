@@ -1,6 +1,6 @@
 import displayToast from "./displayToast";
 import store from "../store/store";
-import { getAuthenticatedUser } from "../store/slices/AuthenticationSlice";
+import { getAuthenticatedUser } from "../store/slices/authenticationSlice";
 import { getBlogsSingleUser } from "../store/slices/blogsSingleUserSlice";
 import login from "../services/login";
 import * as blogService from "../services/blogs";
