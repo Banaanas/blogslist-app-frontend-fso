@@ -60,7 +60,7 @@ const SingleUserCard = () => {
           {user.username}
         </PageHeading>
 
-        <Heading size="sm">BLOGS</Heading>
+        <Heading size="sm">POSTED BLOGS</Heading>
 
         {/* Conditional Rendering, because <Flex> would still appear (Margin and Padding)
             even with no Blog created by User */}
