@@ -59,8 +59,8 @@ const Burger = ({ openMenu, setOpenMenu, menuID }) => {
       removeMenuEffects();
     } else {
       // Set Background Blur if Menu is Open / Disable Scroll
-      const mainElement = document.querySelector("main");
-      mainElement.style.filter = "blur(20px)";
+      document.querySelector("main").style.filter = "blur(20px)";
+      document.querySelector("footer").style.filter = "blur(20px)";
       document.body.style.overflow = "hidden";
     }
   };
