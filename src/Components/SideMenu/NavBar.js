@@ -24,7 +24,7 @@ const StyledMenu = styled.div`
   justify-content: center;
   width: 75%;
   max-width: calc(710px - 25%);
-  min-height: 100vh;
+  min-height: 100%;
   overflow: hidden;
   text-align: left;
   background-color: ${({ theme }) => theme.colors.secondary.main};
