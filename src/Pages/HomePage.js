@@ -13,6 +13,7 @@ const HomePage = () => {
   // ISLOADING - REDUX STATE
   const isLoading = useSelector((state) => state.allUsers.isLoading);
 
+  console.log(isLoading);
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const isAuthenticated = useSelector(
     (state) => state.userAuthentication.isAuthenticated,
@@ -33,6 +34,14 @@ const HomePage = () => {
   // To prevent Rendering of undefined blog and Page Refresh issue
   if (allBlogs === undefined) return null;
 
+  /*  if (isLoading === true) {
+    return (
+      <StyledPageMain>
+        <Spinner />
+      </StyledPageMain>
+    );
+  }*/
+
   return (
     <StyledPageMain
       variants={pageVariants}
@@ -45,9 +54,8 @@ const HomePage = () => {
       <PageHeading>Top Blogs</PageHeading>
       {isAuthenticated ? <AddBlogLink /> : null}
       {isLoading ? <Spinner /> : null}
-      {allBlogs.length > 0 ? (
-        <HomePageTable />
-      ) : (
+      {isLoading === false && allBlogs.length > 0 ? <HomePageTable /> : null}
+      {isLoading === false && allBlogs.length === 0 ? (
         <Heading
           as="h2"
           size="md"
@@ -59,7 +67,7 @@ const HomePage = () => {
         >
           No Blogs yet
         </Heading>
-      )}
+      ) : null}
     </StyledPageMain>
   );
 };
