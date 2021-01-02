@@ -74,10 +74,12 @@ const Routes = () => {
         </Route>
 
         {/* Framer Motion - React Router Redirect - Issue
-          Wrapping the <Redirect /> Component into a <motion /> Component
-          with exit="undefined"
-          --> https://github.com/framer/motion/issues/466
-        */}
+        Wrapping the <Redirect /> Component into a <motion /> Component
+        with exit="undefined"
+        --> https://github.com/framer/motion/issues/466
+        Especially, the bug happens for private route, when, after going to the
+        AddBlogPage, you logout.*/}
+
       </Switch>
     </AnimatePresence>
   );
