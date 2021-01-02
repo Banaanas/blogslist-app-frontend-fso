@@ -83,6 +83,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 - Blog Details ;
 - All Users List ;
 - Great User Interface ;
+- Page Transitions ;
 - Responsive Design.
 
 <p align="center">
