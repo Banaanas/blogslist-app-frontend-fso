@@ -97,7 +97,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 #### Built With
 
-- [Axios](https://github.com/axios/axios)
+- [axios](https://github.com/axios/axios)
 - [Bcrypt](https://github.com/kelektiv/node.bcrypt.js/)
 - [CSS3](https://www.w3.org/Style/CSS/Overview.html)
 - [Chakra UI](https://chakra-ui.com/)
