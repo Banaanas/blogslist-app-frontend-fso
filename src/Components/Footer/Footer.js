@@ -12,6 +12,8 @@ const StyledFooter = styled.footer`
   min-height: 3rem;
   padding-top: 0.5rem;
   background-color: ${({ theme }) => theme.colors.secondary.main};
+  filter: blur(0);
+  transition: filter, 300ms ease;
 `;
 
 const Footer = () => (
