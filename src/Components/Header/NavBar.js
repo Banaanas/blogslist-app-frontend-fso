@@ -129,11 +129,7 @@ const NavBar = () => {
 
           {isAuthenticated ? null : (
             <li>
-              <StyledNavLink
-                id="login-navlink"
-                to="/login"
-                isAuthenticated={isAuthenticated}
-              >
+              <StyledNavLink id="login-navlink" to="/login">
                 LOGIN
               </StyledNavLink>
             </li>
@@ -147,7 +143,6 @@ const NavBar = () => {
             userLogout();
             history.push("/login");
           }}
-          isAuthenticated={isAuthenticated}
         >
           LOGOUT
         </StyledButton>
