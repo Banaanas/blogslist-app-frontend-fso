@@ -33,6 +33,9 @@ const StyledMenu = styled.div`
     isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
   transition: transform, 300ms ease;
 `;
+const StyledList = styled.ul`
+  list-style: none;
+`;
 
 const StyledNavLink = styled(NavLink)`
   display: flex;
@@ -123,7 +126,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
       {...handlers}
     >
       <nav>
-        <ul>
+        <StyledList>
           <li>
             <StyledNavLink
               exact
@@ -178,7 +181,7 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
               <Divider borderColor="primary.dark" />
             </li>
           )}
-        </ul>
+        </StyledList>
 
         {isAuthenticated ? (
           <>

@@ -4,16 +4,21 @@ import { NavLink } from "react-router-dom";
 const StyledNav = styled.nav`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   max-width: 350px;
   padding: 0.5rem;
 `;
 
+const StyledList = styled.ul`
+  display: inline-flex;
+  justify-content: space-around;
+  width: 80%;
+  padding: 0;
+  list-style: none;
+`;
+
 const StyledNavLink = styled(NavLink)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bolder;
   font-size: 1rem;
@@ -29,16 +34,6 @@ const StyledNavLink = styled(NavLink)`
   &.active {
     color: ${({ theme }) => theme.colors.primary.dark};
     opacity: 1;
-  }
-`;
-
-const StyledList = styled.ul`
-  display: inline-flex;
-  padding: 0;
-  list-style: none;
-
-  li:not(:first-of-type):not(:last-of-type) {
-    margin: 0 1rem;
   }
 `;
 

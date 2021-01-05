@@ -5,31 +5,33 @@ import userLogout from "../../utils/userLogout";
 
 const StyledNav = styled.nav`
   display: none;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
-  margin-left: auto;
-  padding: 0 1rem;
 
   @media (min-width: 710px) {
     display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    min-width: ${({ isAuthenticated }) =>
+      isAuthenticated ? "350px" : "450px"};
+    margin-left: auto;
+  }
+
+  @media (min-width: 850px) {
+    min-width: ${({ isAuthenticated }) =>
+      isAuthenticated ? "400px" : "550px"};
   }
 `;
 
 const StyledList = styled.ul`
   display: inline-flex;
+  justify-content: space-around;
+  width: 100%;
+  list-style: none;
 
   li {
     display: flex;
     align-content: center;
     justify-content: center;
-  }
-
-  li:not(:last-of-type) {
-    margin-right: 2rem;
-    @media (min-width: 1000px) {
-      margin-right: 2.5rem;
-    }
   }
 
   #login-navlink {
@@ -76,7 +78,7 @@ const StyledButton = styled("button", {
   display: none;
   align-items: center;
   justify-content: center;
-  margin: 0 0.5rem 0 3rem;
+  margin: 0 0.5rem 0 0.5rem;
   padding: 1rem;
   color: ${({ theme }) => theme.colors.secondary.dark};
   font-weight: bolder;
@@ -111,7 +113,7 @@ const NavBar = () => {
 
   return (
     <>
-      <StyledNav>
+      <StyledNav isAuthenticated={isAuthenticated}>
         <StyledList>
           <li>
             <StyledNavLink exact to="/">
