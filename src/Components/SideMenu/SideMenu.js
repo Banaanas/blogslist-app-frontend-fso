@@ -23,7 +23,7 @@ const SideMenu = () => {
   // Defined Width when Component is mounted
   useEffect(() => {
     setWidth(window.innerWidth);
-  });
+  }, [width]);
 
   const DOMRef = useRef(null);
   const menuId = "side-menu";

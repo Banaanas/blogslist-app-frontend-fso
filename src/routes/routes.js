@@ -78,7 +78,7 @@ const Routes = () => {
         with exit="undefined"
         --> https://github.com/framer/motion/issues/466
         Especially, the bug happens for private route, when, after going to the
-        AddBlogPage, you logout.*/}
+        AddBlogPage, you logout. */}
       </Switch>
     </AnimatePresence>
   );
