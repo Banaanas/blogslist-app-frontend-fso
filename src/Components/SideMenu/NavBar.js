@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
@@ -34,18 +34,10 @@ const StyledMenu = styled.div`
   transition: transform, 300ms ease;
 `;
 
-const StyledNav = styled.nav`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0.5rem;
-`;
-
 const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 1rem 0;
   color: ${({ theme }) => theme.colors.primary.dark};
   font-weight: bold;
@@ -73,11 +65,38 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const StyledButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 0;
+  color: ${({ theme }) => theme.colors.primary.dark};
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.6;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary.dark};
+    opacity: 1;
+  }
+
+  /* Icons */
+  span {
+    margin-right: 1rem;
+  }
+`;
+
 const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const isAuthenticated = useSelector(
     (state) => state.userAuthentication.isAuthenticated,
   );
+
+  // USEHISTORY - REACT ROUTER
+  const history = useHistory();
 
   const isMenuDisplayed = isMenuOpen ? true : false;
   const tabIndex = isMenuDisplayed ? 0 : -1;
@@ -103,72 +122,85 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
       aria-hidden={!isMenuDisplayed}
       {...handlers}
     >
-      <StyledNav>
-        <StyledNavLink
-          exact
-          to="/"
-          tabIndex={tabIndex}
-          onClick={handleCloseMenu}
-        >
-          <span aria-hidden="true">
-            <HomeIcon />
-          </span>
-          Home
-        </StyledNavLink>
+      <nav>
+        <ul>
+          <li>
+            <StyledNavLink
+              exact
+              to="/"
+              tabIndex={tabIndex}
+              onClick={handleCloseMenu}
+            >
+              <span aria-hidden="true">
+                <HomeIcon />
+              </span>
+              Home
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink
+              to="/my-profile"
+              tabIndex={tabIndex}
+              onClick={handleCloseMenu}
+            >
+              <span aria-hidden="true">
+                <MyProfileIcon />
+              </span>
+              My Profile
+            </StyledNavLink>
+          </li>
+          <li>
+            <StyledNavLink
+              to="/users"
+              tabIndex={tabIndex}
+              onClick={handleCloseMenu}
+            >
+              <span aria-hidden="true">
+                <AllUsersIcon />
+              </span>
+              All Users
+            </StyledNavLink>
+          </li>
 
-        <StyledNavLink
-          to="/my-profile"
-          tabIndex={tabIndex}
-          onClick={handleCloseMenu}
-        >
-          <span aria-hidden="true">
-            <MyProfileIcon />
-          </span>
-          My Profile
-        </StyledNavLink>
-
-        <StyledNavLink
-          to="/users"
-          tabIndex={tabIndex}
-          onClick={handleCloseMenu}
-        >
-          <span aria-hidden="true">
-            <AllUsersIcon />
-          </span>
-          All Users
-        </StyledNavLink>
-
-        <Divider borderColor="primary.dark" />
+          {isAuthenticated ? null : (
+            <li>
+              <Divider borderColor="primary.dark" />
+              <StyledNavLink
+                to="/login"
+                tabIndex={tabIndex}
+                onClick={handleCloseMenu}
+              >
+                <span aria-hidden="true">
+                  <LogInIcon />
+                </span>
+                LOGIN
+              </StyledNavLink>
+              <Divider borderColor="primary.dark" />
+            </li>
+          )}
+        </ul>
 
         {isAuthenticated ? (
-          <StyledNavLink
-            to="/login"
-            tabIndex={tabIndex}
-            onClick={() => {
-              handleCloseMenu();
-              userLogout();
-            }}
-          >
-            <Divider borderColor="red.900" />
-            <span aria-hidden="true">
-              <LogOutIcon />
-            </span>
-            LOGOUT
-          </StyledNavLink>
-        ) : (
-          <StyledNavLink
-            to="/login"
-            tabIndex={tabIndex}
-            onClick={handleCloseMenu}
-          >
-            <span aria-hidden="true">
-              <LogInIcon />
-            </span>
-            LOGIN
-          </StyledNavLink>
-        )}
-        <Divider borderColor="primary.dark" />
-      </StyledNav>
+          <>
+            <Divider borderColor="primary.dark" />
+
+            <StyledButton
+              tabIndex={tabIndex}
+              onClick={() => {
+                handleCloseMenu();
+                userLogout();
+                history.push("/login");
+              }}
+            >
+              <span aria-hidden="true">
+                <LogOutIcon />
+              </span>
+              LOGOUT
+            </StyledButton>
+            <Divider borderColor="primary.dark" />
+          </>
+        ) : null}
+      </nav>
     </StyledMenu>
   );
 };

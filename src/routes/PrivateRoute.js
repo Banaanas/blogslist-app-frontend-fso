@@ -30,7 +30,7 @@ const PrivateRoute = ({ path, component, ...rest }) => {
         }}
       />
     </motion.div>
-      /* Framer Motion - React Router Redirect - Issue
+    /* Framer Motion - React Router Redirect - Issue
       Wrapping the <Redirect /> Component into a <motion /> Component
       with exit="undefined"
       --> https://github.com/framer/motion/issues/466

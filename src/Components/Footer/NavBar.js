@@ -32,13 +32,31 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const StyledList = styled.ul`
+  display: inline-flex;
+  padding: 0;
+  list-style: none;
+
+  li:not(:first-of-type):not(:last-of-type) {
+    margin: 0 1rem;
+  }
+`;
+
 const NavBar = () => (
   <StyledNav>
-    <StyledNavLink exact to="/">
-      HOME
-    </StyledNavLink>
-    <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
-    <StyledNavLink to="/users">ALL USERS</StyledNavLink>
+    <StyledList>
+      <li>
+        <StyledNavLink exact to="/">
+          HOME
+        </StyledNavLink>
+      </li>
+      <li>
+        <StyledNavLink to="/my-profile">MY PROFILE</StyledNavLink>
+      </li>
+      <li>
+        <StyledNavLink to="/users">ALL USERS</StyledNavLink>
+      </li>
+    </StyledList>
   </StyledNav>
 );
 
