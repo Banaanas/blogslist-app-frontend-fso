@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useThrottledFn, useWindowResize } from "beautiful-react-hooks";
 import FocusLock from "react-focus-lock";
 import styled from "@emotion/styled";
 import Burger from "./Burger";
 import useOnClickOutside from "../../custom-hooks/useOnClickOutside";
 import NavBar from "./NavBar";
-import removeMenuEffects from "../../utils/removeMenuEffects";
+import enablePageScroll from "../../utils/enablePageScroll";
+import { closeSideMenu } from "../../store/slices/sideMenuSlice";
 
 const StyledDiv = styled.div`
   @media (min-width: 710px) {
@@ -14,7 +16,11 @@ const StyledDiv = styled.div`
 `;
 
 const SideMenu = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
 
   // Width initially set to 0 instead of window.innerWidth
   // Because, if SSR, Window is NOT defined on the Node.js Server
@@ -30,10 +36,11 @@ const SideMenu = () => {
 
   // Close Side SideMenu when click outside the Ref- custom Hook
   useOnClickOutside(DOMRef, () => {
-    setMenuOpen(false);
+    // Close SideMenu - Dispatch - Redux State
+    dispatch(closeSideMenu());
 
-    // Remove Background Blur Effect and enable Scroll again
-    removeMenuEffects();
+    // Enable Scroll Again
+    enablePageScroll();
   });
 
   // useThrottledFn - CUSTOM HOOK
@@ -47,11 +54,12 @@ const SideMenu = () => {
     setWidth(width);
 
     // Close SideMenu if it was Open,
-    if (window.innerWidth > 710) {
-      setMenuOpen(false);
+    if (window.innerWidth > 710 && isMenuOpen === true) {
+      // Close SideMenu - Dispatch - Redux State
+      dispatch(closeSideMenu());
 
-      // Remove Background Blur Effect and enable Scroll again
-      removeMenuEffects();
+      // Enable Scroll Again
+      enablePageScroll();
     }
   }, 200);
 
@@ -63,16 +71,8 @@ const SideMenu = () => {
     <>
       <StyledDiv ref={DOMRef}>
         <FocusLock disabled={!isMenuOpen}>
-          <Burger
-            openMenu={isMenuOpen}
-            setOpenMenu={setMenuOpen}
-            menuID={menuId}
-          />
-          <NavBar
-            isMenuOpen={isMenuOpen}
-            setMenuOpen={setMenuOpen}
-            menuID={menuId}
-          />
+          <Burger menuID={menuId} />
+          <NavBar menuID={menuId} />
         </FocusLock>
       </StyledDiv>
     </>

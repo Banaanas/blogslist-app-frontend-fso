@@ -29,6 +29,9 @@ const MyProfilePage = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
   // USEEFFECT
   useEffect(() => {
     // Return if User is not Authenticated (to avoid console warning for Rejected Request)
@@ -65,6 +68,7 @@ const MyProfilePage = () => {
       initial="initial"
       animate="animate"
       exit="initial"
+      isMenuOpen={isMenuOpen}
     >
       {authenticateUser ? (
         <PageHeading>{authenticateUser.name}</PageHeading>

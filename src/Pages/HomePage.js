@@ -24,6 +24,9 @@ const HomePage = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
   // USEEFFECT
   useEffect(() => {
     // Get blogsAllUsers - Dispatch - Redux State
@@ -43,6 +46,7 @@ const HomePage = () => {
         animate="animate"
         exit="initial"
         style={{ width: "100%" }}
+        isMenuOpen={isMenuOpen}
       >
         <PageHeading>Top Blogs</PageHeading>
         <Spinner />
@@ -58,6 +62,7 @@ const HomePage = () => {
       animate="animate"
       exit="initial"
       style={{ width: "100%" }}
+      isMenuOpen={isMenuOpen}
     >
       <PageHeading>Top Blogs</PageHeading>
       {isAuthenticated ? <AddBlogLink /> : null}

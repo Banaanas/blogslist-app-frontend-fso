@@ -1,6 +1,6 @@
+import { useDispatch, useSelector } from "react-redux";
 import styled from "@emotion/styled";
 import { NavLink, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useSwipeable } from "react-swipeable";
 import { AiFillHome as HomeIcon } from "react-icons/ai";
 import { CgProfile as MyProfileIcon } from "react-icons/cg";
@@ -11,7 +11,8 @@ import {
 } from "react-icons/io";
 import { Divider } from "@chakra-ui/react";
 import userLogout from "../../utils/userLogout";
-import removeMenuEffects from "../../utils/removeMenuEffects";
+import enablePageScroll from "../../utils/enablePageScroll";
+import { closeSideMenu } from "../../store/slices/sideMenuSlice";
 
 const StyledMenu = styled.div`
   position: fixed;
@@ -92,11 +93,17 @@ const StyledButton = styled.button`
   }
 `;
 
-const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
+const NavBar = ({ menuID }) => {
   // LOGGED IN USER - REDUX STATE - (Without Blogs Array)
   const isAuthenticated = useSelector(
     (state) => state.userAuthentication.isAuthenticated,
   );
+
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
 
   // USEHISTORY - REACT ROUTER
   const history = useHistory();
@@ -106,10 +113,11 @@ const NavBar = ({ isMenuOpen, setMenuOpen, menuID }) => {
 
   // Handle Close Side Menu - FUNCTION
   const handleCloseMenu = () => {
-    setMenuOpen(false);
+    // Close SideMenu - Dispatch - Redux State
+    dispatch(closeSideMenu());
 
     // Remove Background Blur Effect and enable Scroll again
-    removeMenuEffects();
+    enablePageScroll();
   };
 
   // React Swipe Event Handler - Close SideMenu when onSwipedLeft

@@ -3,6 +3,7 @@ import { pageTransition, pageVariants } from "../styles/animations";
 import LoginForm from "../Components/Forms/LoginForm";
 import SignupLink from "../Components/SignupLink";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
+import { useSelector } from "react-redux";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -10,19 +11,25 @@ const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const LoginPage = () => (
-  <StyledPageMain
-    variants={pageVariants}
-    transition={pageTransition}
-    initial="initial"
-    animate="animate"
-    exit="initial"
-  >
-    <StyledContainer>
-      <LoginForm />
-      <SignupLink />
-    </StyledContainer>
-  </StyledPageMain>
-);
+const LoginPage = () => {
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
+  return (
+    <StyledPageMain
+      variants={pageVariants}
+      transition={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="initial"
+      isMenuOpen={isMenuOpen}
+    >
+      <StyledContainer>
+        <LoginForm />
+        <SignupLink />
+      </StyledContainer>
+    </StyledPageMain>
+  );
+};
 
 export default LoginPage;

@@ -12,7 +12,7 @@ const StyledPageMain = styled(motion.main)`
   margin-top: 8rem; /* To match the Fixed Header Height */
   padding: 1rem 1rem 2rem 1rem;
   font-size: 1.2rem;
-  filter: blur(0);
+  filter: ${({ isMenuOpen }) => (isMenuOpen ? "blur(20px)" : "blur(0)")};
   transition: filter, 300ms ease;
 `;
 

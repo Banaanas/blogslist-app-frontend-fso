@@ -1,5 +1,7 @@
+import { useDispatch, useSelector } from "react-redux";
 import styled from "@emotion/styled";
-import removeMenuEffects from "../../utils/removeMenuEffects";
+import enablePageScroll from "../../utils/enablePageScroll";
+import { toggleSideMenu } from "../../store/slices/sideMenuSlice";
 
 const StyledSideMenuButton = styled.button`
   display: flex;
@@ -47,27 +49,31 @@ const StyledSideMenuButton = styled.button`
   }
 `;
 
-const Burger = ({ openMenu, setOpenMenu, menuID }) => {
-  const isExpanded = openMenu ? true : false;
+const Burger = ({ menuID }) => {
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
+  // USEDISPATCH - REDUX STATE
+  const dispatch = useDispatch();
+
+  const isExpanded = isMenuOpen ? true : false;
 
   const handleBurgerOnClick = () => {
-    // Toggle OpenMenu
-    setOpenMenu(!openMenu);
+    // Toggle isMenuOpen - Dispatch - Redux State
+    dispatch(toggleSideMenu());
 
     if (isExpanded) {
-      // Remove Background Blur Effect / Enable Scroll again
-      removeMenuEffects();
+      // Enable Scroll again
+      enablePageScroll();
     } else {
-      // Set Background Blur if Menu is Open / Disable Scroll
-      document.querySelector("main").style.filter = "blur(20px)";
-      document.querySelector("footer").style.filter = "blur(20px)";
+      // Disable Scroll
       document.body.style.overflow = "hidden";
     }
   };
 
   return (
     <StyledSideMenuButton
-      openMenu={openMenu}
+      openMenu={isMenuOpen}
       onClick={handleBurgerOnClick}
       aria-label="Toggle SideMenu"
       aria-expanded={isExpanded}

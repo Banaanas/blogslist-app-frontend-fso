@@ -24,6 +24,9 @@ const AllUsersPage = () => {
   // USEDISPATCH - REDUX STATE
   const dispatch = useDispatch();
 
+  // SIDE MENU - REDUX STATE
+  const isMenuOpen = useSelector((state) => state.sideMenu.isMenuOpen);
+
   // USEEFFECT
   useEffect(() => {
     // Get blogsAllUsers - Dispatch - Redux State
@@ -54,6 +57,7 @@ const AllUsersPage = () => {
       initial="initial"
       animate="animate"
       exit="initial"
+      isMenuOpen={isMenuOpen}
     >
       <PageHeading>All Users</PageHeading>
       {isLoading === false && allUsers.length > 0 ? (
