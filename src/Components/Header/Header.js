@@ -52,7 +52,7 @@ const Header = () => {
   // useThrottledFn - CUSTOM HOOK
   // Throttle the callback function to optimize component performances by
   // preventing too many useless renders
-  const onWindowScrollHandler = useThrottledFn(() => {
+  const windowScrollHandler = useThrottledFn(() => {
     // If SSR, Return (because Window is NOT defined on the Node.js Server)
     if (typeof window === "undefined") return;
 
@@ -66,7 +66,7 @@ const Header = () => {
 
   // useWindowScroll - CUSTOM HOOK
   // Scroll Event Listener (Add AND Cleanup Event)
-  useWindowScroll(onWindowScrollHandler);
+  useWindowScroll(windowScrollHandler);
 
   return (
     <StyledHeader boxShadow={boxShadow}>
