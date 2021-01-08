@@ -19,7 +19,7 @@ const StyledHeader = styled.header`
   width: 100%;
   height: 5.5rem;
   background-color: ${({ theme }) => theme.colors.secondary.main};
-  box-shadow: ${(props) => props.boxShadow};
+  box-shadow: ${({ boxShadow }) => boxShadow};
 `;
 
 const StyledImg = styled.img`
