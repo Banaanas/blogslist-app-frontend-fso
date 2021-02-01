@@ -5,9 +5,12 @@ const PageHeading = (props) => (
     as="h1"
     size="2xl"
     mr="-1rem" /* To balance the last letter's letterSpacing */
-    color="secondary.dark"
+    color="secondary.light"
     textTransform="uppercase"
     textAlign="center"
+    backgroundColor="primary.dark"
+    padding="1rem"
+    borderRadius={8}
     letterSpacing="1rem"
     {...props}
   >
