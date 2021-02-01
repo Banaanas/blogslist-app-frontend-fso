@@ -12,6 +12,7 @@ const PageHeading = (props) => (
     padding="1rem"
     borderRadius={8}
     letterSpacing="1rem"
+    marginBottom="2rem"
     {...props}
   >
     {props.children}
