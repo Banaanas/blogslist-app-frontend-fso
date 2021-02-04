@@ -1,8 +1,8 @@
+import { useSelector } from "react-redux";
 import { pageTransition, pageVariants } from "../styles/animations";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import SingleBlogCard from "../Components/SingleBlog/SingleBlogCard";
 import HomePageButton from "../Components/HomePageButton";
-import { useSelector } from "react-redux";
 
 const SingleBlogPage = () => {
   // SIDE MENU - REDUX STATE

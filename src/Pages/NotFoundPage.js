@@ -1,9 +1,9 @@
+import { useSelector } from "react-redux";
 import { Heading, Icon } from "@chakra-ui/react";
 import { RiErrorWarningFill as NotFoundIcon } from "react-icons/ri";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
 import { pageTransition, pageVariants } from "../styles/animations";
 import HomePageButton from "../Components/HomePageButton";
-import { useSelector } from "react-redux";
 
 const NotFoundPage = () => {
   // SIDE MENU - REDUX STATE

@@ -1,9 +1,9 @@
+import { useSelector } from "react-redux";
 import styled from "@emotion/styled";
 import { pageTransition, pageVariants } from "../styles/animations";
 import LoginForm from "../Components/Forms/LoginForm";
 import SignupLink from "../Components/SignupLink";
 import StyledPageMain from "../Components/StyledComponents/StyledPageMain";
-import { useSelector } from "react-redux";
 
 const StyledContainer = styled.div`
   display: flex;

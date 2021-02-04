@@ -1,4 +1,0 @@
-
-"airbnb", "airbnb/hooks"and "plugin:react/recommended" in .eslintrc.json have been disabled.
-
---> https://github.com/facebook/create-react-app/issues/9887
