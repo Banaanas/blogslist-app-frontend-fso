@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "cypress:open": "cypress open",
     "eject": "react-scripts eject",
     "server": "json-server -p3000 --watch db.json",
@@ -84,8 +84,11 @@
     "stylelint-order": "^4.1.0"
   },
   "@comment scripts": {
+    "build": [
+      "`DISABLE_ESLINT_PLUGIN=true` environment variable added to not get ESLINT blocking the Build"
+    ],
     "start": [
-      "`ESLINT_NO_DEV_ERRORS=true` environment variable added to not get ESLINT blocking rendering"
+      "`ESLINT_NO_DEV_ERRORS=true` environment variable added to not get ESLINT blocking the Rendering"
     ],
     "cypress:open": [
       "Run Cypress tests using the graphical test runner"
