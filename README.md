@@ -84,7 +84,7 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 - All Users List ;
 - Great User Interface ;
 - Page Transitions ;
-  - Multi-Tab Login / Logout
+- Multi-Tab Login / Logout
 - Responsive Design.
 
 <p align="center">
