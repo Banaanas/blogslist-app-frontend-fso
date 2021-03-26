@@ -1,7 +1,6 @@
 {
   "name": "blogslist-app-frontend-fso",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "cypress:open": "cypress open",
