@@ -8,6 +8,7 @@
     "plugin:react/recommended",
     "prettier"
   ],
+  "parser": "babel-eslint",
   "plugins": [
     "cypress",
     "import",
