@@ -3,14 +3,13 @@ import { Heading } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import SignupLink from "../Components/SignupLink";
 
-const GlobalContainer = styled.div`
+const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 100%;
   max-width: 25rem;
-  height: 25rem;
   padding: 1rem 0;
   color: ${({ theme }) => theme.colors.secondary.dark};
   text-align: center;
@@ -18,6 +17,7 @@ const GlobalContainer = styled.div`
 
 const StyledLink = styled(Link)`
   width: 90%;
+  margin: 3rem 0;
   padding: 1rem 0;
   color: ${({ signup }) =>
     signup ? "hotpink" : ({ theme }) => theme.colors.primary.dark};
@@ -37,7 +37,7 @@ const StyledLink = styled(Link)`
 
 const AuthRedirectPage = () => (
   <>
-    <GlobalContainer>
+    <StyledContainer>
       <Heading
         size="lg"
         color="secondary.light"
@@ -48,7 +48,7 @@ const AuthRedirectPage = () => (
       </Heading>
       <StyledLink to="/login">LOGIN</StyledLink>
       <SignupLink />
-    </GlobalContainer>
+    </StyledContainer>
   </>
 );
 

@@ -8,6 +8,8 @@ const StyledSocialIconsContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-bottom: 0.2rem;
+  background-color: ${({ theme }) => theme.colors.primary.dark};
 
   a {
     margin: 0 0.5rem;
@@ -15,8 +17,8 @@ const StyledSocialIconsContainer = styled.div`
 
   svg {
     color: ${({ theme }) => theme.colors.primary.dark};
-    font-size: 1.5rem;
-    background-color: ${({ theme }) => theme.colors.secondary.main};
+    color: ${({ theme }) => theme.colors.primary.light};
+    font-size: 1.2rem;
     transform: scale(1);
     opacity: 0.9;
     transition: transform, opacity, 200ms ease;

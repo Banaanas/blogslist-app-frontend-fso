@@ -4,7 +4,7 @@ const PageHeading = (props) => (
   <Heading
     as="h1"
     size="2xl"
-    mr="-1rem" /* To balance the last letter's letterSpacing */
+    pr="-1rem" /* To balance the last letter's letterSpacing */
     color="secondary.light"
     textTransform="uppercase"
     textAlign="center"
