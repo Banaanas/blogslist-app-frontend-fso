@@ -48,15 +48,15 @@ const userLogin = async (username, password) => {
     );
   } catch (e) {
     // Display Warning Toast - Username or Password is Invalid
-    const errorWords = "Invalid Username or Password";
+    const errorUsername = "Invalid Username";
+    const errorPassword = "Invalid Password";
 
     // Check if 1 - e.response.data.error; 2 - e.response.data.error includes(errorWords)
-    if (e.response.data.error && e.response.data.error.includes(errorWords)) {
-      displayToast(
-        "Wrong Credentials",
-        "Invalid Username or Password.",
-        "warning",
-      );
+    // Optional Chaining Operator
+    if (e.response.data?.error.includes(errorUsername)) {
+      displayToast("Wrong Credentials", "Invalid Username.", "warning");
+    } else if (e.response.data?.error.includes(errorPassword)) {
+      displayToast("Wrong Credentials", "Invalid Password.", "warning");
     } else {
       // Display Generic Server Error Toast
       displayServerErrorToast();
