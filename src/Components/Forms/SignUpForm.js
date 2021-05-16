@@ -62,7 +62,7 @@ const ValidationSchemaYup = object().shape({
     .required("Password is Required"),
   passwordConfirmation: string()
     .oneOf([ref("password"), null], "Passwords must match")
-    .required("Enter Blog's URL"),
+    .required("Password Confirmation is Required"),
 });
 
 const SignUpForm = () => {
