@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import styled from "@emotion/styled";
 import NavBar from "./NavBar";
 import SubFooter from "./SubFooter";
+import ContactIcons from "./ContactIcons";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -21,7 +22,6 @@ const Footer = () => {
 
   return (
     <StyledFooter isMenuOpen={isMenuOpen}>
-    {/* <ContactIcons /> */}
       <NavBar />
       <SubFooter />
     </StyledFooter>
