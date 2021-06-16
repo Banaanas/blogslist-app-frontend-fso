@@ -3,7 +3,7 @@ import { FaOm as AumIcon } from "react-icons/fa";
 import ContactIcons from "./ContactIcons";
 
 const StyledAumIcon = styled(AumIcon)`
-  margin: 0 0.5rem;
+  margin: 0 0.25rem;
   color: #ec3956;
   font-size: 1rem;
 `;
