@@ -139,9 +139,12 @@ BlogsList Application achieved as part of <a href="https://fullstackopen.com/en/
 
 1 - Clone the Project's repositories
 
+- Front End
 ```sh
 git https://github.com/Banaanas/blogslist-app-frontend-FSO.git
 ```
+
+- Back End
 ```sh
 git https://github.com/Banaanas/blogslist-app-backend-FSO.git
 ```
