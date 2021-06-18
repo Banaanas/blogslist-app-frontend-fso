@@ -154,8 +154,14 @@ npm install
 
 3 - Development Server
 
+- Front End
 ```sh
 npm run start
+```
+
+- Back End
+```sh
+npm run dev
 ```
 
 4 - Production build
