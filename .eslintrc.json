@@ -6,6 +6,7 @@
     "plugin:eslint-comments/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "prettier"
   ],
   "parser": "babel-eslint",
@@ -18,6 +19,7 @@
     "testing-library"
   ],
   "rules": {
+    "prettier/prettier": "error", // https://github.com/prettier/eslint-plugin-prettier
     "comma-dangle": [
       "error",
       {
@@ -29,15 +31,6 @@
         "exports": "always-multiline",
         // Comma-dangle for functions only when the developer decides
         "functions": "only-multiline"
-      }
-    ],
-    "prettier/prettier": "warn",
-    // Authorize double-quote use
-    "quotes": [
-      1,
-      "double",
-      {
-        "avoidEscape": true
       }
     ],
     // Disable forbid-prop-types rule
